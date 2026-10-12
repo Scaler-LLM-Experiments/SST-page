@@ -1,7 +1,6 @@
-// The remaining sections of the deck (SSB Website vF, Sep '26), laid out with
-// placeholders for their photos and videos: set `photo` / `media` when an asset
-// arrives (files in public/). Copy is the deck's; a missing line (the deck's
-// "xx") is left out and shows as "Copy to come". Eyebrows are drafts.
+// The community and people sections, in Scaler School of Technology's copy and assets (the live
+// site, scaler.com/school-of-technology, 2026-10-12; files in public/sst). A missing line shows
+// as "Copy to come".
 
 import type { ShowcasePerson } from '@/sections/faculty/PeopleShowcase';
 import type { Session } from '@/sections/community/SessionCard';
@@ -15,8 +14,8 @@ export type Venture = {
   founders: string[];
   /** Their photos (square, in /public), in the same order; initials where there is none. */
   avatars?: (string | undefined)[];
-  /** Under their names: the SSB cohort for students ("Cohort 1" if unset, the team's call,
-   *  2026-10-07), "Founder" / "Co-founders" for the Innovation Lab's. */
+  /** Under their names: who they are ("SST student" if unset), "Founder" / "Co-founders" for the
+   *  Innovation Lab's. */
   role?: string;
   /** What it is, in about three lines (115 to 125 characters fill them on desktop). */
   description: string;
@@ -37,382 +36,361 @@ export type Venture = {
   href?: string;
 };
 
+const H = '/sst/community/headlines';
+
 /**
- * Deck p5: "Beyond Placements", rebuilt on 2026-10-07 (the team's brief): no eyebrow, title or
- * line; a turn that carries on from the breaker before it (founders backing the students), as
- * Why SSB's turn hands over to its chapters; then one card per company. No photos for now (the
- * team's call, 2026-10-07: every card on the dark plate; the Why stories' photos of Hummusapiens
- * and GradeSense were used first). Hummusapiens is from the deck's Shark Tank slide (p7), Gredo's
- * founders from Skope Kitchens' release on their vending launch at SSB (2026; to confirm they are
- * students).
- *
- * **Figures marked PLACEHOLDER are made up** (the team's call: "fabricate for now, we will add
- * real stats later"); the rest are the deck's. So are the names of the valet app and the bridal
- * line (the deck doesn't name them).
+ * "Beyond Placements": SST's student startups and headlines (the live site's "Headlines from SST"
+ * and its "10+ Startups Founded by SST Students"). Lines and figures are the site's.
  */
 export const beyondPlacements = {
   turn: {
-    setup: 'Students at SSB didn’t just build careers.',
-    lead: 'They built companies.',
-    // in the logo's green, as Why SSB's roles, its full stop too (the team's calls, 2026-10-07)
+    setup: 'Students at SST don’t wait to graduate.',
+    lead: 'They build companies.',
     accent: 'companies.',
   },
   ventures: [
     {
-      company: 'Hummusapiens',
-      founders: ['Dr. Charles Chacko Porathoor'],
+      company: 'Percevia',
+      founders: ['Tushar'],
+      role: 'SST student, 2nd year',
       description:
-        'Hummus-based healthy snacks, built while studying at SSB and pitched to Shark Tank India judge Anupam Mittal on campus.',
-      sector: 'Healthy snacking',
-      // an offer to invest (July 2026, ANI): not "raised"
-      stat: { value: '₹50L', label: 'offered by Anupam Mittal' },
+        'AI glasses that help the visually impaired, the winner among 20,000+ entries at Samsung Solve for Tomorrow.',
+      sector: 'AI · Assistive tech',
+      stat: { value: '₹25L', label: 'grant, Samsung Solve for Tomorrow' },
+      image: `${H}/percevia.webp`,
+      imagePosition: '78% 50%',
+      imageAlt: 'Tushar in a Samsung Solve for Tomorrow T-shirt',
+      href: 'https://yourstory.com/socialstory/2025/11/bengaluru-student-invents-smart-glasses-visually-impaired',
     },
     {
-      company: 'Gredo',
-      founders: ['Mayank Kelwani', 'Sanskriti Deshmukh'],
-      description:
-        'A protein-food brand live on Zomato and Swiggy, with fresh-food vending machines across Bangalore, the first one at SSB.',
-      sector: 'Food-tech',
-      stat: { value: '₹1Cr+', label: 'ARR' },
+      company: 'Ather Labs',
+      founders: ['Advith', 'Arsh'],
+      role: 'SST students',
+      description: 'An AI-powered fintech startup that Advith and Arsh built and grew to more than ₹2 lakh in monthly recurring revenue.',
+      sector: 'AI · Fintech',
+      stat: { value: '₹2L+', label: 'MRR' },
+      image: `${H}/ather-labs.webp`,
+      imagePosition: '50% 40%',
+      imageAlt: 'Advith and Arsh, the founders of Ather Labs',
+      href: 'https://www.republicworld.com/initiatives/scaler-school-of-technology-hosts-student-shark-tank-young-innovators-pitch-big-idea',
     },
     {
-      company: 'Dream Kit',
-      founders: ['Aashish US'],
-      avatars: ['/alumni/aashish-us.webp'],
-      // "grew", as the deck has it: its web presence names another maker (to confirm)
+      company: 'Trackaroo',
+      founders: ['Pratyush Mishra'],
       description:
-        'A homegrown STEAM toy brand that teaches science through play, grown while he held a full-time role at The Whole Truth.',
-      sector: 'STEAM toys',
-      stat: { value: '12,000+', label: 'students across schools' },
-    },
-    {
-      company: 'GradeSense',
-      founders: ['Ayush Poojary'],
-      description:
-        'AI that evaluates descriptive and handwritten answer sheets at scale, so teachers spend less time grading and more teaching.',
-      sector: 'AI · EdTech',
-      stat: { value: '50,000+', label: 'answer sheets graded' }, // PLACEHOLDER
-    },
-    {
-      company: 'Creator business',
-      founders: ['Paritosh Sinha'],
-      description:
-        'He skipped placements to build his creator business full-time, and is now fielding publishing offers for his debut book.',
-      sector: 'Creator economy',
-      stat: { value: '200K', label: 'followers, up from 8K' },
-    },
-    {
-      company: 'Tally Konnect',
-      founders: ['Moh Agarwal'],
-      avatars: ['/alumni/moh-agarwal.webp'],
-      description:
-        'Joined the family business after SSB and took it digital, launching Tally Konnect’s ERP automation platform for its clients.',
+        'An auto-dealership management platform, with clients like Tata and Ather, generating revenue while he studies at SST.',
       sector: 'B2B SaaS',
-      stat: { value: '₹5Cr', label: 'valuation' }, // PLACEHOLDER
+      stat: { value: '₹25L', label: 'revenue' },
+      image: `${H}/trackaroo.webp`,
+      imagePosition: '50% 40%',
+      imageAlt: 'Pratyush Mishra, the founder of Trackaroo',
+      href: 'https://www.linkedin.com/posts/scaler-school-of-technology_pratyush-mishra-first-client-just-became-activity-7424093910001672192-y_6B',
     },
     {
-      company: 'ParkEase', // PLACEHOLDER name: the deck has "a parking app"
-      founders: ['Yash Ramchandani'],
-      description:
-        'A smart valet platform built from scratch, streamlining car handovers at malls, hotels and other high-footfall venues.',
-      sector: 'Mobility',
-      stat: { value: '10,000+', label: 'cars handed over' }, // PLACEHOLDER
+      company: 'Build My Notes',
+      founders: ['Om'],
+      role: 'SST student, 2nd year',
+      description: 'Om co-founded Build My Notes and cracked two internships at the same time, all in his second year at SST.',
+      sector: 'EdTech',
+      stat: { value: '2', label: 'internships in 2nd year' },
+      image: `${H}/two-internships.webp`,
+      imagePosition: '72% 50%',
+      imageAlt: 'Om, co-founder of Build My Notes',
+      href: 'https://www.linkedin.com/feed/update/urn:li:activity:7295011234104426496/',
     },
     {
-      company: 'Zari & Co.', // PLACEHOLDER name: the deck has "an AI-assisted bridal wear brand"
-      founders: ['Impanna Reddy'],
+      company: 'Ninad AI',
+      founders: ['SST students'],
+      role: 'Builders',
+      description: 'A full-duplex AI speech engine powering real-time, human-like voice interactions, built by SST students.',
+      sector: 'AI · Voice',
+      image: `${H}/ninad-ai.webp`,
+      imageAlt: 'Ninad AI’s real-time AI voice demo',
+      href: 'https://ninad.live/',
+    },
+    {
+      company: 'NeoSapiens',
+      founders: ['Dhananjay Yadav', 'Aryan'],
+      role: 'Innovation Lab startup',
       description:
-        'A premium Kanjivaram bridal line pairing AI colour analysis and bridal storytelling with certified gold-zari craftsmanship.',
-      sector: 'Fashion',
-      stat: { value: '₹50L', label: 'raised' }, // PLACEHOLDER
+        'An AI-native wearable pendant, incubated at SST’s Innovation Lab, that secured funding on Shark Tank India.',
+      sector: 'AI wearables',
+      stat: { value: '$2M', label: 'seed funding' },
+      image: `${H}/neosapiens.webp`,
+      imagePosition: '80% 50%',
+      imageAlt: 'NeoSapiens’ founder wearing the AI pendant',
+      href: 'https://www.hindustantimes.com/genesis/scaler-innovation-lab-incubated-ai-wearable-tech-startup-neosapien-raises-2mn-seed-funding-101767074236219.html',
+    },
+    {
+      company: 'Emergent',
+      founders: ['SST students'],
+      role: 'Founding engineers',
+      description:
+        '15+ SST students joined Emergent as founding engineers from Day Zero: not just employees, but its core building team.',
+      sector: 'AI · Vibe coding',
+      stat: { value: '15+', label: 'SST founding engineers' },
+      image: `${H}/emergent.webp`,
+      imageAlt: 'Sam Altman, CEO of OpenAI, with Mukund Jha, CEO of Emergent',
     },
   ] satisfies Venture[],
 };
 
-/** Deck p6: "Investors & Founders on Campus" (its quote is the testimonial banner). */
+/** The industry leaders on SST's campus (the people tabs' fourth group): those who build at its
+ *  Innovation Lab or have spoken to its students. */
 export const investors = {
   eyebrow: 'On campus',
-  title: 'Investors & Founders on Campus',
-  sub: 'Investors and founders from Sequoia, Peak XV, McKinsey, Cashfree and Lightrock meet SSB students on campus.',
-  // Photos in public/people (640x800); logos in public/logos, shown white on the card.
+  title: 'Industry Leaders on Campus',
+  sub: 'Founders and technologists who build at SST’s Innovation Lab and speak to its students.',
   people: [
-    { name: 'Navin Parwal', role: 'Founder, Mokobara', image: '/people/navin-parwal.webp' },
     {
-      name: 'Sidhant Goyal',
-      role: 'EIR, Toddle, Ex-Sequoia',
-      image: '/people/sidhant-goyal.webp',
-      logo: { name: 'Toddle', src: '/logos/toddle.svg' },
+      name: 'Srikanth Vidapanakal',
+      role: 'xSpecies AI · Ex-Stanford, Director AI, OLA Electric',
+      image: '/sst/community/lab/srikanth-vidapanakal.webp',
     },
     {
-      name: 'Roel Janssen',
-      role: 'Partner, Global Founders Capital, Ex-McKinsey',
-      image: '/people/roel-janssen.webp',
+      name: 'Gaurav Dadhich',
+      role: 'Founder, Maximem · Incubated at the Innovation Lab',
+      image: '/faculty/gaurav-dadhich.webp',
     },
     {
-      name: 'Akash Sinha',
-      role: 'Founder & CEO, Cashfree',
-      image: '/people/akash-sinha.webp',
-      logo: { name: 'Cashfree', src: '/logos/cashfree.svg' },
-    },
-    {
-      name: 'Vedant Trivedi',
-      role: 'Investor, Peak XV, Ex-Sequoia',
-      image: '/people/vedant-trivedi.webp',
-      logo: { name: 'Peak XV Partners', src: '/logos/peakxv.svg' },
-    },
-    {
-      name: 'Dhron Kanish',
-      role: 'Associate Partner, McKinsey',
-      image: '/people/dhron-kanish.webp',
-      logo: { name: 'McKinsey & Company', src: '/logos/mckinsey.svg' },
-    },
-    {
-      name: 'Divya Venkataraghavan',
-      role: 'Principal, Lightrock / Aspada',
-      image: '/people/divya-venkataraghavan.webp',
-      logo: { name: 'Lightrock', src: '/logos/lightrock.svg' },
-    },
-    {
-      name: 'Saurabh Jain',
-      role: 'Co-Founder, Stable Money',
-      image: '/people/saurabh-jain.webp',
-      logo: { name: 'Stable Money', src: '/logos/stable-money.svg' },
-    },
-    {
-      name: 'Sucheta Mahapatra',
-      role: 'Ex-MD, Branch / Airtel / WeWork',
-      image: '/people/sucheta-mahapatra.webp',
-      logo: { name: 'Airtel', src: '/logos/airtel.svg' },
+      name: 'Jacob Singh',
+      role: 'Ex-CTO, Blinkit',
+      image: '/faculty/jacob-singh.webp',
+      logo: { name: 'Blinkit', src: '/sst/community/sessions/jacob-singh-logo.webp' },
     },
   ] satisfies ShowcasePerson[],
 };
 
-/** Deck p7: the Shark Tank judge. */
+/** What industry leaders say about SST: the testimonial band's slides, by `title`. */
 export const sharkTank = {
   eyebrow: 'On campus',
-  title: 'A Shark Tank India judge sat across from our students, and wrote a cheque.',
-  sub: 'Founders and investors review student startups on campus, and some put money behind them.',
+  title: 'What industry leaders say about SST',
+  sub: 'Founders and leaders on SST’s students and curriculum.',
   stories: [
     {
       title: 'Anupam Mittal',
-      text: 'On a campus visit, Shark Tank India’s Anupam Mittal reviewed student-led startups: Hummusapiens, Gredo, Grade Sense, and Dream Kit, and offered ₹50 lakh to Hummusapiens, founded by student Dr. Charles Chacko Porathoor. A one-time visit, a real term sheet.',
-      mediaLabel: 'Photo / video: Anupam Mittal on campus with students',
-      // SSB's video: "Anupam Mittal Offers ₹50L to this Bangalore Hummus Startup" (its thumbnail)
-      media: '/on-campus/anupam-mittal.webp',
-      href: 'https://www.youtube.com/watch?v=fCP4SbBrwKQ',
-    },
-    {
-      title: 'Ankur Warikoo',
-      text: 'At the founding cohort’s convocation, Ankur Warikoo handed 55 graduating students, headed to Urban Company, Blinkit, Ninjacart, Avendus, Emergent, and Whole Truth Foods, their certificates in person, and left them with one line: “Don’t get intellectually comfortable.”',
-      mediaLabel: 'Photo / video: Ankur Warikoo at the founding cohort’s convocation',
-      // SSB's video with him ("The Truth About Building a Career, Startup & Personal Brand"); no
-      // convocation video on the channel yet
-      media: '/on-campus/ankur-warikoo.webp',
-      href: 'https://www.youtube.com/watch?v=ZFVqtpqSlyI',
-    },
-    // Dummy copy until the team's arrives (the deck has "xx").
-    {
-      title: 'Shantanu Deshpande',
-      text: 'Dummy copy: a line about Shantanu Deshpande’s campus visit goes here, the startups reviewed and the advice shared with students, kept to the length of the other cards so the layout can be reviewed.',
-      mediaLabel: 'Photo / video: Shantanu Deshpande on campus',
-    },
-    {
-      title: 'Kiran Shah',
-      text: 'Dummy copy: a line about Kiran Shah’s time on campus goes here, the session on campus and what students took away from it, kept to the length of the other cards so the layout can be reviewed.',
-      mediaLabel: 'Photo / video: Kiran Shah on campus',
+      text: 'SST’s curriculum and culture puts its students ahead of the curve. The industry needs such talent. I’d love to hire from SST.',
+      mediaLabel: 'Photo: Anupam Mittal with SST students',
+      media: '/sst/proof/testimonial/anupam-mittal.webp',
     },
   ] satisfies Story[],
 };
 
-/** Deck p13: the mentors and SSB's founding team, as Faculty's cards (photos in public/people).
- *  People without a photo yet are listed but not shown (`image` unset); add it to show them. */
+const M = '/sst/community/mentors';
+const T = '/sst/community/team';
+
+/** The SST team (the live site's "Meet the Team Behind SST"), those running the programme; its
+ *  founders and board are `foundingTeamSection`. Roles are the site's two lines, joined. */
 export const mentorsSection = {
-  eyebrow: 'Mentors',
-  title: 'Mentored by the Builders of Zomato, Flipkart, Paytm and CRED',
-  sub: 'Founders and investors behind some of India’s best-known companies mentor SSB students.',
+  eyebrow: 'Our team',
+  title: 'Meet the Team Behind SST',
+  sub: 'Entrepreneurs and AI builders who’ve scaled global companies lead SST, bringing real-world insight to shape tomorrow’s tech leaders.',
   people: [
-    {
-      name: 'Deepinder Goyal',
-      role: 'Co-founder, Zomato',
-      image: '/people/deepinder-goyal.webp',
-      logo: { name: 'Zomato', src: '/logos/zomato.svg' },
-    },
-    {
-      name: 'Binny Bansal',
-      role: 'Co-founder, Flipkart',
-      image: '/people/binny-bansal.webp',
-      logo: { name: 'Flipkart', src: '/logos/flipkart.svg' },
-    },
-    {
-      name: 'Vijay Shekhar Sharma',
-      role: 'MD, Paytm',
-      image: '/people/vijay-shekhar-sharma.webp',
-      logo: { name: 'Paytm', src: '/logos/paytm.svg' },
-    },
-    {
-      name: 'Kunal Shah',
-      role: 'Founder, CRED',
-      image: '/people/kunal-shah.webp',
-      logo: { name: 'CRED', src: '/logos/cred.svg', scale: 1.7 },
-    },
-    {
-      name: 'Rajan Anandan',
-      role: 'MD, Peak XV',
-      image: '/people/rajan-anandan.webp',
-      logo: { name: 'Peak XV Partners', src: '/logos/peakxv.svg' },
-    },
+    { name: 'Manmeet Singh Akali', role: 'Programme Director SST, Ex-Founder, Klarity', image: `${T}/manmeet-singh-akali.webp` },
+    { name: 'Tushar Bisht', role: 'CTO, Scaler', image: `${T}/tushar-bisht.webp` },
+    { name: 'Shivank Agrawal', role: 'Sr. VP Data Science, Scaler · Ex-Microsoft, Oracle', image: `${T}/shivank-agrawal.webp` },
+    { name: 'Amar Srivastava', role: 'AVP Product, Scaler · IIT Delhi Alum', image: `${T}/amar-srivastava.webp` },
+    { name: 'Shruti Sagar', role: 'Ex-LEK Consulting', image: `${T}/shruti-sagar.webp` },
+    { name: 'Vadivelan Gopal', role: 'Vice President, Campus Outreach, SST', image: `${T}/vadivelan-gopal.webp` },
   ] as (Omit<ShowcasePerson, 'image'> & { image?: string })[],
 };
 export const foundingTeamSection = {
   eyebrow: 'Leadership',
-  title: 'SSB’s Founding Team',
-  sub: 'Leaders from Meta, McKinsey, BCG, Uber, Google and Bain who built SSB.',
+  title: 'The Founders and Board Behind SST',
+  sub: 'Scaler’s co-founders, the head of SST and the board member who built Uber India.',
   people: [
     {
       name: 'Anshuman Singh',
-      role: 'Co-founder, Ex-Meta',
-      image: '/people/anshuman-singh.webp',
+      role: 'Co-Founder of Scaler, Ex-Meta',
+      image: `${T}/anshuman-singh.webp`,
       logo: { name: 'Meta', src: '/logos/meta.svg' },
     },
-    { name: 'Abhimanyu Saxena', role: 'Co-founder, Ex-Fab.com', image: '/people/abhimanyu-saxena.webp' },
-    {
-      name: 'Bhavik Rathod',
-      role: 'Founding Leader, Uber India',
-      image: '/people/bhavik-rathod.webp',
-      logo: { name: 'Uber', src: '/logos/uber.svg' },
-    },
+    { name: 'Abhimanyu Saxena', role: 'Co-founder of Scaler, Ex-Fab.com', image: `${T}/abhimanyu-saxena.webp` },
     {
       name: 'Vidit Jain',
-      role: 'SVP, Ex-McKinsey/ISB',
-      image: '/people/vidit-jain.webp',
+      role: 'Head of SST, Ex-McKinsey & MPL',
+      image: `${T}/vidit-jain.webp`,
       logo: { name: 'McKinsey & Company', src: '/logos/mckinsey.svg' },
     },
     {
-      name: 'Sucheta Mahapatra',
-      role: 'VP Business, SSB · Ex-Bain, Airtel',
-      image: '/people/sucheta-mahapatra.webp',
-      logo: { name: 'Bain & Company', src: '/logos/bain.svg' },
+      name: 'Bhavik Rathod',
+      role: 'Board Member, Built Uber India',
+      image: `${T}/bhavik-rathod.webp`,
+      logo: { name: 'Uber', src: '/logos/uber.svg' },
     },
-    {
-      name: 'Manish Pansari',
-      role: 'Director, Business Ops, SSB · Ex-Myntra, Kearney',
-      image: '/people/manish-pansari.webp',
-      logo: { name: 'Kearney', src: '/logos/kearney.svg' },
-    },
-    {
-      name: 'Adhiraj Arora',
-      role: 'Program Director, Ex-BCG, ISB',
-      image: '/people/adhiraj-arora.webp',
-      logo: { name: 'BCG', src: '/logos/bcg.svg' },
-    },
-    { name: 'Rahul Karthikeyan', role: 'CMO, Scaler, Ex-upGrad', image: '/people/rahul-karthikeyan.webp' },
-    {
-      name: 'Ratnakar Reddy',
-      role: 'Enterprise Head, Ex-Google/Microsoft',
-      image: '/people/ratnakar-reddy.webp',
-      logo: { name: 'Google', src: '/logos/google.svg' },
-    },
-    { name: 'Amar Srivastava', role: 'CEO, Scaler Online Business', image: '/people/amar-srivastava.webp' },
   ] satisfies ShowcasePerson[],
 };
 
-/** Deck p15: Super Mentor Sessions. */
+const S = '/sst/community/sessions';
+
+/** "Access To Industry Leaders" (the live site's): its five talks, name and role split at the
+ *  title's comma, the line as written; thumbnails YouTube's, logos the site's. */
 export const superMentors = {
-  eyebrow: 'Sessions',
-  title: 'Super Mentor Sessions',
-  sub: 'Supported & Mentored by India’s Top Business Leaders.',
-  // The deck's copy (name, role, line); the thumbnails and logos of Scaler School of Technology's
-  // "Access To Industry Leaders" (scaler.com/school-of-technology); videos on YouTube.
+  eyebrow: 'Industry talks',
+  title: 'Access to Industry Leaders',
+  sub: 'Get unparalleled access to those shaping the AI revolution.',
   sessions: [
     {
-      name: 'Rajan Anandan',
-      role: 'Ex-MD SEA, Google',
-      text: 'He spoke about striving for excellence, learning from failure, and staying hungry for success.',
-      videoId: 'M7H1SHc1f2Q',
-      thumb: '/sessions/rajan-anandan.webp',
-      logo: { name: 'Google', src: '/sessions/rajan-anandan-logo.png' },
-    },
-    {
-      name: 'Jacob Singh',
-      role: 'Ex-CTO, Blinkit, India’s Largest Q-Commerce',
-      text: 'He shared deep insights on tech leadership and product thinking with the students.',
-      videoId: 'QMjFvjBwuE4',
-      thumb: '/sessions/jacob-singh.webp',
-      logo: { name: 'Blinkit', src: '/sessions/jacob-singh-logo.png' },
-    },
-    {
-      name: 'Rahul Chari',
-      role: 'Co-Founder, PhonePe (India’s largest UPI app)',
-      text: 'Rejected by Google, built a leading UPI platform. A journey of grit and innovation.',
-      videoId: 'fN43OAasN5w',
-      thumb: '/sessions/rahul-chari.webp',
-      logo: { name: 'PhonePe', src: '/sessions/rahul-chari-logo.png' },
+      name: 'Varun Mohan',
+      role: 'Building Antigravity at Google DeepMind',
+      text: 'An MIT-trained AI innovator addressed SST students on reshaping software development.',
+      videoId: 'fCg1bSh1RnI',
+      thumb: `${S}/varun-mohan.webp`,
+      logo: { name: 'Google DeepMind', src: `${S}/varun-mohan-logo.webp` },
     },
     {
       name: 'Yash Kumar',
       role: 'Lead Engineer, OpenAI (ChatGPT Agents)',
       text: 'The creator of OpenAI’s first agent, addressed students on Commencement Day.',
       videoId: '5R95YlIdeBg',
-      thumb: '/sessions/yash-kumar.webp',
-      logo: { name: 'OpenAI', src: '/sessions/yash-kumar-logo.png' },
+      thumb: `${S}/yash-kumar.webp`,
+      logo: { name: 'OpenAI', src: `${S}/yash-kumar-logo.webp` },
+    },
+    {
+      name: 'Rajan Anandan',
+      role: 'Ex-MD SEA, Google',
+      text: 'He spoke about striving for excellence, learning from failure, and staying hungry for success.',
+      videoId: 'M7H1SHc1f2Q',
+      thumb: `${S}/rajan-anandan.webp`,
+      logo: { name: 'Google', src: `${S}/rajan-anandan-logo.webp` },
+    },
+    {
+      name: 'Jacob Singh',
+      role: 'Ex-CTO, Blinkit, India’s Largest Q-Commerce',
+      text: 'He shared deep insights on tech leadership and product thinking with the students.',
+      videoId: 'QMjFvjBwuE4',
+      thumb: `${S}/jacob-singh.webp`,
+      logo: { name: 'Blinkit', src: `${S}/jacob-singh-logo.webp` },
+    },
+    {
+      name: 'Rahul Chari',
+      role: 'Co-Founder, PhonePe (India’s largest UPI app)',
+      text: 'Rejected by Google, built a leading UPI platform: a journey of grit and innovation.',
+      videoId: 'fN43OAasN5w',
+      thumb: `${S}/rahul-chari.webp`,
+      logo: { name: 'PhonePe', src: `${S}/rahul-chari-logo.webp` },
     },
   ] satisfies Session[],
 };
 
-/** Deck p24: Life Beyond the Classroom. Photos: the team's campus shoot (2026-10-07), public/campus. */
+const C = '/sst/community/campus';
+
+/** "Bangalore. India's Startup Capital. Your Campus." (the live site's): the campus photos, then its
+ *  amenities as the row of cards. */
 export const campusLife = {
   eyebrow: 'Campus life',
-  title: 'Life Beyond the Classroom.',
-  sub: 'Fully residential campus in Bengaluru · Shared Innovation Lab and campus with SST · Backed by Peak XV, Lightrock, Tiger Global.',
+  title: 'Bangalore. India’s Startup Capital. Your Campus.',
+  sub: 'In India’s Silicon Valley, our urban campus combines cutting-edge labs with a close community, where students learn, lead clubs, run fests, and forge lifelong bonds.',
   /** The mosaic's middle photo: on desktop it arrives full-bleed and pulls back into its tile. */
-  feature: { media: '/campus/cohort.webp', alt: 'An SSB cohort together on campus', position: '50% 62%' },
-  /** The student clubs, as the Innovation Lab's startups (a row of cards, each with a photo). The
-      deck's line for each, then a clause of ours on what the club is for, to fill the card's three
-      lines as the startups' do (the team's ask, 2026-10-07; no new facts: for the team to confirm). */
-  clubsTurn: { text: 'Student clubs, by SSB students.', accent: 'Student clubs' },
+  feature: { media: `${C}/campus-5.webp`, alt: 'An SST cohort together on the campus lawn', position: '50% 55%' },
+  /** SST's "Amenities and Features", as the row of cards (a photo each). */
+  clubsTurn: { text: 'Amenities and features, built around builders.', accent: 'Amenities and features' },
   clubs: [
     {
-      name: 'Marketing Club',
-      tag: 'Marketing',
-      text: 'Branding sessions and case competitions with founders like Meolaa’s Ishita Sawant: learn to build and pitch a brand.',
-      media: '/campus/flags.webp',
-      alt: 'SSB banners in the campus grounds',
-      position: '50% 70%',
+      name: 'Fully residential',
+      tag: 'Living',
+      text: 'On-campus living designed for focused building and a strong peer community.',
+      media: `${C}/campus-1.webp`,
+      alt: 'SST students walking across campus',
+      position: '50% 50%',
     },
     {
-      name: 'Consulting Club',
-      tag: 'Consulting',
-      text: 'SSB’s own Case Book and sessions with Ex-McKinsey and BCG consultants: learn to structure and present a case.',
-      media: '/campus/classroom.webp',
-      alt: 'Students in an SSB lecture hall',
-      position: '62% 50%',
+      name: 'Scaler Innovation Lab',
+      tag: 'Lab',
+      text: 'India’s only deep-tech lab for undergraduates, where innovative ideas come to life.',
+      media: '/sst/community/lab/humanoid.webp',
+      alt: 'A student beside a robotic hand in the Innovation Lab',
+      position: '40% 50%',
+    },
+    {
+      name: 'Clubs',
+      tag: 'Clubs',
+      text: 'Open source, competitive programming, sports and entrepreneurship, run by students.',
+      media: `${C}/campus-2.webp`,
+      alt: 'Students playing basketball on the campus court',
+      position: '50% 40%',
+    },
+    {
+      name: 'Mental health support',
+      tag: 'Wellbeing',
+      text: 'Professional counselling through our in-house mental health counsellors.',
+      media: `${C}/campus-4.webp`,
+      alt: 'Students working on laptops together on the lawn',
+      position: '50% 50%',
     },
   ],
   /** The campus around it, in the mosaic's order (left tall, left short, right short, right tall). */
   photos: [
-    { media: '/campus/arch.webp', alt: 'The Scaler School of Business arch on Commencement Day', position: '50% 50%' },
-    { media: '/campus/gym.webp', alt: 'The campus gym', position: '45% 60%' },
-    { media: '/campus/building.webp', alt: 'The SSB building in Bengaluru', position: '50% 55%' },
-    { media: '/campus/classroom.webp', alt: 'Students in an SSB lecture hall', position: '50% 40%' },
+    { media: `${C}/campus-1.webp`, alt: 'SST students walking across campus', position: '50% 50%' },
+    { media: `${C}/campus-2.webp`, alt: 'Students playing basketball on the campus court', position: '50% 40%' },
+    { media: `${C}/campus-3.webp`, alt: 'SST students together at a campus fest', position: '55% 50%' },
+    { media: `${C}/campus-4.webp`, alt: 'Students working on laptops together', position: '50% 50%' },
   ],
   follow: [
     {
-      handle: '@scalerschool_of_business',
+      handle: '@scaler_school_of_technology',
       note: 'official',
-      href: 'https://www.instagram.com/scalerschool_of_business/',
+      href: 'https://www.instagram.com/scaler_school_of_technology/',
     },
-    { handle: '@life_at_ssb', note: 'student-run', href: 'https://www.instagram.com/life_at_ssb/' },
   ],
 };
 
-/** Deck p25: "Scaler In the news." (the deck has only the title: four article slots). */
+const N = '/sst/community/news';
+
+/** "In the News" (the live site's): its seven stories, the site's headline as each card's line. */
 export const inTheNews = {
-  eyebrow: 'Press',
-  title: 'Scaler in the News.',
-  sub: 'What the press has written about Scaler and SSB.',
-  articles: [1, 2, 3, 4].map((n) => ({
-    kicker: `Publication ${n}`,
-    title: 'Headline to come',
-    mediaLabel: 'Publication logo / article image',
-  })) satisfies Story[],
+  eyebrow: 'Featured',
+  title: 'In the News.',
+  sub: 'What the press has written about Scaler and SST.',
+  articles: [
+    {
+      kicker: 'Partnership',
+      title: 'IIT Madras partners with SST',
+      text: 'IIT Madras has partnered with Scaler School of Technology to use AI tools in its BS Data Science course.',
+      media: `${N}/iit-madras.webp`,
+      mediaLabel: 'IIT Madras and Scaler School of Technology',
+    },
+    {
+      kicker: 'Partnership',
+      title: 'IIT Roorkee and Scaler',
+      text: 'IIT Roorkee and Scaler partner to launch high-impact AI programmes addressing talent shortages.',
+      media: `${N}/iit-roorkee.webp`,
+      mediaLabel: 'IIT Roorkee and Scaler',
+    },
+    {
+      kicker: 'GovTech',
+      title: 'SST & eGov launch DIGIT',
+      text: 'Scaler School of Technology and eGov launch the DIGIT GovTech course to train future public-tech leaders.',
+      media: `${N}/egov-digit.webp`,
+      mediaLabel: 'SST and eGov',
+    },
+    {
+      kicker: 'Students',
+      title: 'SST over IIT Ropar',
+      text: 'Why a CS aspirant chose Scaler SST over IIT Ropar: real-world learning tipped the scales.',
+      media: `${N}/iit-ropar.webp`,
+      mediaLabel: 'An SST student',
+    },
+    {
+      kicker: 'Students',
+      title: 'An AI interview companion',
+      text: 'Scaler students create an AI interview companion, streamlining prep for their peers.',
+      media: `${N}/ai-interview.webp`,
+      mediaLabel: 'Scaler students’ AI interview companion',
+    },
+    {
+      kicker: 'Recognition',
+      title: 'TIME’s top EdTech companies',
+      text: 'TIME magazine’s World’s Top EdTech Companies 2024: Scaler Academy achieved the top position.',
+      media: `${N}/time-edtech.webp`,
+      mediaLabel: 'TIME World’s Top EdTech Companies 2024',
+    },
+    {
+      kicker: 'Innovation Lab',
+      title: 'A deep-tech innovation lab',
+      text: 'Scaler School of Technology launches a deep-tech innovation lab to foster robotics, AI and autonomous startups.',
+      media: `${N}/deep-tech-lab.webp`,
+      mediaLabel: 'The Scaler Innovation Lab',
+    },
+  ] satisfies Story[],
 };

@@ -29,7 +29,7 @@ import './film-player.css';
 export function FilmPlayer({
   youtubeId,
   length = 0,
-  title = 'Scaler School of Business campus film',
+  title = 'Scaler School of Technology programmes film',
 }: {
   youtubeId: string;
   /** The film's length in seconds, for the preview's scrubber. */
@@ -92,7 +92,7 @@ export function FilmPlayer({
       >
         <GlassButton
           size="icon-lg"
-          aria-label="Play the campus film"
+          aria-label="Play the programmes film"
           className="pointer-events-auto size-16 sm:size-20"
           onClick={() => openFilm()}
         >

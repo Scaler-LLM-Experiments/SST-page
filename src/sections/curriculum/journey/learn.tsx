@@ -83,7 +83,7 @@ function VideoCard({ item, cfg }: { item: LearnChallenge; cfg: JourneyConfig }) 
       </div>
       <div className="lv-details">
         <span className="lv-avatar" aria-hidden="true">
-          <Logo brand="ssb" variant="monogram" size="sm" surface="light" decorative />
+          <Logo brand="sst" variant="monogram" size="sm" surface="light" decorative />
         </span>
         <div className="lv-meta">
           <h3 className="lv-title" id={titleId}>
@@ -277,7 +277,7 @@ function PlaylistMobile({ learn, cfg }: { learn: LearnByDoing; cfg: JourneyConfi
           <span className="sp-title">{learn.eyebrow}</span>
           <span className="sp-meta">
             <span className="sp-by">
-              <Logo brand="ssb" variant="monogram" size="sm" surface="light" decorative />
+              <Logo brand="sst" variant="monogram" size="sm" surface="light" decorative />
             </span>
             {items[0].video.channel}
           </span>

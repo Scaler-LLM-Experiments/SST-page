@@ -1,86 +1,58 @@
 import type { HeroContent } from '@/sections/hero/types';
 
 /*
- * The first fold's copy, the same in both variants (the cinematic V2 and the split
- * card, ?hero=split): the deck's (SSB Website vF, Sep '26, slide 1). CTA hrefs are
- * placeholders until real destinations are agreed. The campus film is a 15s silent
- * cut of the team's screen recording (campus walk-through, then the programme
- * director), looping; in V2 its play button opens the full film from YouTube.
- *
- * "B‑school" uses a non-breaking hyphen (U+2011), so the title never breaks inside it.
+ * The first fold's copy, from the live SST page (scaler.com/school-of-technology, read
+ * 2026-10-12): the title, "Industry Integrated UG Programmes Built by 100+ leaders from" over the
+ * leaders' logos (the live hero's strip, public/sst/hero), Join Waitlist and Explore Programmes,
+ * and the four USPs as the facts. The film is the live hero's loop (public/sst/hero/hero.mp4); its
+ * play button (hidden on /v2 for now) opens SST's programmes film on YouTube (14:23).
  */
 export const hero: HeroContent = {
-  eyebrow: 'PGP in Management & Technology (PGP-MT)',
-  title: 'India’s first AI-native B‑school',
-  // V2's title (the team, 2026-10-12): the faculty's line moved up into it, their logos under it,
-  // above the CTAs. `title` stays for the split fold.
-  titleLead: 'Learn business hands-on',
-  leadersTitle: 'from 100+ industry leaders & faculty from',
-  description:
-    'Build startups & AI products · No tech background required',
-  primaryCta: { label: 'Apply now', href: '#apply', icon: 'arrow' },
-  secondaryCta: { label: 'Download brochure', href: '#brochure', icon: 'download' },
-  // A quiet line under the actions (FoldCopy): each value, then its caption.
+  eyebrow: 'Scaler School of Technology · UG Programmes',
+  title: 'India’s Ivy League for the AI Age',
+  // V2's title: the lead line in the brand colour, then the leaders' line, their logos under it.
+  // `title` stays for the split fold.
+  titleLead: 'India’s Ivy League for the AI Age',
+  leadersTitle: 'Industry Integrated UG Programmes Built by 100+ leaders from',
+  description: 'Computer Science & AI · AI & Business · Bangalore campus',
+  // [CONFIRM] the live Join Waitlist is a button that opens the site's own form, not a link
+  primaryCta: { label: 'Join Waitlist', href: 'https://www.scaler.com/school-of-technology/admission/', icon: 'arrow' },
+  secondaryCta: { label: 'Explore Programmes', href: '#curriculum', icon: 'arrow' },
   facts: [
-    // Values in one row; the caption a small line under it, starting under its value.
-    // V4 shows the short caption (its tags sit in the narrower right column).
-    { value: '18 months', caption: 'incl. internships & immersions', shortCaption: 'incl. internships' },
-    { value: 'Bengaluru' },
-    { value: '150 seats' },
+    // As SSB's: values in one row, one with a small caption under it.
+    { value: '4-year UG', caption: 'CS & AI · AI & Business', shortCaption: 'CS & AI · AI & B' },
+    { value: 'Bangalore' },
+    { value: '3.3% selected' },
   ],
   media: {
-    videoSrc: '/media/campus-film.mp4',
-    poster: '/media/campus-film-poster.jpg',
-    youtubeId: 'yBYXT419bFw',
-    youtubeLength: 288,
-    caption: 'Learn by doing. Build alongside the people shaping what comes next.',
+    videoSrc: '/sst/hero/hero.mp4',
+    poster: '/sst/hero/hero-poster.jpg',
+    // SST's programmes film ("Explore the programmes and choose your best fit"), 14:23
+    youtubeId: 'PkXHq65A9JI',
+    youtubeLength: 863,
+    caption: 'Learn by building. Build alongside the people shaping the AI age.',
   },
-  // Was "Learn business hands-on from 100+ industry-leading faculty from": the line under the
-  // title already says "Learn by doing".
-  leadersLine: '100+ industry-leading faculty from',
-  // Feedback, 2026-10-06. TO CONFIRM: which Oxford reference to use (Oxford / Saïd Business School);
-  // Before the schools' logos in the facts box, on one line (about the values' row's width).
-  alumniLead: 'Built by alumni from',
-  // Their wide logos (the team, 2026-10-08: "wide logos instead of short, then words"): Oxford's
-  // from Wikimedia Commons, public domain ("University of Oxford.svg", Wikidata's P154); HBS's
-  // lockup (shield and stacked name) the team's own file (src/HBS.svg, copied). Shown white on
-  // the glass, or in their own colours on a white plate (the lab's toggle, ?logos=plate). Were
-  // the Oxford circlet and the HBS shield, each beside its name.
-  alumniFrom: [
-    { name: 'University of Oxford', logoUrl: '/logos/oxford-wide.svg', wordmark: 'Oxford', ink: 0.15 },
-    { name: 'Harvard Business School', logoUrl: '/logos/hbs-lockup.svg', wordmark: 'Harvard Business School', ink: 0.26 },
-  ],
-  // V5's ticker: the same list as each organisation's own colour icon (its site or app icon,
-  // public/logos/marks, 96px) with its name beside it.
+  leadersLine: 'Built by 100+ industry leaders from',
+  // [SST] the live hero names no schools the programme was built by (SSB's Oxford / HBS line), so
+  // the facts box shows the four USPs alone: no schools.
+  alumniLead: '',
+  alumniFrom: [],
+  // V5's ticker: each leader organisation's own colour icon with its name beside it.
   leaderMarks: [
-    { name: 'BCG', mark: '/logos/marks/lead-bcg.png', wordmark: true },
-    { name: 'ISB', mark: '/logos/marks/lead-isb.png' },
-    { name: 'McKinsey', mark: '/logos/marks/lead-mckinsey.png' },
-    { name: 'IIMA', mark: '/logos/marks/lead-iima.png' },
-    { name: 'Bain', mark: '/logos/marks/lead-bain.png' },
-    { name: 'Kearney', mark: '/logos/marks/lead-kearney.png' },
-    { name: 'Google', mark: '/logos/marks/lead-google.png' },
-    { name: 'Colgate', mark: '/logos/marks/lead-colgate.png' },
-    { name: 'Airtel', mark: '/logos/marks/lead-airtel.png' },
-    { name: 'OpenAI', mark: '/logos/marks/lead-openai.png' },
+    { name: 'OpenAI', mark: '/logos/marks/lead-openai.png', wordmark: true },
     { name: 'Meta', mark: '/logos/marks/lead-meta.png' },
+    { name: 'Adobe', mark: '/sst/hero/mark-adobe.png' },
+    { name: 'Google DeepMind', mark: '/sst/hero/mark-deepmind.png' },
+    { name: 'Microsoft', mark: '/sst/hero/mark-microsoft.png' },
+    { name: 'Amazon', mark: '/sst/hero/mark-amazon.png' },
   ],
-  // The deck's list, in its order, as logos only (the team, 2026-10-08: "instead of names, just
-  // show logos, full width"): our wordmark files in public/logos, in one grey tone in the hero
-  // (LogoTicker). `ink` measured in the browser as CLAUDE.md, "Logos" says (BCG, McKinsey and
-  // Bain gave their stored values again). Was each organisation's app icon beside its name.
+  // The live hero's strip, in its order, as colour files (the ticker's one tone turns them white).
   leaders: [
-    { name: 'BCG', logoUrl: '/logos/bcg.svg', wordmark: 'BCG', ink: 0.52 },
-    { name: 'ISB', logoUrl: '/logos/isb.png', wordmark: 'ISB', ink: 0.28 },
-    { name: 'McKinsey & Company', logoUrl: '/logos/mckinsey.svg', wordmark: 'McKinsey', ink: 0.13 },
-    { name: 'IIM Ahmedabad', logoUrl: '/logos/iima.svg', wordmark: 'IIMA', ink: 0.24 },
-    { name: 'Bain & Company', logoUrl: '/logos/bain.svg', wordmark: 'Bain', ink: 0.17 },
-    // The wordmark alone: kearney.svg is the centenary lockup, "KEARNEY 100" (viewBox cropped).
-    { name: 'Kearney', logoUrl: '/logos/kearney-wordmark.svg', wordmark: 'Kearney', ink: 0.28 },
-    { name: 'Google', logoUrl: '/logos/google.svg', wordmark: 'Google', ink: 0.27 },
-    { name: 'Colgate-Palmolive', logoUrl: '/logos/colgate.svg', wordmark: 'Colgate', ink: 0.38 },
-    { name: 'Airtel', logoUrl: '/logos/airtel.svg', wordmark: 'Airtel', ink: 0.28 },
     { name: 'OpenAI', logoUrl: '/logos/openai.svg', wordmark: 'OpenAI', ink: 0.35 },
     { name: 'Meta', logoUrl: '/logos/meta.svg', wordmark: 'Meta', ink: 0.39 },
+    { name: 'Adobe', logoUrl: '/sst/proof/alumni-logos/adobe.png', wordmark: 'Adobe', ink: 0.55 },
+    { name: 'Google DeepMind', logoUrl: '/logos/google.svg', wordmark: 'Google DeepMind', ink: 0.27 },
+    { name: 'Microsoft', logoUrl: '/sst/proof/alumni-logos/microsoft.png', wordmark: 'Microsoft', ink: 0.38 },
+    { name: 'Amazon', logoUrl: '/logos/amazon.svg', wordmark: 'Amazon', ink: 0.38 },
   ],
 };

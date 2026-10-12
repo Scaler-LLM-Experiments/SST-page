@@ -9,7 +9,7 @@ const people = faculty
   .map((m) => ({
     name: m.name,
     role: m.role,
-    image: `/faculty/${m.photo}.webp`,
+    image: `/sst/community/mentors/${m.photo}.webp`,
     logo: companyLogos[m.companies[0]],
   }));
 
@@ -17,9 +17,9 @@ export function FacultySection() {
   return (
     <PeopleShowcase
       id="faculty"
-      eyebrow="Faculty"
-      title="Learn From Your Future Recruiters, Not Just Faculty."
-      sub="Operators and leaders from BCG, McKinsey, Razorpay, Zomato, PayPal, Flipkart and more teach at SSB."
+      eyebrow="Super mentors"
+      title="Built & Delivered By 100+ Industry Leaders"
+      sub="Builders from Google, OpenAI, Google DeepMind, PhonePe and Flipkart mentor SST students."
       people={people}
       itemName="faculty"
     />

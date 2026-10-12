@@ -1,4 +1,5 @@
-// Scaler Innovation Lab section, from "SSB Website vF _ Sep'26", slide 12.
+// The Scaler Innovation Lab, from SST's live site (scaler.com/school-of-technology, "03 Innovation
+// Focus", 2026-10-12).
 
 import type { Venture } from '@/content/community';
 
@@ -11,10 +12,10 @@ export type LabStat = {
 };
 
 export const labStats: LabStat[] = [
-  { value: 10, format: (n) => `₹${Math.round(n)}Cr+`, label: 'Revenue in Live Businesses' },
-  { value: 1, format: (n) => `$${Math.round(n)}B+`, label: 'Combined Valuations' },
-  { value: 100, format: (n) => `${Math.round(n)}+`, label: 'Team Members' },
-  { value: 2, format: (n) => `$${Math.round(n)}M+`, label: 'Funding Raised' },
+  { value: 7, format: (n) => `${Math.round(n)}+`, label: 'Deep-tech startups incubated' },
+  { value: 25, format: (n) => `₹${Math.round(n)}L`, label: 'Samsung Solve for Tomorrow grant' },
+  { value: 1, format: (n) => `#${Math.round(n)}`, label: 'India’s first humanoid robot' },
+  { value: 100, format: (n) => `${Math.round(n)}+`, label: 'Industry leaders' },
 ];
 
 // The incubated startups, as listed on Scaler's AI-B page
@@ -26,9 +27,9 @@ export const labStats: LabStat[] = [
  * the line that followed the count on Scaler's AI-B page.
  */
 export const labStartupsIntro = {
-  value: 10,
+  value: 7,
   format: (n: number) => `${Math.round(n)}+`,
-  subtext: 'industry-led startups incubated in Innovation lab, founded by leaders from Big Tech.',
+  subtext: 'deep-tech startups building cutting-edge AI products, including India’s first humanoid robot, incubated at SST’s Innovation Lab.',
 };
 export type LabStartup = {
   name: string;
@@ -109,18 +110,14 @@ export type LabPhoto = {
  * public/media/CREDITS.md.
  */
 export const labBand = {
-  // ours, as the curriculum's "Future-proof curriculum"
-  eyebrow: 'Startup ecosystem',
-  // SSB's own heading and line for the lab (the live site's section, the team's ask): before,
-  // "Scaler Innovation Lab" / "Network with founders, land internships, and work on real startup
-  // projects, 10 steps from your classroom."
-  title: 'Scaler’s Innovation Lab for non-technical leaders',
-  line: 'Enter without code. Exit with the capability to build real world products as a Mini CEO.',
+  // SST's "03 Innovation Focus" and "Industry Led Innovation Lab" (the live site's)
+  eyebrow: 'Innovation focus',
+  title: 'India’s only deep-tech lab for undergraduates',
+  line: 'Access to cutting-edge AI, robotics and drone labs led by experts, with funding support for your startup, and Scaler AI Labs building the next frontier of AGI.',
   stats: [
-    { value: '$1B+', label: 'Combined valuations' },
-    // shortened from the deck's "Revenue in Live Businesses" (the team's call), to sit on one line
-    { value: '₹10Cr+', label: 'Revenue generated' },
-    { value: '$2M+', label: 'Funding raised' },
+    { value: '7+', label: 'Deep-tech startups' },
+    { value: '₹25L', label: 'Grant won by students' },
+    { value: '1st', label: 'Humanoid robot in India' },
   ],
   photos: [
     {
@@ -161,9 +158,9 @@ export const labBand = {
  * green. Before: "10+ startups incubated here, / founded by leaders from Big Tech."
  */
 export const labTurn = {
-  setup: 'Network with industry leaders',
-  lead: 'incubated in our startup ecosystem.',
-  accent: 'industry leaders',
+  setup: '7+ deep-tech startups incubated here,',
+  lead: 'founded by alumni of Stanford, NVIDIA, Amazon and Google.',
+  accent: '7+ deep-tech startups',
 };
 
 /**

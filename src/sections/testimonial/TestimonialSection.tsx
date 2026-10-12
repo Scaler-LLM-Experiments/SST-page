@@ -61,7 +61,7 @@ type Person = {
 type Slide = Person & { id: string; name: string };
 
 /** The line over every slide: the storyline's turn from the alumni to the people backing them. */
-const EYEBROW = 'Founders and investors have noticed';
+const EYEBROW = 'What industry leaders say about SST';
 
 /**
  * What each slide says, and who the person is. Ours (2026-10-07), from the deck's facts; for the
@@ -71,7 +71,7 @@ const EYEBROW = 'Founders and investors have noticed';
  */
 const PEOPLE: Record<string, Person> = {
   'Anupam Mittal': {
-    lead: 'In July 2026, Anupam Mittal heard four startups our students built, and offered ₹50 lakh to back one of them, Hummusapiens.',
+    lead: '“SST’s curriculum and culture puts its students ahead of the curve. The industry needs such talent. I’d love to hire from SST.”',
     credential: 'Founder & CEO, Shaadi.com · Shark Tank India judge',
     logos: [{ name: 'Shaadi.com', src: '/logos/shaadi.svg', scale: 1.6 }],
     // The team's GIF of his visit (src/Anupam Mittal Funding.gif, 55 MB, gitignored), 2026-10-07:
@@ -79,23 +79,23 @@ const PEOPLE: Record<string, Person> = {
     // widened to 21:9 on Magnific (Seedance 2.5 outpaint, Magnific Precision upscale): the footage
     // kept where it was at the left, the room continued to its right under the words' blur. It
     // replaces the band's earlier file, which filled the right with a blurred copy of the clip.
-    clip: { src: '/media/mittal-band.mp4', poster: '/media/mittal-band.webp', ratio: 21 / 9, face: 0.23 },
+    clip: { src: '/sst/proof/testimonial/anupam-mittal-band.mp4', poster: '/sst/proof/testimonial/anupam-mittal-band.webp', ratio: 1600 / 768, face: 0.27 },
   },
-  'Ankur Warikoo': {
+  'Amitabh Kant': {
     // The team's line (2026-10-07), cut short for phones; his words from the deck's convocation slide.
     // No date: the deck has the convocation in May 2026, the team's first draft June (to confirm).
-    lead: 'Ankur Warikoo handed our graduates their degrees, and one line: “Don’t get intellectually comfortable.”',
-    credential: 'Founder, WebVeda · Author, Do Epic Shit',
-    logos: [{ name: 'WebVeda', src: '/logos/webveda.svg', scale: 1 }],
+    lead: '“Today, where even top-tier institutes like IITs are running old syllabi, Scaler does the job of producing high-quality engineers.”',
+    credential: 'Ex-CEO, NITI Aayog, Govt. of India · G20 India Sherpa',
+    logos: [{ name: 'NITI Aayog', src: '/sst/proof/logos/niti-aayog.png', scale: 1 }],
     // The team's GIF of his convocation speech (src/Ankoor Warikoo.gif, 76 MB, gitignored),
     // 2026-10-07: one handheld shot, his face drifting from 44% to 52% across it, where the words
     // begin; cropped of its left 300px so he holds the left third (not flipped: the banners behind
     // him carry text). The white tent is bright under the words, so the frost darkens for it.
     clip: {
-      src: '/media/warikoo-band.mp4',
-      poster: '/media/warikoo-band.webp',
-      ratio: 980 / 720,
-      face: 0.3,
+      src: '/sst/proof/testimonial/amitabh-kant-band.mp4',
+      poster: '/sst/proof/testimonial/amitabh-kant-band.webp',
+      ratio: 788 / 684,
+      face: 0.5,
       bright: true,
     },
   },
@@ -105,7 +105,7 @@ const PEOPLE: Record<string, Person> = {
  * band for now (the team's call, 2026-10-07); add it back to `SLIDES`.
  */
 const SIDHANT: Person = {
-  lead: 'The energy at SSB & SST was intentional… they’re definitely on the right track to building things that matter.',
+  lead: 'SST’s curriculum and culture puts its students ahead of the curve… I’d love to hire from SST.',
   quote: true,
   credential: 'Investor',
   logos: t.logos,
@@ -220,7 +220,7 @@ export function TestimonialSection() {
     <section
       ref={scope}
       aria-roledescription="carousel"
-      aria-label="Founders and investors on SSB's students"
+      aria-label="Industry leaders on SST's students"
       className="why-breaker oc-breaker"
       data-bright={SLIDES[active].clip?.bright || undefined}
       data-turned={dir !== 0 || undefined}
@@ -267,7 +267,7 @@ export function TestimonialSection() {
       <Container className="why-breaker-inner">
         <div className="why-breaker-copy">
           <div className="why-breaker-top">
-            <div className="why-breaker-lead" data-brand="ssb" data-theme="dark">
+            <div className="why-breaker-lead" data-brand="sst" data-theme="dark">
               <Heading as="p" size="eyebrow" className="text-on-image-ink" data-breaker-part>
                 {EYEBROW}
               </Heading>

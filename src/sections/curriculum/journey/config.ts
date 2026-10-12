@@ -41,7 +41,7 @@ export interface JourneyConfig {
   invertOpen: boolean; // navy "inverted card" for the open year (desktop)
   rowLayout: 'stacked' | 'cover' | 'side';
   pathStyle: 'card' | 'outline';
-  forkStyle: 'reveal' | 'cover' | 'branch' | 'split' | 'cards' | 'transform';
+  forkStyle: 'reveal' | 'cover' | 'branch' | 'split' | 'cards' | 'transform' | 'simple'; // simple: the system's Card
   forkScrim: number; // 0–1, how dark the photo overlay is under text
   // L4 sections
   spine: 'rail' | 'row' | 'stack';

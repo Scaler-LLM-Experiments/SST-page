@@ -390,7 +390,7 @@
    above the line and the actions. */
 .fold-title-lead {
   display: block;
-  color: color-mix(in srgb, var(--color-ssb-light-9) 62%, #fff);
+  color: color-mix(in srgb, var(--color-sst-light-9) 62%, #fff);
 }
 .fold-title-leaders {
   /* a step under the billboard, so the two lines sit in two on desktop and the logos and CTAs

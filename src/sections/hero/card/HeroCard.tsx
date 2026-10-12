@@ -21,7 +21,7 @@ export async function HeroCard(hero: HeroContent) {
   ]);
   return (
     <section className="hc" aria-labelledby="hc-title">
-      <div className="hc-card" data-brand="ssb" data-theme="dark">
+      <div className="hc-card" data-brand="sst" data-theme="dark">
         {media?.videoSrc ? (
           <video
             className="hc-media"

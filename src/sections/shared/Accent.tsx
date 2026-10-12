@@ -11,7 +11,7 @@ export function Accent({ text, word }: { text: string; word?: string }) {
   return (
     <>
       {text.slice(0, at)}
-      <span style={{ color: 'var(--color-ssb-light-9)' }}>{word}</span>
+      <span style={{ color: 'var(--color-sst-light-9)' }}>{word}</span>
       {text.slice(at + word.length)}
     </>
   );

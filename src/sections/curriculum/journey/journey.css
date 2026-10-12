@@ -638,11 +638,9 @@ button.sj-mcard:hover .sj-mcard-media img, a.sj-mcard:hover .sj-mcard-media img 
 /* ── fork · transform: steps stream into the axis, two paths come out ────── */
 .sj-mt { --beat: 1.4s; --cycle: calc(var(--beat) * var(--n)); display: grid; gap: calc(var(--sj-space) * 0.75); }
 .sj-mt .sj-fork-head { flex-wrap: wrap; }
-.sj-mt-pause { all: unset; box-sizing: border-box; cursor: pointer; margin-left: auto; display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 0 12px; border-radius: var(--sj-ctl-r);
-  border: 1px solid var(--border-subtle); color: var(--content-secondary); font-size: 13px; }
-.sj-mt-pause:hover { color: var(--content-primary); border-color: var(--border-strong); }
-.sj-mt-pause:focus-visible { outline: 2px solid var(--border-focus); outline-offset: 2px; }
-.sj-mt-stage { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 112px minmax(0, 1.25fr); min-height: 420px;
+/* the pause is the system's tertiary Button (sm); only its place is set here */
+.sj-mt-pause { margin-left: auto; }
+.sj-mt-stage { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) var(--space-24) minmax(0, 1.25fr); min-height: calc(var(--space-24) * 4.5);
   border-radius: var(--sj-card-r); background: var(--surface-sunken); border: 1px solid var(--border-subtle); overflow: hidden; }
 
 /* in: the left side of the stage, where the one card travels */
@@ -653,32 +651,28 @@ button.sj-mcard:hover .sj-mcard-media img, a.sj-mcard:hover .sj-mcard-media img 
 /* the axis: the moment you choose */
 .sj-mt-axis { position: relative; z-index: 2; display: grid; place-items: center; }
 .sj-mt-axis::before { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; translate: -1px 0;
-  background: linear-gradient(to bottom, transparent, var(--surface-brand-solid) 20%, var(--surface-brand-solid) 80%, transparent);
-  box-shadow: 0 0 18px 2px color-mix(in srgb, var(--surface-brand-solid) 45%, transparent); }
-.sj-mt-tile { all: unset; box-sizing: border-box; cursor: pointer; position: relative; z-index: 1; display: grid; place-items: center; width: 60px; height: 60px; border-radius: var(--sj-card-r);
-  background: var(--surface-brand-solid); color: var(--content-on-brand-solid); font-size: 26px;
-  box-shadow: 0 0 0 6px color-mix(in srgb, var(--surface-brand-solid) 18%, transparent), 0 10px 30px color-mix(in srgb, var(--surface-brand-solid) 40%, transparent);
+  background: linear-gradient(to bottom, transparent, var(--border-brand) 20%, var(--border-brand) 80%, transparent); }
+.sj-mt-tile { all: unset; box-sizing: border-box; cursor: pointer; position: relative; z-index: 1; display: grid; place-items: center; width: var(--space-12); height: var(--space-12); border-radius: var(--radius-lg);
+  background: var(--surface-brand-solid); color: var(--content-on-brand-solid); font-size: var(--type-h2-size);
+  box-shadow: var(--shadow-raised);
   animation: sj-mt-pulse var(--beat) ease-out infinite; }
 .sj-mt-tile:focus-visible { outline: 2px solid var(--border-focus); outline-offset: 4px; }
 @keyframes sj-mt-pulse { 0%, 100% { transform: scale(1); } 12% { transform: scale(1.08); } 30% { transform: scale(1); } }
 
 /* out: one line splits in two and a card rides out along each branch */
-.sj-mt-out { --split: 1.1s; --ride: cubic-bezier(0.22, 1, 0.36, 1); position: relative; overflow: hidden; mask-image: linear-gradient(to right, transparent, #000 44px); display: grid; grid-template-rows: 1fr 1fr; gap: 14px; padding: 18px 20px 18px 11%; }
+.sj-mt-out { --split: 1.1s; --ride: cubic-bezier(0.22, 1, 0.36, 1); position: relative; overflow: hidden; mask-image: linear-gradient(to right, transparent, #000 var(--space-10)); display: grid; grid-template-rows: 1fr 1fr; gap: var(--space-4); padding: var(--space-4) var(--space-6) var(--space-4) 11%; }
 .sj-mt-branches { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
-.sj-mt-branches path { fill: none; stroke: var(--surface-brand-solid); stroke-width: 2; stroke-linecap: round; opacity: 0.6; }
+.sj-mt-branches path { fill: none; stroke: var(--border-brand); stroke-width: 2; stroke-linecap: round; }
 .sj-mt-path { position: relative; display: grid; overflow: hidden;
   border-radius: var(--radius-lg); background: var(--surface-raised); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-raised); }
 .sj-mt-path[data-photo] { grid-template-columns: minmax(120px, 34%) minmax(0, 1fr); }
-.sj-mt-body { display: grid; align-content: start; gap: 6px 0; padding: calc(var(--sj-space) * 1) calc(var(--sj-space) * 1.1); }
+.sj-mt-body { display: grid; align-content: start; gap: var(--space-2) 0; padding: var(--space-6); }
 /* photos fill their slot, whatever the card's height */
 .sj-mt-media, .sj-mt-major-media { position: relative; min-height: 100%; }
 .sj-mt-media .sj-visual, .sj-mt-major-media .sj-visual { position: absolute; inset: 0; aspect-ratio: auto; border-radius: 0; }
-.sj-mt-path[data-lane='founder'] { border-top: 3px solid var(--surface-brand-solid); }
-.sj-mt-path[data-lane='placement'] { border-top: 3px solid var(--border-strong); }
-.sj-mt-chips { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
-.sj-mt-chips li { padding: 5px 11px; border-radius: var(--radius-md); /* the SSX badge's corners, like every other pill */ font-size: 13px; line-height: 1.3; font-weight: 500;
-  background: var(--surface-brand-subtle); color: var(--content-brand); border: 1px solid color-mix(in srgb, var(--surface-brand-solid) 22%, transparent); }
-.sj-mt-path[data-lane='placement'] .sj-mt-chips li { background: var(--surface-subtle, var(--surface-sunken)); color: var(--content-primary); border-color: var(--border-subtle); }
+/* the chips are the system's Badge (lg); the list only lays them out */
+.sj-mt-chips { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.sj-mt-chips li { display: flex; }
 
 /* each run: the one card travels into the axis (0–4.5s, unhurried);
    from 3.6s the two path cards come out of the light on the other side and
@@ -696,15 +690,15 @@ button.sj-mcard:hover .sj-mcard-media img, a.sj-mcard:hover .sj-mcard-media img 
    pane's soft edge), then the pair comes out of the other side */
 .sj-mt-major { position: absolute; z-index: 1; top: 50%; left: -400px; translate: 0 -50%; box-sizing: border-box; width: 380px; height: 270px;
   display: grid; grid-template-columns: 42% 1fr; overflow: hidden;
-  border-radius: var(--radius-lg); background: var(--surface-raised); border: 1px solid var(--border-subtle); border-top: 3px solid var(--surface-brand-solid);
-  box-shadow: var(--shadow-overlay, 0 18px 40px rgb(0 0 0 / 0.16)); animation: sj-mt-major 4.5s cubic-bezier(0.4, 0, 0.65, 1) both; }
+  border-radius: var(--radius-lg); background: var(--surface-raised); border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-overlay); animation: sj-mt-major 4.5s cubic-bezier(0.4, 0, 0.65, 1) both; }
 @keyframes sj-mt-major { from { left: -400px; } to { left: 100%; } }
 .sj-mt-major-media { display: grid; grid-template-rows: 1fr 1fr; gap: 2px; background: var(--surface-raised); position: relative; }
 .sj-mt-major-media > * { position: relative; }
 .sj-mt-major-media > .sj-visual { position: relative; inset: auto; height: 100%; aspect-ratio: auto; border-radius: 0; }
-.sj-mt-major-text { display: grid; align-content: center; gap: 10px; padding: 0 18px; }
+.sj-mt-major-text { display: grid; align-content: center; gap: var(--space-3); padding: 0 var(--space-6); }
 .sj-mt-major svg { width: 28px; height: 28px; color: var(--content-brand); }
-.sj-mt-major b { font-size: calc(22px * var(--ts, 1)); line-height: 1.2; }
+.sj-mt-major b { font-size: var(--type-h2-size); line-height: 1.2; font-weight: var(--font-weight-semibold, 600); }
 .sj-mt-major i { font-style: normal; font-weight: 400; color: var(--content-secondary); }
 
 /* the two cards start stacked inside the one, on the axis, and travel out to their places */
@@ -742,7 +736,13 @@ button.sj-mcard:hover .sj-mcard-media img, a.sj-mcard:hover .sj-mcard-media img 
 @container sj (max-width: 720px) { .cs-projects .sj-carousel-track { grid-auto-columns: calc((100% - var(--gap)) / 2); } }
 
 /* the stub from the tile to that edge, so the branches start at the tile */
-.sj-mt-tile::after { content: ''; position: absolute; left: 100%; top: 50%; width: 30px; height: 2px; translate: 0 -1px; background: var(--surface-brand-solid); opacity: 0.6; }
+.sj-mt-tile::after { content: ''; position: absolute; left: 100%; top: 50%; width: var(--space-6); height: 2px; translate: 0 -1px; background: var(--border-brand); }
+
+/* ── fork · simple: two club cards (.vc) side by side, stacked on m-web ──── */
+.sj-fork-paths[data-style='simple'] { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
+@container sj (max-width: 720px) { .sj-fork-paths[data-style='simple'] { grid-template-columns: minmax(0, 1fr); } }
+.sj-simplepath-chips { list-style: none; margin: var(--space-3) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.sj-simplepath-foot { display: grid; gap: 0; }
 
 /* ── fork · transform on m-web: the same pass, top to bottom ───────────────── */
 .sj-mt[data-narrow] .sj-mt-stage { grid-template-columns: 1fr; grid-template-rows: 230px 72px auto; min-height: 0; }
@@ -752,7 +752,7 @@ button.sj-mcard:hover .sj-mcard-media img, a.sj-mcard:hover .sj-mcard-media img 
 @keyframes sj-mt-major-v { from { top: -240px; } to { top: 100%; } }
 /* the axis lies across */
 .sj-mt[data-narrow] .sj-mt-axis::before { top: 50%; bottom: auto; left: 0; right: 0; width: auto; height: 2px; translate: 0 -1px;
-  background: linear-gradient(to right, transparent, var(--surface-brand-solid) 20%, var(--surface-brand-solid) 80%, transparent); }
+  background: linear-gradient(to right, transparent, var(--border-brand) 20%, var(--border-brand) 80%, transparent); }
 .sj-mt[data-narrow] .sj-mt-tile::after { left: 50%; top: 100%; width: 2px; height: 20px; translate: -1px 0; }
 /* out: the pair comes out under the axis, stacked, photo on top */
 .sj-mt[data-narrow] .sj-mt-out { grid-template-rows: auto auto; padding: 14px 14px 18px; mask-image: linear-gradient(to bottom, transparent, #000 32px); }
@@ -1245,7 +1245,7 @@ button.sj-mcard:hover .sj-mcard-media img, a.sj-mcard:hover .sj-mcard-media img 
 .sj-bento-illo { top: -6px; right: -6px; width: 84px; height: 84px; opacity: 1; }
 .sj-career-col .sj-bento-illo { width: 76px; height: 76px; top: -6px; right: -6px; }
 .sj-bento-glow { position: absolute; left: 50%; top: 52%; width: 56%; height: 56%; translate: -50% -50%; border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in srgb, var(--surface-brand-solid) 85%, #7dffb0) 0, var(--surface-brand-solid) 45%, transparent 72%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--surface-brand-solid) 85%, var(--brand-tint-surface)) 0, var(--surface-brand-solid) 45%, transparent 72%);
   filter: blur(6px); opacity: 0.55; }
 .sj-bento-illo[data-k='oneToOne'] .sj-bento-glow { width: 44%; height: 70%; top: 50%; }
 .sj-bento-illo[data-k='behaviour'] .sj-bento-glow { left: 48%; top: 56%; width: 50%; height: 50%; }
@@ -1255,7 +1255,7 @@ button.sj-mcard:hover .sj-mcard-media img, a.sj-mcard:hover .sj-mcard-media img 
 /* stronger glow through a milkier glass; the drawing sits whole inside the tile */
 .sj-bento-illo, .sj-career-col .sj-bento-illo { top: 10px; right: 10px; width: 64px; height: 64px; }
 .sj-bento-glow { width: 62%; height: 62%; opacity: 0.95; filter: blur(7px);
-  background: radial-gradient(circle, color-mix(in srgb, var(--surface-brand-solid) 70%, #6dff9f) 0, var(--surface-brand-solid) 50%, transparent 74%); }
+  background: radial-gradient(circle, color-mix(in srgb, var(--surface-brand-solid) 70%, var(--brand-tint-surface)) 0, var(--surface-brand-solid) 50%, transparent 74%); }
 .sj-bento-illo[data-k='oneToOne'] .sj-bento-glow { width: 50%; height: 64%; }
 .sj-bento-illo svg path, .sj-bento-illo svg circle { fill: color-mix(in srgb, var(--surface-raised, #fff) 62%, transparent); }
 /* ── glass tiles (the ones with an illustration): no grid, a white glass face with
@@ -1263,7 +1263,7 @@ button.sj-mcard:hover .sj-mcard-media img, a.sj-mcard:hover .sj-mcard-media img 
    the drawings are glossy gradient solids with a green glow under them ── */
 .sj-bento-card[data-glass] { border-color: color-mix(in srgb, #fff 70%, var(--border-subtle));
   background:
-    radial-gradient(70% 60% at 88% 12%, color-mix(in srgb, #d9f59e 55%, transparent), transparent 70%),
+    radial-gradient(70% 60% at 88% 12%, color-mix(in srgb, var(--color-sst-light-4) 55%, transparent), transparent 70%),
     radial-gradient(60% 50% at 70% 30%, color-mix(in srgb, var(--surface-brand-solid) 14%, transparent), transparent 70%),
     linear-gradient(170deg, #fff, color-mix(in srgb, #fff 88%, var(--surface-brand-subtle)));
   box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px color-mix(in srgb, #fff 70%, transparent), inset 0 -10px 24px -14px color-mix(in srgb, var(--surface-brand-solid) 22%, transparent), 0 14px 28px -18px rgb(18 60 32 / 0.22); }
@@ -1275,7 +1275,7 @@ button.sj-mcard:hover .sj-mcard-media img, a.sj-mcard:hover .sj-mcard-media img 
 .sj-bento-illo[data-k='behaviour'] svg * { fill: url(#sjb-behaviour); }
 .sj-bento-illo svg defs *, .sj-bento-illo svg stop { fill: none; }
 .sj-bento-illo svg path, .sj-bento-illo svg circle { stroke: color-mix(in srgb, #fff 75%, transparent); stroke-width: 1.2; opacity: 0.92; }
-.sj-bento-illo svg { filter: drop-shadow(0 8px 10px color-mix(in srgb, var(--surface-brand-solid) 30%, transparent)) drop-shadow(0 2px 3px color-mix(in srgb, #9fdc8a 45%, transparent)); }
+.sj-bento-illo svg { filter: drop-shadow(0 8px 10px color-mix(in srgb, var(--surface-brand-solid) 30%, transparent)) drop-shadow(0 2px 3px color-mix(in srgb, var(--color-sst-light-6) 45%, transparent)); }
 /* the glass icon tile: frosted white with a rim, not a tinted square */
 .sj-bento-card[data-glass] .sj-bento-icon { background: color-mix(in srgb, #fff 70%, transparent); box-shadow: inset 0 1px 0 #fff, 0 2px 6px -2px rgb(18 60 32 / 0.18); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
 /* the chart card keeps its grid but gets the same glass rim and lift */
@@ -1339,7 +1339,7 @@ button.sj-mcard:hover .sj-mcard-media img, a.sj-mcard:hover .sj-mcard-media img 
 .sj-bento-dial .hub { fill: #fff; }
 
 /* photo: the picture fills the card, a dark fade under white type */
-.sj-bento[data-v2] .sj-bento-card[data-v='photo'] { border-color: transparent; background: #1c2a22; align-content: end; }
+.sj-bento[data-v2] .sj-bento-card[data-v='photo'] { border-color: transparent; background: var(--color-sst-light-12); align-content: end; }
 .sj-bento-photo { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
 .sj-bento[data-v2] .sj-bento-card[data-v='photo']::after { display: block; content: ''; position: absolute; inset: 0; z-index: -1; left: 0; right: 0; bottom: 0; height: auto; border-radius: 0; opacity: 1;
   background: linear-gradient(to top, rgb(10 20 14 / 0.82), rgb(10 20 14 / 0.1) 75%); }

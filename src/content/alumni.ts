@@ -1,5 +1,5 @@
-// Strong Alumni Base: from the deck (SSB Website vF, Sep '26). Each card reads
-// "<role> at <company>" over the role they held before SSB.
+// SST's students in the alumni cards (scaler.com/school-of-technology). Each card reads
+// "<role> at <company>" over where they are at SST.
 //
 // Marks are each company's own app/site icon. `fill` marks an icon that comes
 // on its own coloured square (it fills the tile); the rest sit inside it.
@@ -10,142 +10,70 @@ export type CompanyMark = { name: string; src: string; fill?: boolean };
 
 export type Alumnus = {
   name: string;
-  /** File in /public/alumni, without the extension (WebP, 948x631, the person on
+  /** File in /public/sst/proof/alumni, without the extension (WebP, 948x631, the person on
    * the left, a dark blur on the right). Absent until a photo in this style is supplied. */
   photo?: string;
-  /** Role before SSB. */
+  /** Where they are at SST (their year). */
   before: string;
-  /** Role after SSB, and where. */
+  /** Their offer, and where. */
   role: string;
   company: CompanyMark;
 };
 
 const marks = {
-  blinkit: { name: 'Blinkit', src: '/logos/marks/blinkit.png', fill: true },
-  urbancompany: { name: 'Urban Company', src: '/logos/marks/urbancompany.png', fill: true },
-  razorpay: { name: 'Razorpay', src: '/logos/marks/razorpay.png' },
-  avendus: { name: 'Avendus', src: '/logos/marks/avendus.png' },
+  wealthy: { name: 'Wealthy', src: '/sst/proof/campus-logos/wealthy.png' },
+  tasket: { name: 'Tasket', src: '/sst/proof/campus-logos/tasket.png' },
   emergent: { name: 'Emergent', src: '/logos/marks/emergent.png', fill: true },
-  wholetruth: { name: 'The Whole Truth', src: '/logos/marks/wholetruth.svg' },
-  bharatpe: { name: 'BharatPe', src: '/logos/marks/bharatpe.svg' },
-  ninjacart: { name: 'Ninjacart', src: '/logos/marks/ninjacart.png' },
+  mamaearth: { name: 'Mamaearth', src: '/sst/proof/campus-logos/mamaearth.png' },
+  manifestai: { name: 'Manifest AI', src: '/sst/proof/campus-logos/manifest-ai.png' },
+  onepharmacy: { name: '1Pharmacy Network', src: '/sst/proof/campus-logos/1pharmacy-network.png' },
 } satisfies Record<string, CompanyMark>;
 
+// SST's "Internship + PPO Highlights" (scaler.com/school-of-technology, 2026-10-12): eight 3rd-year
+// students and the company on each card. Photos: the live site's portraits, set in the card's
+// landscape style (public/sst/proof/alumni).
 export const alumni: Alumnus[] = [
-  {
-    name: 'Uttara Nambiar',
-    photo: 'uttara-nambiar',
-    before: 'Software Developer',
-    role: 'Asst. Program Manager',
-    company: marks.blinkit,
-  },
-  {
-    name: 'Sagnik Banerjee',
-    // photo: 'sagnik-banerjee', (awaiting a photo in the new landscape style)
-    before: 'Project Lead',
-    role: 'Sr. Strategy Manager',
-    company: marks.urbancompany,
-  },
-  {
-    name: 'Suhaas Sastry',
-    // photo: 'suhaas-sastry', (awaiting a photo in the new landscape style)
-    before: 'Sales Engineer',
-    role: 'Partnerships',
-    company: marks.razorpay,
-  },
-  {
-    name: 'Pranav Bagla',
-    // photo: 'pranav-bagla', (awaiting a photo in the new landscape style)
-    before: 'Investment Analyst',
-    role: 'Investment Advisor',
-    company: marks.avendus,
-  },
-  {
-    name: 'Kritika Bhatia',
-    photo: 'kritika-bhatia',
-    before: 'Financial Analyst',
-    role: 'Growth Marketing',
-    company: marks.emergent,
-  },
-  {
-    // The deck spells it "Ashish US" here and "Aashish US" in Beyond Placements.
-    name: 'Aashish US',
-    photo: 'aashish-us',
-    before: 'Founder',
-    role: 'Brand Marketing',
-    company: marks.wholetruth,
-  },
-  {
-    name: 'Moh Agarwal',
-    photo: 'moh-agarwal',
-    before: 'Fresher',
-    role: 'Growth Marketing',
-    company: marks.bharatpe,
-  },
-  {
-    name: 'Bharath Ramesh',
-    photo: 'bharath-ramesh',
-    before: 'Executive',
-    role: 'Growth Manager',
-    company: marks.ninjacart,
-  },
+  { name: 'Ananya Srivastava', photo: 'ananya-srivastava', before: '3rd Year', role: 'Internship + PPO', company: marks.wealthy },
+  { name: 'Shubh Kesharwani', photo: 'shubh-kesharwani', before: '3rd Year', role: 'Internship + PPO', company: marks.tasket },
+  { name: 'Abhishek Kumar Shah', photo: 'abhishek-kumar-shah', before: '3rd Year', role: 'Internship + PPO', company: marks.emergent },
+  { name: 'Divyanshu Pandey', photo: 'divyanshu-pandey', before: '3rd Year', role: 'Internship + PPO', company: marks.mamaearth },
+  { name: 'Loukik Thatte', photo: 'loukik-thatte', before: '3rd Year', role: 'Internship + PPO', company: marks.manifestai },
+  { name: 'Ajai Sharan Velmurugan', photo: 'ajai-sharan-velmurugan', before: '3rd Year', role: 'Internship + PPO', company: marks.wealthy },
+  { name: 'Siva Rama Gogineni', photo: 'siva-rama-gogineni', before: '3rd Year', role: 'Internship + PPO', company: marks.onepharmacy },
+  { name: 'Ayush Kesharwani', photo: 'ayush-kesharwani', before: '3rd Year', role: 'Internship + PPO', company: marks.wealthy },
 ];
 
-// The internship section's learner cards, moved here (2026-10-07, the team's ask: that carousel keeps
-// only the video stories). From the live site's "Success stories and pivots" (scaler.com/school-of-business);
-// Uttara Nambiar and Bharath Ramesh were in both and keep their cards above. No portraits in the card's
-// style yet: AlumniCard draws the empty-room plate and their initials.
-const internMarks = {
-  tooljet: { name: 'ToolJet', src: '/internship/marks/tooljet.png', fill: true },
-  pync: { name: 'Pync', src: '/internship/marks/pync.png' },
-  razorpay: { name: 'Razorpay', src: '/logos/marks/razorpay.png' },
-  loestro: { name: 'LoEstro', src: '/internship/marks/loestro.png' },
-  limechat: { name: 'LimeChat', src: '/internship/marks/limechat.png' },
-  onsurity: { name: 'Onsurity', src: '/internship/marks/onsurity.png', fill: true },
-} satisfies Record<string, CompanyMark>;
+// The second list of learner cards (the SSB page's pivots): none on the SST page, so empty.
+export const pivotAlumni: Alumnus[] = [];
 
-export const pivotAlumni: Alumnus[] = [
-  { name: 'Sanyam Maheshwari', before: 'Analyst, Deloitte', role: 'Product Strategy', company: internMarks.tooljet },
-  { name: 'Akarsh Sharma', before: 'Data Analyst, Uber', role: 'Founder’s Office', company: internMarks.pync },
-  { name: 'Sarosha Pais', before: 'HR, Aquarelle', role: 'Partnerships', company: internMarks.razorpay },
-  { name: 'Ayush Poojary', before: 'Trainee, Mutha & Co.', role: 'Investment Banking', company: internMarks.loestro },
-  { name: 'Rohan Kumar', before: 'Finance Associate, KPMG', role: 'Operations', company: internMarks.limechat },
-  { name: 'Impana Reddy', before: 'Founder, Papermint', role: 'Product Management', company: internMarks.onsurity },
-];
-
-// Your peers come from: the deck's list, in its order. Our own files in
-// public/logos, trimmed to their edges; `ink` measured in one tone (CLAUDE.md, "Logos").
+// "Scaler's alumni work across 1200+ companies" (the live site's eleven logos), then the companies
+// on SST's campus to hire (its "Companies On campus to hire" strip), then four of Scaler's hiring
+// partners from our own files, so the 24-cell grid fills. `ink` measured as CLAUDE.md, "Logos".
+const A = '/sst/proof/alumni-logos';
+const K = '/sst/proof/campus-logos';
 export const peerCompanies: HeroLogo[] = [
-  { name: 'Amazon', logoUrl: '/logos/amazon.svg', wordmark: 'Amazon', ink: 0.34 },
-  { name: 'McKinsey & Company', logoUrl: '/logos/mckinsey.svg', wordmark: 'McKinsey', ink: 0.13 },
-  { name: 'Uber', logoUrl: '/logos/uber.svg', wordmark: 'Uber', ink: 0.38 },
-  { name: 'Deloitte', logoUrl: '/logos/deloitte.svg', wordmark: 'Deloitte', ink: 0.52 },
-  { name: 'KPMG', logoUrl: '/logos/kpmg.svg', wordmark: 'KPMG', ink: 0.35 },
-  { name: 'PwC', logoUrl: '/logos/pwc.svg', wordmark: 'PwC', ink: 0.26 },
-  { name: 'Accenture', logoUrl: '/logos/accenture.svg', wordmark: 'Accenture', ink: 0.25 },
-  { name: 'EY', logoUrl: '/logos/ey.svg', wordmark: 'EY', ink: 0.28 },
-  { name: 'Jio', logoUrl: '/logos/jio.svg', wordmark: 'Jio', ink: 0.63 },
-  { name: 'Apollo Hospitals', logoUrl: '/logos/apollo.svg', wordmark: 'Apollo', ink: 0.25 },
-  { name: 'Deutsche Bank', logoUrl: '/logos/deutschebank.svg', wordmark: 'Deutsche Bank', ink: 0.18 },
-  { name: 'Axis Bank', logoUrl: '/logos/axisbank.svg', wordmark: 'Axis Bank', ink: 0.2 },
-  { name: 'IIFL Finance', logoUrl: '/logos/iifl.svg', wordmark: 'IIFL', ink: 0.32 },
-  { name: 'S&P Global', logoUrl: '/logos/spglobal.svg', wordmark: 'S&P Global', ink: 0.4 },
-  { name: 'DMart', logoUrl: '/logos/dmart.svg', wordmark: 'DMart', ink: 0.34 },
-  { name: 'Tata Consultancy Services', logoUrl: '/logos/tcs.svg', wordmark: 'TCS', ink: 0.12 },
-  { name: 'Lufthansa', logoUrl: '/logos/lufthansa.svg', wordmark: 'Lufthansa', ink: 0.26 },
-  { name: 'ZS Associates', logoUrl: '/logos/zs.svg', wordmark: 'ZS', ink: 0.2 },
-  { name: 'Freshworks', logoUrl: '/logos/freshworks.svg', wordmark: 'Freshworks', ink: 0.24 },
-  // More from Placements' logo list (the team, 2026-10-12, "pick it up from this list"), so the
-  // phone's 4 × 6 grid has logos to turn to; `ink` as there.
-  { name: 'BigBasket', logoUrl: '/logos/bigbasket.svg', wordmark: 'BigBasket', ink: 0.26 },
-  { name: 'Zendesk', logoUrl: '/logos/zendesk.svg', wordmark: 'Zendesk', ink: 0.27 },
-  { name: 'Aviva', logoUrl: '/logos/aviva.svg', wordmark: 'Aviva', ink: 0.31 },
+  { name: 'Google', logoUrl: `${A}/google.png`, wordmark: 'Google', ink: 0.25 },
+  { name: 'Microsoft', logoUrl: `${A}/microsoft.png`, wordmark: 'Microsoft', ink: 0.32 },
+  { name: 'Amazon', logoUrl: `${A}/amazon.png`, wordmark: 'Amazon', ink: 0.37 },
+  { name: 'Meta', logoUrl: `${A}/meta.png`, wordmark: 'Meta', ink: 0.39 },
+  { name: 'Adobe', logoUrl: `${A}/adobe.png`, wordmark: 'Adobe', ink: 0.29 },
+  { name: 'Flipkart', logoUrl: `${A}/flipkart.png`, wordmark: 'Flipkart', ink: 0.27 },
+  { name: 'PayPal', logoUrl: `${A}/paypal.png`, wordmark: 'PayPal', ink: 0.35 },
+  { name: 'Paytm', logoUrl: `${A}/paytm.png`, wordmark: 'Paytm', ink: 0.5 },
+  { name: 'Razorpay', logoUrl: `${A}/razorpay.png`, wordmark: 'Razorpay', ink: 0.28 },
+  { name: 'Target', logoUrl: `${A}/target.png`, wordmark: 'Target', ink: 0.43 },
+  { name: 'Zomato', logoUrl: `${A}/zomato.png`, wordmark: 'Zomato', ink: 0.51 },
+  { name: 'Rippling', logoUrl: `${K}/rippling.png`, wordmark: 'Rippling', ink: 0.32 },
+  { name: 'Zeta', logoUrl: `${K}/zeta.png`, wordmark: 'Zeta', ink: 0.44 },
+  { name: 'Media.net', logoUrl: `${K}/media-net.png`, wordmark: 'Media.net', ink: 0.39 },
+  { name: 'slice', logoUrl: `${K}/slice.png`, wordmark: 'slice', ink: 0.43 },
+  { name: 'Mamaearth', logoUrl: `${K}/mamaearth.png`, wordmark: 'Mamaearth', ink: 0.32 },
+  { name: 'Manifest AI', logoUrl: `${K}/manifest-ai.png`, wordmark: 'Manifest AI', ink: 0.44 },
+  { name: 'Wealthy', logoUrl: `${K}/wealthy.png`, wordmark: 'Wealthy', ink: 0.27 },
+  { name: 'Tasket', logoUrl: `${K}/tasket.png`, wordmark: 'Tasket', ink: 0.4 },
+  { name: '1Pharmacy Network', logoUrl: `${K}/1pharmacy-network.png`, wordmark: '1Pharmacy', ink: 0.22 },
   { name: 'Swiggy', logoUrl: '/logos/swiggy.svg', wordmark: 'Swiggy', ink: 0.36 },
-  { name: 'Flipkart', logoUrl: '/logos/flipkart.svg', wordmark: 'Flipkart', ink: 0.28 },
   { name: 'PhonePe', logoUrl: '/logos/phonepe.svg', wordmark: 'PhonePe', ink: 0.33 },
-  { name: 'Samsung', logoUrl: '/logos/samsung.svg', wordmark: 'Samsung', ink: 0.51 },
+  { name: 'Uber', logoUrl: '/logos/uber.svg', wordmark: 'Uber', ink: 0.38 },
   { name: 'Goldman Sachs', logoUrl: '/logos/goldman-sachs.svg', wordmark: 'Goldman Sachs', ink: 0.32 },
-  { name: 'Zomato', logoUrl: '/logos/zomato.svg', wordmark: 'Zomato', ink: 0.49 },
-  { name: 'Razorpay', logoUrl: '/logos/razorpay.svg', wordmark: 'Razorpay', ink: 0.27 },
-  { name: 'Nomura', logoUrl: '/logos/nomura.svg', wordmark: 'Nomura', ink: 0.47 },
 ];

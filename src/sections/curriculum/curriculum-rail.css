@@ -142,7 +142,7 @@
    small drawing is off. The figure and its line sit on a frosted glass bar at the card's foot,
    in white, as an App Store banner sets a title over its artwork. */
 @media (min-width: 1056px) {
-  .cr-main .sj-ps-card[data-k='behaviour'] { background: #2f9b6a url('/career/behaviour-scene.webp') 22% 62% / auto 150% no-repeat; }
+  .cr-main .sj-ps-card[data-k='behaviour'] { background: var(--color-sst-light-10) url('/career/behaviour-scene.webp') 22% 62% / auto 150% no-repeat; }
   .cr-main .sj-ps-card[data-k='behaviour'] .sj-ps-art { display: none; }
   .cr-main .sj-ps-card[data-k='behaviour'] .sj-ps-copy { --ps-bar: blur(22px) saturate(1.5); left: 24px; right: 20.5rem; bottom: 24px; flex-direction: row; align-items: center; padding: 18px 26px; border-radius: 20px;
     border: 1px solid rgb(255 255 255 / 0.22); background: rgb(8 60 38 / 0.38); -webkit-backdrop-filter: var(--ps-bar); backdrop-filter: var(--ps-bar); }
@@ -150,12 +150,12 @@
   .cr-main .sj-ps-card[data-k='behaviour'] .sj-ps-stat dd { font-size: 3.5rem; line-height: 1; color: #fff; }
   .cr-main .sj-ps-card[data-k='behaviour'] .sj-ps-stat dt { max-width: 14ch; font-size: 1.125rem; line-height: 1.3; color: rgb(255 255 255 / 0.88); }
 }
-@media (min-width: 1056px) { .cr-main .sj-ps-card[data-k='behaviour'] { background: #c9ecd9 url('/career/behaviour-scene.webp') -190px 58% / auto 128% no-repeat; } }
+@media (min-width: 1056px) { .cr-main .sj-ps-card[data-k='behaviour'] { background: var(--color-sst-light-5) url('/career/behaviour-scene.webp') -190px 58% / auto 128% no-repeat; } }
 
 /* The mock-interviews slide on its illustrated scene, as the behavioural one: the scene fills the
    card, the small drawing and its waveform are off, the figure sits on the frosted bar. */
 @media (min-width: 1056px) {
-  .cr-main .sj-ps-card[data-k='interviews'] { background: #c9ecd9 url('/career/interviews-scene.webp') -230px 40% / auto 128% no-repeat; }
+  .cr-main .sj-ps-card[data-k='interviews'] { background: var(--color-sst-light-5) url('/career/interviews-scene.webp') -230px 40% / auto 128% no-repeat; }
   .cr-main .sj-ps-card[data-k='interviews'] .sj-ps-art, .cr-main .sj-ps-card[data-k='interviews'] .sj-pb-wave { display: none; }
   .cr-main .sj-ps-card[data-k='interviews'] .sj-ps-copy { --ps-bar: blur(22px) saturate(1.5); left: 24px; right: 20.5rem; bottom: 24px; flex-direction: row; align-items: center; padding: 18px 26px; border-radius: 20px;
     border: 1px solid rgb(255 255 255 / 0.22); background: rgb(8 60 38 / 0.38); -webkit-backdrop-filter: var(--ps-bar); backdrop-filter: var(--ps-bar); }
@@ -166,7 +166,7 @@
 
 /* The 1:1 problem-solving slide on its illustrated scene, as the other two. */
 @media (min-width: 1056px) {
-  .cr-main .sj-ps-card[data-k='oneToOne'] { background: #c9ecd9 url('/career/solving-scene.webp') -215px 30% / auto 128% no-repeat; }
+  .cr-main .sj-ps-card[data-k='oneToOne'] { background: var(--color-sst-light-5) url('/career/solving-scene.webp') -215px 30% / auto 128% no-repeat; }
   .cr-main .sj-ps-card[data-k='oneToOne'] .sj-ps-art { display: none; }
   .cr-main .sj-ps-card[data-k='oneToOne'] .sj-ps-copy { --ps-bar: blur(22px) saturate(1.5); left: 24px; right: 20.5rem; bottom: 24px; flex-direction: row; align-items: center; padding: 18px 26px; border-radius: 20px;
     border: 1px solid rgb(255 255 255 / 0.22); background: rgb(8 60 38 / 0.38); -webkit-backdrop-filter: var(--ps-bar); backdrop-filter: var(--ps-bar); }
@@ -174,12 +174,12 @@
   .cr-main .sj-ps-card[data-k='oneToOne'] .sj-ps-stat dd { font-size: 3.5rem; line-height: 1; color: #fff; }
   .cr-main .sj-ps-card[data-k='oneToOne'] .sj-ps-stat dt { max-width: 16ch; font-size: 1.125rem; line-height: 1.3; color: rgb(255 255 255 / 0.88); }
 }
-@media (min-width: 1056px) { .cr-main .sj-ps-card[data-k='oneToOne'] { background: #c9ecd9 url('/career/solving-scene.webp') -190px 78% / auto 118% no-repeat; } }
+@media (min-width: 1056px) { .cr-main .sj-ps-card[data-k='oneToOne'] { background: var(--color-sst-light-5) url('/career/solving-scene.webp') -190px 78% / auto 118% no-repeat; } }
 
 /* The prep-hours slide on its illustrated scene, as the other three. Its two figures sit side by
    side on the frosted bar, a hairline between them. */
 @media (min-width: 1056px) {
-  .cr-main .sj-ps-card[data-k='hours'] { background: #c9ecd9 url('/career/hours-scene.webp') -330px 70% / auto 122% no-repeat; }
+  .cr-main .sj-ps-card[data-k='hours'] { background: var(--color-sst-light-5) url('/career/hours-scene.webp') -330px 70% / auto 122% no-repeat; }
   .cr-main .sj-ps-card[data-k='hours'] .sj-ps-art { display: none; }
   .cr-main .sj-ps-card[data-k='hours'] .sj-ps-copy { --ps-bar: blur(22px) saturate(1.5); left: 24px; right: 20.5rem; bottom: 24px; flex-direction: row; align-items: center; gap: 0; padding: 18px 26px; border-radius: 20px;
     border: 1px solid rgb(255 255 255 / 0.22); background: rgb(8 60 38 / 0.38); -webkit-backdrop-filter: var(--ps-bar); backdrop-filter: var(--ps-bar); }
@@ -188,7 +188,7 @@
   .cr-main .sj-ps-card[data-k='hours'] .sj-ps-stat dd { font-size: 2.75rem; line-height: 1; color: #fff; }
   .cr-main .sj-ps-card[data-k='hours'] .sj-ps-stat dt { max-width: 9ch; font-size: 1rem; line-height: 1.3; color: rgb(255 255 255 / 0.88); }
 }
-@media (min-width: 1056px) { .cr-main .sj-ps-card[data-k='hours'] { background: #c9ecd9 url('/career/hours-scene.webp') -160px 88% / auto 108% no-repeat; } }
+@media (min-width: 1056px) { .cr-main .sj-ps-card[data-k='hours'] { background: var(--color-sst-light-5) url('/career/hours-scene.webp') -160px 88% / auto 108% no-repeat; } }
 
 /* The frosted bar, one treatment on all four slides: smaller figures, and everything kept inside
    the bar (the same height on every slide, nothing wider than it). */
@@ -216,7 +216,7 @@
 @media (max-width: 1055px) {
   .cr-main .sj-pbento { display: grid; grid-template-columns: minmax(0, 1fr); grid-auto-rows: auto; gap: 12px; }
   .cr-main .sj-pb-card { position: relative; display: flex; flex-direction: column; justify-content: flex-end; grid-column: auto; grid-row: auto; min-height: 220px; height: auto; padding: 0; overflow: hidden;
-    border: 0; border-radius: 20px; box-shadow: none; background: #c9ecd9 center / cover no-repeat; text-align: left; }
+    border: 0; border-radius: 20px; box-shadow: none; background: var(--color-sst-light-5) center / cover no-repeat; text-align: left; }
   .cr-main .sj-pb-card[data-k='hours'] { background-image: url('/career/hours-scene.webp'); background-position: 30% 70%; }
   .cr-main .sj-pb-card[data-k='oneToOne'] { background-image: url('/career/solving-scene.webp'); background-position: 30% 60%; }
   .cr-main .sj-pb-card[data-k='interviews'] { background-image: url('/career/interviews-scene.webp'); background-position: 30% 40%; }
@@ -276,7 +276,7 @@
   .cr-main .sj-ps { position: relative; display: block; min-height: 0; }
   .cr-main .sj-ps-view { position: relative; height: 480px; overflow: hidden; border: 8px solid var(--surface-sunken); border-radius: 24px; }
   .cr-main .sj-ps-track { list-style: none; margin: 0; padding: 0; display: flex; height: 100%; transition: transform 760ms cubic-bezier(0.65, 0, 0.2, 1); }
-  .cr-main .sj-ps-card { position: relative; flex: 0 0 100%; min-width: 0; overflow: hidden; background: #c9ecd9 center / cover no-repeat; }
+  .cr-main .sj-ps-card { position: relative; flex: 0 0 100%; min-width: 0; overflow: hidden; background: var(--color-sst-light-5) center / cover no-repeat; }
   .cr-main .sj-ps-card[data-k='hours'] { background-image: url('/career/hours-scene.webp'); background-position: 30% 70%; }
   .cr-main .sj-ps-card[data-k='oneToOne'] { background-image: url('/career/solving-scene.webp'); background-position: 35% 60%; }
   .cr-main .sj-ps-card[data-k='interviews'] { background-image: url('/career/interviews-scene.webp'); background-position: 35% 40%; }
@@ -359,11 +359,11 @@
 @media (max-width: 1055px) {
   .cr-main .sj-career-split { position: relative; }
   .cr-main .sj-ps-view { height: 560px; }
-  .cr-main .sj-ps-card[data-k] { background-color: #2b7650; background-repeat: no-repeat; background-size: 100% 100%, 100% auto; background-position: 0 0, center top; }
-  .cr-main .sj-ps-card[data-k='hours'] { background-image: linear-gradient(to bottom, transparent 46%, #2b7650 62%), url('/career/hours-scene-phone.webp'); }
-  .cr-main .sj-ps-card[data-k='oneToOne'] { background-image: linear-gradient(to bottom, transparent 46%, #2b7650 62%), url('/career/solving-scene-phone.webp'); }
-  .cr-main .sj-ps-card[data-k='interviews'] { background-image: linear-gradient(to bottom, transparent 46%, #2b7650 62%), url('/career/interviews-scene-phone.webp'); }
-  .cr-main .sj-ps-card[data-k='behaviour'] { background-image: linear-gradient(to bottom, transparent 46%, #2b7650 62%), url('/career/behaviour-scene-phone.webp'); }
+  .cr-main .sj-ps-card[data-k] { background-color: var(--color-sst-light-11); background-repeat: no-repeat; background-size: 100% 100%, 100% auto; background-position: 0 0, center top; }
+  .cr-main .sj-ps-card[data-k='hours'] { background-image: linear-gradient(to bottom, transparent 46%, var(--color-sst-light-11) 62%), url('/career/hours-scene-phone.webp'); }
+  .cr-main .sj-ps-card[data-k='oneToOne'] { background-image: linear-gradient(to bottom, transparent 46%, var(--color-sst-light-11) 62%), url('/career/solving-scene-phone.webp'); }
+  .cr-main .sj-ps-card[data-k='interviews'] { background-image: linear-gradient(to bottom, transparent 46%, var(--color-sst-light-11) 62%), url('/career/interviews-scene-phone.webp'); }
+  .cr-main .sj-ps-card[data-k='behaviour'] { background-image: linear-gradient(to bottom, transparent 46%, var(--color-sst-light-11) 62%), url('/career/behaviour-scene-phone.webp'); }
   .cr-main .sj-ps-card .sj-ps-copy, .cr-main .sj-ps-card[data-k] .sj-ps-copy { bottom: 108px; background: rgb(255 255 255 / 0.12); border-color: rgb(255 255 255 / 0.2); }
   /* the phases: one row of white tiles over the card's foot, drifting slowly sideways */
   .cr-main .sj-career-split > .sj-career-card { position: absolute; z-index: 4; top: calc(560px - 4px - 12px - 84px); left: 4px; right: 4px; height: 84px; overflow: hidden; padding: 0; }
@@ -412,10 +412,10 @@
 @media (max-width: 1055px) {
   .cr-main .sj-ps-view { height: 580px !important; }
   .cr-main .sj-ps-card[data-k] { background-size: 100% 100%, 100% auto; background-position: 0 0, center -48px; }
-  .cr-main .sj-ps-card[data-k='hours'] { background-image: linear-gradient(to bottom, transparent 30%, #2b7650 44%), url('/career/hours-scene-phone.webp'); }
-  .cr-main .sj-ps-card[data-k='oneToOne'] { background-image: linear-gradient(to bottom, transparent 30%, #2b7650 44%), url('/career/solving-scene-phone.webp'); }
-  .cr-main .sj-ps-card[data-k='interviews'] { background-image: linear-gradient(to bottom, transparent 30%, #2b7650 44%), url('/career/interviews-scene-phone.webp'); }
-  .cr-main .sj-ps-card[data-k='behaviour'] { background-image: linear-gradient(to bottom, transparent 30%, #2b7650 44%), url('/career/behaviour-scene-phone.webp'); }
+  .cr-main .sj-ps-card[data-k='hours'] { background-image: linear-gradient(to bottom, transparent 30%, var(--color-sst-light-11) 44%), url('/career/hours-scene-phone.webp'); }
+  .cr-main .sj-ps-card[data-k='oneToOne'] { background-image: linear-gradient(to bottom, transparent 30%, var(--color-sst-light-11) 44%), url('/career/solving-scene-phone.webp'); }
+  .cr-main .sj-ps-card[data-k='interviews'] { background-image: linear-gradient(to bottom, transparent 30%, var(--color-sst-light-11) 44%), url('/career/interviews-scene-phone.webp'); }
+  .cr-main .sj-ps-card[data-k='behaviour'] { background-image: linear-gradient(to bottom, transparent 30%, var(--color-sst-light-11) 44%), url('/career/behaviour-scene-phone.webp'); }
   .cr-main .sj-ps-card .sj-ps-copy, .cr-main .sj-ps-card[data-k] .sj-ps-copy { bottom: 224px; }
   .cr-main .sj-career-split > .sj-career-card { top: calc(580px - 4px - 12px - 200px); left: 16px; right: 16px; height: 200px; overflow: visible; }
   .cr-main .sj-career-card .sj-tl { display: grid; grid-template-columns: minmax(0, 1fr); grid-auto-rows: 62px; gap: 7px; width: auto; padding: 0; animation: none; }

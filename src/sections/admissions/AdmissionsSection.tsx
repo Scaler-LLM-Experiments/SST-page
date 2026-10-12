@@ -57,13 +57,13 @@ export function AdmissionsSection() {
           {/* Left: the title and the two CTAs. Stays in view while the steps scroll. */}
           <div data-enter="header" className="flex flex-col gap-3 self-start md:sticky md:top-24">
             <Heading as="p" size="eyebrow" className="text-content-brand" data-enter="eyebrow">
-              Admissions
+              Admission Process
             </Heading>
             <Heading as="h2" size="display" id="admissions-title" data-enter="headline">
-              Admission Process, Fees and Eligibility
+              How to Join SST
             </Heading>
             <Text size="lg" tone="secondary" data-enter="sub">
-              Who can apply, how selection works, what the programme costs, and the scholarships on offer.
+              Who can apply, how selection works through NSET and two interviews, what the programme costs, and the scholarships on offer.
             </Text>
             {/* Eligibility: a plain card, on the left above the two CTAs (the team's
                 ask, 2026-10-07). */}
@@ -93,7 +93,7 @@ export function AdmissionsSection() {
             <li className="adm-card adm-frame">
               <div className="adm-ground adm-process">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/admissions/scholarships.webp" alt="" width={1671} height={941} loading="lazy" decoding="async" data-part="photo" />
+                <img src="/sst/community/campus/campus-1.webp" alt="" width={1671} height={941} loading="lazy" decoding="async" data-part="photo" />
                 <div className="adm-process__panel">
                   <Heading as="h3" size="3" data-part="title">
                     Admissions process
@@ -146,7 +146,7 @@ export function AdmissionsSection() {
                         {r.intake}
                       </Text>
                       <Text as="span" size="sm" tone="secondary">
-                        Deadline {r.deadline}
+                        Hostel &amp; mess {r.deadline}
                       </Text>
                     </div>
                     <Text as="span" className="font-semibold whitespace-nowrap">
@@ -156,7 +156,7 @@ export function AdmissionsSection() {
                 ))}
               </ul>
               <Text size="sm" tone="secondary" className="adm-intakes-note">
-                Application fee: {feeRows[0].application} for every intake.
+                Admission fee: {feeRows[0].application}, in Year 1 only. Hostel &amp; mess is indicative; a ₹25,000 refundable security deposit applies.
               </Text>
             </Step>
 
@@ -166,7 +166,7 @@ export function AdmissionsSection() {
             <li className="adm-card adm-frame">
               <div className="adm-ground adm-scholar">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/admissions/scholarships.webp" alt="" width={1671} height={941} loading="lazy" decoding="async" data-part="photo" />
+                <img src="/sst/community/campus/campus-1.webp" alt="" width={1671} height={941} loading="lazy" decoding="async" data-part="photo" />
                 <div className="adm-scholar__bar adm-glass">
                   <p className="adm-scholar__figure" data-part="title">
                     <span>Up to</span>100%

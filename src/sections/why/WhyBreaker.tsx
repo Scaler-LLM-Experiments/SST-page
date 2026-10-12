@@ -182,12 +182,12 @@ export function WhyBreaker({ quote, figures }: { quote: WhyQuote; figures: WhyFi
         <div className="why-breaker-copy">
           <div className="why-breaker-top">
             {/* The words: a dark island, white over the clip (the team's call). */}
-            <div className="why-breaker-lead" data-brand="ssb" data-theme="dark">
+            <div className="why-breaker-lead" data-brand="sst" data-theme="dark">
               {/* The argument out front (the team, 2026-10-12: "pay more attention to the traditional
                   MBA"): the line as the section's title, "traditional MBA" in the logo's green, then
                   the quote under it a step quieter. Was a white eyebrow over the quote. */}
               <h2 id="why-breaker-title" data-breaker-part className="why-breaker-kicker">
-                {emphasise(quote.eyebrow ?? '', 'traditional MBA')}
+                {emphasise(quote.eyebrow ?? '', 'old syllabi')}
               </h2>
               <p data-breaker-part className="why-breaker-words">
                 “{quote.caption}”

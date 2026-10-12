@@ -1,30 +1,12 @@
 export type CompanyLogo = { name: string; src: string };
 
-// Full-colour wordmarks. Sourced from Wikimedia Commons and each company's
-// own site; trimmed to their edges so every logo sits at the same height.
+// The super mentors' companies, as SST's live site shows them under each mentor
+// (scaler.com/school-of-technology, "Super mentors"); files in public/sst/community.
 export const companyLogos: Record<string, CompanyLogo> = {
-  epigamia: { name: 'Epigamia', src: '/logos/epigamia.png' },
-  colgate: { name: 'Colgate', src: '/logos/colgate.svg' },
-  'stable-money': { name: 'Stable Money', src: '/logos/stable-money.svg' },
-  decathlon: { name: 'Decathlon', src: '/logos/decathlon.svg' },
-  cashfree: { name: 'Cashfree', src: '/logos/cashfree.svg' },
-  lightrock: { name: 'Lightrock', src: '/logos/lightrock.svg' },
-  bcg: { name: 'BCG', src: '/logos/bcg.svg' },
-  mckinsey: { name: 'McKinsey & Company', src: '/logos/mckinsey.svg' },
-  toddle: { name: 'Toddle', src: '/logos/toddle.svg' },
-  sequoia: { name: 'Sequoia Capital', src: '/logos/sequoia.svg' },
-  blinkit: { name: 'Blinkit', src: '/logos/blinkit.svg' },
-  paypal: { name: 'PayPal', src: '/logos/paypal.svg' },
-  razorpay: { name: 'Razorpay', src: '/logos/razorpay.svg' },
-  zomato: { name: 'Zomato', src: '/logos/zomato.svg' },
-  flipkart: { name: 'Flipkart', src: '/logos/flipkart.svg' },
-  amazon: { name: 'Amazon', src: '/logos/amazon.svg' },
-  aspora: { name: 'Aspora', src: '/logos/aspora.png' },
-  bain: { name: 'Bain & Company', src: '/logos/bain.svg' },
-  deutschebank: { name: 'Deutsche Bank', src: '/logos/deutschebank.svg' },
-  jpmorgan: { name: 'J.P. Morgan', src: '/logos/jpmorgan.svg' },
-  mars: { name: 'Mars', src: '/logos/mars.svg' },
-  pwc: { name: 'PwC', src: '/logos/pwc.svg' },
-  accenture: { name: 'Accenture', src: '/logos/accenture.svg' },
-  iimb: { name: 'IIM Bangalore', src: '/logos/iimb.png' },
+  google: { name: 'Google', src: '/sst/community/mentors/rajan-anandan-logo.webp' },
+  openai: { name: 'OpenAI', src: '/sst/community/mentors/arvind-n-logo.webp' },
+  deepmind: { name: 'Google DeepMind', src: '/sst/community/mentors/varun-mohan-logo.webp' },
+  viacom18: { name: 'Viacom18', src: '/sst/community/mentors/akash-saxena-logo.webp' },
+  phonepe: { name: 'PhonePe', src: '/sst/community/mentors/rahul-chari-logo.webp' },
+  flipkart: { name: 'Flipkart', src: '/sst/community/mentors/amod-malviya-logo.webp' },
 };

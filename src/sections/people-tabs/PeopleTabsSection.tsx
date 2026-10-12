@@ -37,22 +37,22 @@ const withPhoto = (people: readonly { image?: string }[]) => people.filter((p): 
 const ALL_GROUPS: (Group & { id: PeopleGroupId })[] = [
   {
     id: 'faculty',
-    tab: 'Faculty',
-    eyebrow: 'Faculty',
-    title: 'Learn From Your Future Recruiters, Not Just Faculty.',
-    sub: 'Operators and leaders from BCG, McKinsey, Razorpay, Zomato, PayPal, Flipkart and more teach at SSB.',
+    tab: 'Super Mentors',
+    eyebrow: 'Super mentors',
+    title: 'Built & Delivered By 100+ Industry Leaders',
+    sub: 'Builders from Google, OpenAI, Google DeepMind, PhonePe and Flipkart mentor SST students.',
     itemName: 'faculty',
     people: faculty
       .filter((m) => m.photo)
-      .map((m) => ({ name: m.name, role: m.role, image: `/faculty/${m.photo}.webp`, logo: companyLogos[m.companies[0]] })),
+      .map((m) => ({ name: m.name, role: m.role, image: `/sst/community/mentors/${m.photo}.webp`, logo: companyLogos[m.companies[0]] })),
   },
-  { id: 'mentors', tab: 'Mentors', ...mentorsSection, itemName: 'mentor', people: withPhoto(mentorsSection.people) },
-  { id: 'founding', tab: 'Founding Team', ...foundingTeamSection, itemName: 'person', people: withPhoto(foundingTeamSection.people) },
-  { id: 'investors', tab: 'Investors & Founders', ...investors, itemName: 'person', people: withPhoto(investors.people) },
+  { id: 'mentors', tab: 'SST Team', ...mentorsSection, itemName: 'mentor', people: withPhoto(mentorsSection.people) },
+  { id: 'founding', tab: 'Founders & Board', ...foundingTeamSection, itemName: 'person', people: withPhoto(foundingTeamSection.people) },
+  { id: 'investors', tab: 'Industry Leaders', ...investors, itemName: 'person', people: withPhoto(investors.people) },
 ];
 
 /** PLACEHOLDER (2026-10-12): the stacked cards' line under the logo, until each person's own is written. */
-const PLACEHOLDER_BIO = 'A line on what they teach at SSB and the work they have led.';
+const PLACEHOLDER_BIO = 'A line on what they bring to SST students and the work they have led.';
 
 /** One group's row: mounted afresh for each tab, so the carousel starts from its first card. */
 function Row({ group: g, stacked = false }: { group: Group; stacked?: boolean }) {
@@ -120,7 +120,7 @@ function Row({ group: g, stacked = false }: { group: Group; stacked?: boolean })
 export function PeopleTabsSection({
   groups: ids = ['faculty', 'mentors'],
   id = 'people',
-  label = 'The people at SSB',
+  label = 'The people at SST',
   stacked = false,
 }: {
   groups?: PeopleGroupId[];

@@ -89,7 +89,7 @@ main section.lab + section [data-enter='header'] {
   letter-spacing: var(--type-display-tracking);
   font-weight: var(--font-weight-medium);
   /* the logo's green (the team's call), as the page's accent words */
-  color: var(--color-ssb-light-9);
+  color: var(--color-sst-light-9);
 }
 /* h1 everywhere: at the display size they weighed as much as the heading beside them */
 .lab-stat-label {

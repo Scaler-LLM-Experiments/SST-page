@@ -39,20 +39,20 @@ export function AlumniSection({ peers }: { peers?: React.ReactNode }) {
         >
           <div className="flex max-w-(--size-measure-max) flex-col gap-3">
             <Heading as="p" size="eyebrow" className="text-content-brand" data-enter="eyebrow">
-              Alumni
+              Internship + PPO Highlights
             </Heading>
             {/* Picks up Why SSB's "roles like…" (2026-10-07): our earlier cohorts, already there. */}
             <Heading as="h2" size="display" id="alumni-title" data-enter="headline">
-              Our earlier cohorts are already in roles like these.
+              Our students are already in roles like these.
             </Heading>
             <Text size="lg" tone="secondary" data-enter="sub">
-              Now in growth, strategy and brand roles at Blinkit, Emergent and more.
+              3rd-year SST students with internship and PPO offers at Emergent, Mamaearth, Manifest AI and more.
             </Text>
           </div>
         </div>
       </Container>
 
-      <ul ref={rowRef} className="alumni-row" aria-label="Alumni">
+      <ul ref={rowRef} className="alumni-row" aria-label="Students">
         {alumni.map((a, i) => (
           <li key={a.name}>
             <AlumniCard alumnus={a} priority={i < 3} />
@@ -71,7 +71,7 @@ export function AlumniSection({ peers }: { peers?: React.ReactNode }) {
           return (
             <div key={r} className="alumni-drift-row" data-dir={r ? 'back' : undefined} style={{ '--n': mine.length } as React.CSSProperties}>
               {[0, 1].map((copy) => (
-                <ul key={copy} className="alumni-drift-set" aria-label={copy ? undefined : 'Alumni'} aria-hidden={copy ? true : undefined}>
+                <ul key={copy} className="alumni-drift-set" aria-label={copy ? undefined : 'Students'} aria-hidden={copy ? true : undefined}>
                   {mine.map((a) => (
                     <li key={a.name}>
                       <AlumniCard alumnus={a} />

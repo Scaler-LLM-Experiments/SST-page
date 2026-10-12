@@ -84,8 +84,8 @@
 
 /* the figures in the logo's green (2026-10-07, the team's ask), as Beyond Placements' "companies.";
    the unit the same green, a step lighter */
-.in-figure { color: var(--color-ssb-light-9); }
-.in-figure .pl-unit { color: color-mix(in srgb, var(--color-ssb-light-9) 72%, #fff); }
+.in-figure { color: var(--color-sst-light-9); }
+.in-figure .pl-unit { color: color-mix(in srgb, var(--color-sst-light-9) 72%, #fff); }
 
 /* The numbers as Placements' cohort boxes (2026-10-07): grey boxes, gaps between, no frame or hairlines.
    One column on a phone, three across from sm. */

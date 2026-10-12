@@ -14,7 +14,7 @@ const base = {
   ...DEFAULT_CONFIG,
   ...LAB_SETTINGS,
   concept: 'stack',
-  brand: 'ssb',
+  brand: 'sst',
   theme: 'light',
   radius: 1,
   stackOpen: 'sheet',

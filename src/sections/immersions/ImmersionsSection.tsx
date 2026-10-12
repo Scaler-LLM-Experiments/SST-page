@@ -56,7 +56,7 @@ function CreatorCard({ creator: c }: { creator: Creator }) {
       <div className="creator-card__head" data-part="title">
         <span className="creator-card__badge">
           <StarIcon weight="fill" aria-hidden="true" />
-          Creator
+          SST student
         </span>
         <h4 className="creator-card__name">{c.name}</h4>
         <p className="creator-card__niche">{c.niche}</p>
@@ -92,11 +92,11 @@ export function ImmersionsSection() {
             Immersions
           </Heading>
           <Heading as="h2" size="display" id="immersions-title" data-enter="headline">
-            Immersions Beyond the Classroom
+            International Internships and a Year in Industry
           </Heading>
           <Text size="lg" tone="secondary" data-enter="sub">
-            Learn where the work happens: on factory floors, inside quick-commerce operations, and at
-            Reliance&apos;s creative agency.
+            Learn where the work happens: in internships from Bali to New York, and a final year spent
+            inside real companies.
           </Text>
         </div>
 
@@ -109,13 +109,13 @@ export function ImmersionsSection() {
         </ul>
 
         <Heading as="h3" size="3" className="mt-16 mb-6 text-center sm:mt-20" data-enter="block">
-          Student success stories under our creator lab
+          Students who joined us leaving behind prestigious offers
         </Heading>
       </Container>
 
       {/* Phones: a row to swipe; tablet and up: three across. */}
       <Container className="creator-wrap">
-        <ul ref={rowRef} className="creator-row" aria-label="Creator lab success stories">
+        <ul ref={rowRef} className="creator-row" aria-label="Students who joined SST over other offers">
           {creators.map((c) => (
             <li key={c.name}>
               <CreatorCard creator={c} />
@@ -124,7 +124,7 @@ export function ImmersionsSection() {
         </ul>
       </Container>
       <div className="creator-dots">
-        <ScrollDots scroller={rowRef} count={creators.length} itemName="creator" fill="solid" />
+        <ScrollDots scroller={rowRef} count={creators.length} itemName="student" fill="solid" />
       </div>
     </Section>
   );

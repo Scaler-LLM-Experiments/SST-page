@@ -27,8 +27,8 @@ import { ParticleText } from './ParticleText';
 
 // the wordmark in the brand green (#1D925B) first, softened by a lighter green
 // and a few mints so it is not a solid block; weighted 5 brand : 2 light : 3 mint
-const SSB_GREENS = ['#1D925B', '#1D925B', '#1D925B', '#1D925B', '#1D925B', '#2FB573', '#2FB573', '#8FCFAE', '#8FCFAE', '#BFE4D0'];
-const WORDMARK_LINES = ['Scaler School', 'of Business'];
+const SSB_GREENS = ['#0245B9', '#0245B9', '#0245B9', '#0245B9', '#0245B9', '#96B7F0', '#96B7F0', '#C6D9FB', '#C6D9FB', '#DFEBFF'];
+const WORDMARK_LINES = ['Scaler School', 'of Technology'];
 import './footer.css';
 
 function Links({ links }: { links: FooterLink[] }) {
@@ -64,7 +64,7 @@ function CampusFoot({ footRef, content }: { footRef: React.Ref<HTMLElement>; con
   // the name on one line on desktop, broken after "School" on a phone so it can stay large
   const [first, ...rest] = content.wordmark.split(/ (?=of )/);
   return (
-    <footer ref={footRef} className="sf-foot" data-variant="campus" data-brand="ssb" data-theme="dark">
+    <footer ref={footRef} className="sf-foot" data-variant="campus" data-brand="sst" data-theme="dark">
       <div className="sfc-scene" aria-hidden="true">
         <img src={campus.image.src} srcSet={`${campus.image.small} 1200w, ${campus.image.src} 2400w`} sizes="100vw" alt="" loading="lazy" decoding="async" />
       </div>
@@ -77,7 +77,7 @@ function CampusFoot({ footRef, content }: { footRef: React.Ref<HTMLElement>; con
           <p className="sfc-statement">{content.tagline}</p>
           {/* the page's action pair, as the hero's and the navbar's: the label, then a plain trailing
               glyph (no icon well). In the light theme's colours (the footer's dark theme mutes the green). */}
-          <div className="sfc-actions" data-brand="ssb" data-theme="light">
+          <div className="sfc-actions" data-brand="sst" data-theme="light">
             <Button asChild variant="primary" size="lg">
               <a href={cta.primary.href}>
                 {cta.primary.label}
@@ -158,9 +158,9 @@ function BuildingFoot({ footRef, content, green = false }: { footRef: React.Ref<
   const [first, ...rest] = content.wordmark.split(/ (?=of )/);
   const body = (
     <>
-      <div className="sfb-top" {...(green ? { 'data-brand': 'ssb', 'data-theme': 'dark' } : {})}>
+      <div className="sfb-top" {...(green ? { 'data-brand': 'sst', 'data-theme': 'dark' } : {})}>
         <div className="sfb-lead">
-          <Logo brand="ssb" size={green ? 'lg' : 'md'} surface={green ? 'dark' : 'auto'} />
+          <Logo brand="sst" size={green ? 'lg' : 'md'} surface={green ? 'dark' : 'auto'} />
           {green ? (
             <Text size="lg" className="sfb-tagline">
               {content.tagline}
@@ -273,7 +273,7 @@ export function SsbFooter({ content = SSB_FOOTER, showCta = true, settled, varia
   return (
     // the building looks are light whatever the OS's theme (the site is light; following a dark OS
     // turned the footer's white, and the card's fade, black)
-    <div ref={root} className="sf" data-brand="ssb" data-theme={variant === 'building' || variant === 'green' ? 'light' : theme} data-lift="">
+    <div ref={root} className="sf" data-brand="sst" data-theme={variant === 'building' || variant === 'green' ? 'light' : theme} data-lift="">
       {/* the sheet that lifts: the page and the CTA band, opaque, above the pinned footer */}
       <div ref={layer} className="sf-lift">
       {children}
@@ -326,7 +326,7 @@ export function SsbFooter({ content = SSB_FOOTER, showCta = true, settled, varia
         </span>
         <div className="sf-top">
           <div className="sf-brand">
-            <Logo brand="ssb" size="lg" className="sf-logo" />
+            <Logo brand="sst" size="lg" className="sf-logo" />
             <Text size="sm" tone="secondary">
               {content.tagline}
             </Text>

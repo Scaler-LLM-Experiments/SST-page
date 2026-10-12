@@ -15,13 +15,13 @@ export async function PeersTicker() {
           line, with a quiet line under it (Text, secondary): no longer the small grey caps (2026-10-09) */}
       <div className="flex flex-col gap-1">
         <Heading as="h3" size="3" className="peers-title">
-          Your peers come from companies like these
+          Scaler’s alumni work across 1200+ companies
         </Heading>
         <Text size="md" tone="secondary">
-          Where the people in your cohort worked before SSB.
+          Hiring partners including MAANG companies and AI startups.
         </Text>
       </div>
-      <PeersFlip logos={logos} label="Companies our students come from" />
+      <PeersFlip logos={logos} label="Companies where Scaler’s alumni work" />
     </div>
   );
 }

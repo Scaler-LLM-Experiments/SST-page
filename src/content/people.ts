@@ -1,63 +1,46 @@
 export type Person = { name: string; role: string };
 
 export type FacultyMember = Person & {
-  /** Portrait in /public/faculty. Absent until a photo is supplied. */
+  /** Portrait in /public/sst/community/mentors. Absent until a photo is supplied. */
   photo?: string;
   /** The company whose logo the card shows (the first named in `role`), a key of `companyLogos`. */
   companies: string[];
 };
 
-// Section 10 content, from "SSB Website vF _ Sep'26", slide 13.
-// The slide's "Add:" notes are merged in at the positions it names.
+// SST's super mentors: the live site's "Super mentors: Built & Delivered By 100+ Industry Leaders"
+// (scaler.com/school-of-technology, 2026-10-12). Roles as the site has them, the company named.
 
 export const mentors: Person[] = [
-  { name: 'Deepinder Goyal', role: 'Co-founder, Zomato' },
-  { name: 'Binny Bansal', role: 'Co-founder, Flipkart' },
-  { name: 'Vijay Shekhar Sharma', role: 'MD, Paytm' },
-  { name: 'Kunal Shah', role: 'Founder, CRED' },
-  { name: 'Rajan Anandan', role: 'MD, Peak XV' },
+  { name: 'Rajan Anandan', role: 'Ex VP South-East Asia, Google' },
+  { name: 'Arvind N', role: 'Co-Creator GPT 3 & 4, OpenAI' },
+  { name: 'Varun Mohan', role: 'Lead Engineer, Google DeepMind' },
+  { name: 'Yash Kumar', role: 'Member of Technical Staff, OpenAI' },
+  { name: 'Akash Saxena', role: 'CTPO, Viacom18' },
+  { name: 'Rahul Chari', role: 'Co-founder, PhonePe' },
+  { name: 'Amod Malviya', role: 'Ex CTO, Flipkart' },
 ];
 
+// The people tabs' first group: the super mentors, with their photos (public/sst/community/mentors).
 export const faculty: FacultyMember[] = [
-  { name: 'Siddharth Menon', role: 'Ex-CMO, Epigamia/Colgate', photo: 'siddharth-menon', companies: ['epigamia'] },
-  // Added after Siddharth Menon
-  { name: 'Saurabh Jain', role: 'Co-Founder, Stable Money', photo: 'saurabh-jain', companies: ['stable-money'] },
-  { name: 'Gautham G.', role: 'CMO, Decathlon Sports India', companies: ['decathlon'] },
-  { name: 'Akash Sinha', role: 'CEO & Co-Founder, Cashfree', photo: 'akash-sinha', companies: ['cashfree'] },
-  { name: 'Divya Venkataraghavan', role: 'Principal, LightRock', companies: ['lightrock'] },
-  { name: 'Puneet', role: 'Partner, BCG', photo: 'puneet', companies: ['bcg'] },
-  { name: 'Dhron Kanish', role: 'Associate Partner, McKinsey', photo: 'dhron-kanish', companies: ['mckinsey'] },
-  { name: 'Sidhant Goyal', role: 'Toddle; Ex-Sequoia Capital', photo: 'sidhant-goyal', companies: ['toddle'] },
-  { name: 'Jacob Singh', role: 'Ex-CTO, Blinkit', photo: 'jacob-singh', companies: ['blinkit'] },
-  // Existing list
-  { name: 'Malthi SS', role: 'Ex-Product Director, PayPal', photo: 'malthi-ss', companies: ['paypal'] },
-  { name: 'Kanishk Mehta', role: 'Sr. Product Director, Razorpay', photo: 'kanishk-mehta', companies: ['razorpay'] },
-  { name: 'Saurabh Sengupta', role: 'Ex-SVP Sales, Zomato', photo: 'saurabh-sengupta', companies: ['zomato'] },
-  { name: 'Gaurav Dadhich', role: 'Founder, Ex-Flipkart/Razorpay/Amazon', photo: 'gaurav-dadhich', companies: ['flipkart'] },
-  { name: 'Sudarshan Tapuriah', role: "Founders' Office, Aspora, Ex-Bain", companies: ['aspora'] },
-  { name: 'Amit Puniyani', role: 'Ex-VP, Deutsche Bank/J.P. Morgan', photo: 'amit-puniyani', companies: ['deutschebank'] },
-  { name: 'Sandeep Das', role: 'Ex-Global Lead, Mars/PwC/Accenture', photo: 'sandeep-das', companies: ['mars'] },
-  { name: 'Narahari Hansoge', role: 'IIM Faculty, PhD IIM-B', photo: 'narahari-hansoge', companies: ['iimb'] },
-  { name: 'Vatsal Sanghvi', role: 'Founder, Ex-Flipkart', photo: 'vatsal-sanghvi', companies: ['flipkart'] },
+  { name: 'Rajan Anandan', role: 'Ex VP South-East Asia, Google', photo: 'rajan-anandan', companies: ['google'] },
+  { name: 'Arvind N', role: 'Co-Creator GPT 3 & 4, OpenAI', photo: 'arvind-n', companies: ['openai'] },
+  { name: 'Varun Mohan', role: 'Lead Engineer, Google DeepMind', photo: 'varun-mohan', companies: ['deepmind'] },
+  { name: 'Yash Kumar', role: 'Member of Technical Staff, OpenAI', photo: 'yash-kumar', companies: ['openai'] },
+  { name: 'Akash Saxena', role: 'CTPO, Viacom18', photo: 'akash-saxena', companies: ['viacom18'] },
+  { name: 'Rahul Chari', role: 'Co-founder, PhonePe', photo: 'rahul-chari', companies: ['phonepe'] },
+  { name: 'Amod Malviya', role: 'Ex CTO, Flipkart', photo: 'amod-malviya', companies: ['flipkart'] },
 ];
 
+// "Meet the Team Behind SST" (the live site's); the cards' data is in community.ts.
 export const foundingTeam: Person[] = [
-  { name: 'Anshuman Singh', role: 'Co-founder, Ex-Meta' },
-  { name: 'Abhimanyu Saxena', role: 'Co-founder, Ex-Fab.com' },
-  { name: 'Bhavik Rathod', role: 'Founding Leader, Uber India' },
-  { name: 'Vidit Jain', role: 'SVP, Ex-McKinsey/ISB' },
-  // Added after Vidit Jain
-  {
-    name: 'Sucheta Mahapatra',
-    role: 'VP Business, SSB - MD India, Branch International | Ex-Principal, Bain | Ex-VP, Airtel',
-  },
-  {
-    name: 'Manish Pansari',
-    role: 'Director of Business Operations, SSB - CXO & Head of Ops, Myntra | Principal, A.T. Kearney',
-  },
-  // Existing list
-  { name: 'Adhiraj Arora', role: 'Program Director, Ex-BCG, ISB' },
-  { name: 'Rahul Karthikeyan', role: 'CMO, Scaler, Ex-upGrad' },
-  { name: 'Ratnakar Reddy', role: 'Enterprise Head, Ex-Google/Microsoft' },
-  { name: 'Amar Srivastava', role: 'CEO, Scaler Online Business' },
+  { name: 'Anshuman Singh', role: 'Co-Founder of Scaler, Ex-Meta' },
+  { name: 'Abhimanyu Saxena', role: 'Co-founder of Scaler, Ex-Fab.com' },
+  { name: 'Vidit Jain', role: 'Head of SST, Ex-McKinsey & MPL' },
+  { name: 'Manmeet Singh Akali', role: 'Programme Director SST, Ex-Founder, Klarity' },
+  { name: 'Tushar Bisht', role: 'CTO, Scaler' },
+  { name: 'Shivank Agrawal', role: 'Sr. VP Data Science, Scaler, Ex-Microsoft, Oracle' },
+  { name: 'Amar Srivastava', role: 'AVP Product, Scaler, IIT-Delhi Alum' },
+  { name: 'Shruti Sagar', role: 'Ex-LEK Consulting' },
+  { name: 'Bhavik Rathod', role: 'Board Member, Built Uber India' },
+  { name: 'Vadivelan Gopal', role: 'Vice President, Campus Outreach, SST' },
 ];

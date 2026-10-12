@@ -16,7 +16,7 @@ export function HeroVariantToggle({ current }: { current: HeroVariant }) {
       aria-label="First fold variant"
       className="fixed bottom-4 left-1/2 z-50 flex -translate-x-1/2 items-center gap-1 rounded-full border border-border-subtle bg-surface-raised p-1"
       style={{ boxShadow: '0 10px 30px -12px rgb(0 0 0 / 0.35)' }}
-      data-brand="ssb"
+      data-brand="sst"
       data-theme="light"
     >
       <span className="whitespace-nowrap px-3 type-caption text-content-secondary">First fold</span>

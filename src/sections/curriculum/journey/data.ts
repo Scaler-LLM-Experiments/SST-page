@@ -256,7 +256,7 @@ export const JOURNEY: Journey = {
         { title: 'Create routing system', desc: 'Create a city navigation optimization system for Swiggy/Zomato.', image: 'pRouting' },
       ],
       outcome:
-        'You can build advanced tech products with a clear business model, defined users personas, and a realistic path to distribution and revenue.',
+        'You can build advanced tech products with a clear business model, defined user personas, and a realistic path to distribution and revenue.',
       syllabus: null,
     },
     {
@@ -274,7 +274,7 @@ export const JOURNEY: Journey = {
         { title: 'Emergent-Style AI App Builder', desc: 'That lets users vibecode apps', image: 'pBuilder' },
         { title: 'GTM Strategy Challenge', desc: 'Launch a real tech product and take it to market', image: 'pGtm' },
         { title: 'Build Perplexity-Style Answer Engine', desc: 'Deliver direct answers, not links', image: 'pAnswer' },
-        { title: 'Real world Industry Projects', desc: 'Solve real business problems of companies using AI', flagship: true, image: 'y3Flagship' },
+        { title: 'Real-world Industry Projects', desc: 'Solve real business problems of companies using AI', flagship: true, image: 'y3Flagship' },
         { title: 'Personal AI Assistant', desc: 'Create an AI tool that reads & summarizes information', image: 'pAssistant' },
         { title: 'AI Customer Support System', desc: 'Resolve queries across chat and voice', image: 'pSupport' },
         { title: 'Multi-Agent Workflow Automation', desc: 'Automate complex workflows', image: 'pAgents' },
@@ -284,13 +284,13 @@ export const JOURNEY: Journey = {
         { title: 'Text Summarisation', desc: 'Build an NLP-powered tool for summarising large texts', image: 'pSummary' },
       ],
       outcome:
-        'Understand how technology creates real business value by solving real-world business problems for industry-sourced projects or startups',
+        'You understand how technology creates real business value, by solving real-world business problems for industry-sourced projects or startups.',
       syllabus: null,
     },
     {
       year: 4,
       name: 'Launch & Lead',
-      description: '6 months building a real tech startup. 6 months in industry- internships, projects, real companies.',
+      description: '6 months building a real tech startup. 6 months in industry: internships, projects, real companies.',
       ship: 'Your own company',
       visual: 'y4',
       skills: null,
@@ -334,7 +334,7 @@ export const JOURNEY: Journey = {
         desc: 'Step into high-impact AI and business roles with 1200+ placement partners',
         image: 'fPlacement',
         roles: ['Forward Deployed Engineer', 'Product Engineer', 'AI Product Manager', 'Growth Engineer', 'AI Consultant', 'Tech Founder'],
-        points: ['Upto 6-month Internships'],
+        points: ['Up to 6-month internships'],
       },
     ],
     safetyNet:

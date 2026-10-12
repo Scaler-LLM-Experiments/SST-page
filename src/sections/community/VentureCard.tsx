@@ -44,7 +44,7 @@ export function VentureCard({
   company,
   founders,
   avatars,
-  role = 'Cohort 1',
+  role = 'SST student',
   description,
   sector,
   stat,

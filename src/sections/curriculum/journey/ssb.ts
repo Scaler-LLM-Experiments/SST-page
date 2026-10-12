@@ -169,29 +169,45 @@ export const SSB_JOURNEY: Journey = {
     },
   ],
   // [SSB concept] ssb-school-concept.vercel.app, "The AI journey"; images are that site's assets
-  // [SSB] "Learn by doing", from the SSB concept site; videos from the school's YouTube channel
-  // (views and upload dates captured from YouTube, 2026-09-30)
+  // [SST] "Learn by doing": the live site's "01 Learn By Building" four videos (scaler.com/school-of-technology);
+  // titles, lengths, views and upload dates captured from YouTube, 2026-10-12
   learn: {
-    eyebrow: 'Learn by doing',
-    title: 'Build 2 Real Businesses. Pitch to VCs.',
-    titleAccent: 'Graduate with Founder experience.',
-    lede: 'Real markets and real feedback turn business concepts into hard-earned experience.',
+    eyebrow: 'Learn by Building',
+    title: 'Future-proof curriculum',
+    titleAccent: 'with AI embedded from day one.',
+    lede: 'Curriculum co-developed with 100+ industry leaders, updated every 6 months.',
     items: [
       {
         n: '01',
-        label: 'D2C Startup Challenge',
-        title: 'Take a brand from zero to its first customers.',
-        desc: 'Sourcing, branding, packaging, pricing and selling in a six-week challenge. Teams receive ₹25,000 in startup funding and target ₹5L+ revenue.',
-        image: '/learn/d2c.jpg', // the video's own YouTube thumbnail (assets/learn)
-        video: { id: 's0KKS3FxNUU', title: 'D2C Startup Challenge - Scaler School of Business', channel: 'Scaler School of Business', seconds: 61, views: 761, published: '2025-11-20' },
+        label: 'Skills that matter',
+        title: 'Learn relevant skills that matter.',
+        desc: 'A curriculum co-developed with 100+ industry leaders and updated every 6 months, with AI embedded from day one.',
+        image: '/sst/curriculum/yt-zZ1roRdV7xU.webp', // the video's own YouTube thumbnail
+        video: { id: 'zZ1roRdV7xU', title: 'What is Scaler School of Technology?', channel: 'Scaler School of Technology', seconds: 57, views: 2539, published: '2025-06-20' },
       },
       {
         n: '02',
-        label: 'The Hustle Program',
-        title: 'Take an MVP to a founder-ready pitch.',
-        desc: 'Build, earn revenue and pitch a startup with ₹50,000 in initial funding and a pathway to funding up to ₹25L, backed by Lightrock, Peak XV and Sidhant Goyal.',
-        image: '/learn/hustle.jpg', // the video's own YouTube thumbnail
-        video: { id: '6V9RgMnFFaU', title: 'Next $Billion Dollar Idea? Business School Students Pitch to VCs', channel: 'Scaler School of Business', seconds: 951, views: 1582, published: '2025-04-19' },
+        label: 'Beginner to industry ready',
+        title: 'Go from beginner to industry ready.',
+        desc: 'Harsh joined with no clue about tech. Consistency took him to an internship at Dukaan.',
+        image: '/sst/curriculum/yt-Ez8oh_akMjw.webp',
+        video: { id: 'Ez8oh_akMjw', title: 'How Consistency Took Harsh from “No Clue About Tech” to interning at Dukaan.', channel: 'Scaler School of Technology', seconds: 82, views: 7150, published: '2025-11-03' },
+      },
+      {
+        n: '03',
+        label: 'Compete globally',
+        title: 'Compete with the best, on the global stage.',
+        desc: 'Failed the ICPC prelims, then a year later beat IIT teams to rank 68 at ICPC. Five-hour contests, zero shortcuts.',
+        image: '/sst/curriculum/yt-MzqipVCcuEM.webp',
+        video: { id: 'MzqipVCcuEM', title: 'Failed ICPC Prelims. One year later, beating IITs. Rank 68 at ICPC.', channel: 'Scaler School of Technology', seconds: 59, views: 14856, published: '2026-02-08' },
+      },
+      {
+        n: '04',
+        label: 'Monthly hackathons',
+        title: 'Monthly hackathons to sharpen your skills.',
+        desc: 'They didn’t just play games: they built one in just 12 hours.',
+        image: '/sst/curriculum/yt-aDU9GVr4HBs.webp',
+        video: { id: 'aDU9GVr4HBs', title: 'They Didn’t Just Play Games, They Built One in just 12 Hours!', channel: 'Scaler School of Technology', seconds: 60, views: 3532, published: '2025-11-08' },
       },
     ],
   },

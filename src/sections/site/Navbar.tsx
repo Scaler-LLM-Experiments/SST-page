@@ -211,10 +211,10 @@ export function SsbNavbar({
   };
 
   return (
-    <header ref={root} className="sn" data-hero-nav={heroNav ? '' : undefined} data-brand="ssb" data-theme={heroNav ? 'dark' : theme ?? docTheme} data-scrolled={scrolled || undefined} data-open={open !== null || mobile || undefined} onPointerLeave={hoverClose}>
+    <header ref={root} className="sn" data-hero-nav={heroNav ? '' : undefined} data-brand="sst" data-theme={heroNav ? 'dark' : theme ?? docTheme} data-scrolled={scrolled || undefined} data-open={open !== null || mobile || undefined} onPointerLeave={hoverClose}>
       <div className="sn-bar">
-        <a className="sn-logo" href="#top" aria-label="Scaler School of Business, home">
-          <Logo brand="ssb" size="md" decorative />
+        <a className="sn-logo" href="#top" aria-label="Scaler School of Technology, home">
+          <Logo brand="sst" size="md" decorative />
         </a>
         <nav className="sn-nav" aria-label="Main">
           <ul>

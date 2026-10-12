@@ -21,7 +21,7 @@ export function HeroNav({ cta, theme }: { cta: HeroCta; theme?: 'light' | 'dark'
   return (
     <header
       data-hero-nav
-      data-brand={theme ? 'ssb' : undefined}
+      data-brand={theme ? 'sst' : undefined}
       data-theme={theme}
       className="sticky top-0 z-sticky border-b border-border-decorative bg-page"
     >

@@ -10,28 +10,28 @@ export const bottomNav: {
   label: string;
   items: BottomNavItem[];
   callback: { label: string; href: string };
-  /** Phones: the sticky apply bar, Apply now over a row of icon tabs (the team's ask, 2026-10-09);
+  /** Phones: the sticky apply bar, Join Waitlist over a row of icon tabs (the team's ask, 2026-10-09);
    *  the tabs open the school's other pages on the live site, not sections of this one. */
   apply: { label: string; tabs: BottomNavLink[] };
 } = {
   label: 'Sections of the page',
   items: [
-    { label: 'Outcomes', target: 'placements-showcase-title' },
-    { label: 'Why SSB', target: 'why-breaker-title' },
-    { label: 'Faculty', target: 'people' },
+    { label: 'Highlights', target: 'placements-showcase-title' },
+    { label: 'Why SST', target: 'why-breaker-title' },
+    { label: 'Mentors', target: 'people' },
     { label: 'Curriculum', target: 'curriculum' },
     { label: 'Innovation Lab', target: 'sil-band-title' },
     { label: 'Campus life', target: 'campus-title' },
     { label: 'Admissions', target: 'admissions' },
   ],
-  callback: { label: 'Request a callback', href: '#advisor' },
+  callback: { label: 'Request Callback', href: '#advisor' },
   apply: {
-    label: 'Apply now',
+    label: 'Join Waitlist',
     tabs: [
-      { label: 'Admission & Fees', href: 'https://www.scaler.com/school-of-business/admission/' },
-      { label: 'Program', href: 'https://www.scaler.com/school-of-business/program/' },
-      { label: 'Internship', href: 'https://www.scaler.com/school-of-business/internship/' },
-      { label: 'Campus Life', href: 'https://www.scaler.com/school-of-business/campus-life/' },
+      { label: 'Admission & Fees', href: 'https://www.scaler.com/school-of-technology/admission/' },
+      { label: 'Degree', href: 'https://www.scaler.com/school-of-technology/certification' },
+      { label: 'Outcomes', href: 'https://www.scaler.com/school-of-technology/career-outcomes' },
+      { label: 'Campus Life', href: 'https://www.scaler.com/school-of-technology/campus-life' },
     ],
   },
 };

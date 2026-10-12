@@ -306,7 +306,7 @@
   overflow: hidden;
   /* The logo's green (the team asked for brighter than the deep `content-brand`); at the display
      size it clears 3:1 on the page's white. The page is pinned light, so the light step is safe. */
-  color: var(--color-ssb-light-9);
+  color: var(--color-sst-light-9);
 }
 .why-role {
   grid-area: 1 / 1;
@@ -545,7 +545,7 @@
 }
 
 /* the chapters' icons in the logo's green, as the term cards' and the rest of the page's (2026-10-07) */
-.why-chapter-icon { color: var(--color-ssb-light-9); }
+.why-chapter-icon { color: var(--color-sst-light-9); }
 
 /* The argument out front (2026-10-12): "Why the traditional MBA doesn't work" as the title, at the
    display size, bold; "traditional MBA" in the logo's green, lifted for the dark. The quote under

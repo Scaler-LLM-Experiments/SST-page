@@ -21,8 +21,8 @@ import './learn-by-doing.css';
 
 /** The figure on each card's photo, from the challenge's own line (keyed by its number). */
 const STATS: Record<string, { value: string; label: string }> = {
-  '01': { value: '₹25K', label: 'startup funding, ₹5L+ revenue target' },
-  '02': { value: '₹25L', label: 'funding pathway, from ₹50K to start' },
+  '01': { value: '100+', label: 'industry leaders co-develop the curriculum' },
+  '02': { value: '50+', label: 'projects across 4 years' },
 };
 
 const LAYERS = ['', 'soft', 'deep'] as const;
@@ -85,7 +85,7 @@ function ChallengeCard({ item, onPlay }: { item: Item; onPlay: () => void }) {
           {v ? (
             <div className="vc-founders" data-part="description">
               <span className="lb-avatar" aria-hidden>
-                <Logo brand="ssb" variant="monogram" size="sm" surface="light" decorative />
+                <Logo brand="sst" variant="monogram" size="sm" surface="light" decorative />
               </span>
               <span className="vc-who">
                 <span className="vc-names lb-channel">
@@ -143,7 +143,7 @@ export function LearnByDoingSection() {
         // with its green words, Beyond Placements' form, was here first)
         eyebrow={l.eyebrow}
         sub={l.lede}
-        itemName="challenge"
+        itemName="video"
         cardWidth="38rem"
       >
         {l.items.map((item) => (

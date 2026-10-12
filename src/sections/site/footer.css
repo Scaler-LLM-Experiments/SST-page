@@ -100,9 +100,9 @@
 /* ribbon 2: mint and a hint of teal-green, higher and thinner, drifting the other way */
 .sf-foot::after { height: 260px;
   background:
-    radial-gradient(30% 35% at 60% 60%, color-mix(in srgb, #2FB573 20%, transparent), transparent 72%),
-    radial-gradient(28% 40% at 15% 55%, color-mix(in srgb, #3FB8A0 14%, transparent), transparent 72%),
-    radial-gradient(25% 30% at 88% 65%, color-mix(in srgb, #7ACB9F 18%, transparent), transparent 72%);
+    radial-gradient(30% 35% at 60% 60%, color-mix(in srgb, var(--color-sst-light-8) 20%, transparent), transparent 72%),
+    radial-gradient(28% 40% at 15% 55%, color-mix(in srgb, var(--color-sst-light-7) 14%, transparent), transparent 72%),
+    radial-gradient(25% 30% at 88% 65%, color-mix(in srgb, var(--color-sst-light-6) 18%, transparent), transparent 72%);
   animation: sf-aurora-b 28s ease-in-out infinite alternate; }
 @keyframes sf-aurora-a {
   0% { transform: translateX(-6%) scaleY(0.9) skewX(-6deg); opacity: 0.75; }
@@ -170,7 +170,7 @@
 .sfc-col { display: grid; gap: 16px; align-content: start; min-width: 11rem; padding: 2px 40px 6px 24px; border-left: 1px solid var(--sfc-line); }
 /* the page's own type: the group labels are the page's eyebrow, the closing line its small body text */
 .sfc-label { margin: 0; font-family: inherit; font-size: var(--type-eyebrow-size, 12px); line-height: var(--type-eyebrow-lh, 1.35); font-weight: var(--type-eyebrow-weight, 700); letter-spacing: var(--type-eyebrow-tracking, 0.08em); text-transform: uppercase; color: var(--sfc-ink-2); }
-.sf-foot[data-variant='campus'] { --sf-link: var(--sfc-ink); --sf-link-hover: #7bc99a; }
+.sf-foot[data-variant='campus'] { --sf-link: var(--sfc-ink); --sf-link-hover: var(--color-sst-light-6); }
 .sf-foot[data-variant='campus'] .sf-links { gap: 10px; }
 .sf-foot[data-variant='campus'] .sf-links a { font-size: 17px; }
 .sfc-up { display: grid; place-items: center; width: 48px; height: 48px; border-radius: var(--radius-lg, 8px); border: 1px solid var(--sfc-line); color: var(--sfc-ink); transition: background 180ms ease, border-color 180ms ease; }
@@ -306,7 +306,7 @@
 .sfb-stage { --wm: calc(100cqi / 11.6); --bw: min(100cqi, 1040px); position: relative; container-type: inline-size; margin: 72px calc(var(--sf-gutter) * -1) 0; }
 .sfb-wordmark { position: relative; z-index: 1; margin: 0; text-align: center;
   font-size: var(--wm); line-height: 1.05; letter-spacing: -0.035em; font-weight: var(--font-weight-semibold, 600); white-space: nowrap;
-  background: linear-gradient(to bottom, var(--color-ssb-light-9) 35%, color-mix(in srgb, var(--color-ssb-light-9) 55%, var(--surface-page)) 100%);
+  background: linear-gradient(to bottom, var(--color-sst-light-9) 35%, color-mix(in srgb, var(--color-sst-light-9) 55%, var(--surface-page)) 100%);
   -webkit-background-clip: text; background-clip: text; color: transparent; }
 .sfb-wordmark > span { display: inline; }
 /* the building over the name: pulled up by its transparent top, less a sixth of the name, so the

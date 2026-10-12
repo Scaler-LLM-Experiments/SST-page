@@ -1,11 +1,9 @@
 /**
- * SSB navbar content.
- *   SSB_NAV          the live site's own nav (scaler.com/school-of-business, read 2026-10-05):
- *                    Home · Admission & Fees · Program · Internship · Campus Life · Events ·
- *                    Career Roadmap · Guide · FAQs, then Login and Apply Now. Same labels,
- *                    same order, same destinations.
- *   SSB_NAV_CONCEPT  the earlier concept nav (ssb-school-concept.vercel.app) grouped into two
- *                    mega menus after React Bits' Navbar 5; kept so it can be switched back.
+ * SST navbar content.
+ *   SSB_NAV          the live SST nav (scaler.com/school-of-technology, read 2026-10-12): the
+ *                    Programmes menu, Home · Admission & Fees · Degree · Outcomes · Campus Life ·
+ *                    FAQs, then Login and Join Waitlist.
+ *   SSB_NAV_CONCEPT  the two-mega-menu concept nav, in SST's copy; kept so it can be switched back.
  */
 export type NavIcon = 'chart' | 'users' | 'rocket' | 'briefcase' | 'target' | 'chalkboard' | 'book' | 'sparkle' | 'compass' | 'buildings' | 'flask' | 'door';
 export interface NavItem {
@@ -29,25 +27,48 @@ export interface NavContent {
   closeLabel: string;
 }
 
-const APPLY = 'https://www.scaler.com/school-of-business/admission/';
-const SSB = 'https://www.scaler.com/school-of-business';
+const APPLY = 'https://www.scaler.com/school-of-technology/admission/';
+const SST = 'https://www.scaler.com/school-of-technology';
 
 export const SSB_NAV: NavContent = {
-  menus: [],
+  // The live nav's Programmes dropdown, with the live top strip's links (Our Students, Campus Tour,
+  // Hire from us, Events, Guide) in its second group, as the type has no second row
+  menus: [
+    {
+      label: 'Programmes',
+      groups: [
+        {
+          title: 'UG programmes',
+          items: [
+            { title: 'Computer Science & AI', desc: 'Build real world software and advanced AI systems', href: `${SST}/cs-ai`, icon: 'book' },
+            { title: 'AI & Business', desc: 'Build AI products and ship them to real users', href: `${SST}/ai-b`, icon: 'sparkle' },
+          ],
+        },
+        {
+          title: 'More from SST',
+          items: [
+            { title: 'Our Students', desc: 'The student directory', href: `${SST}/alum-directory/`, icon: 'users' },
+            { title: 'Campus Tour', desc: 'Walk through the Bangalore campus', href: `${SST}/campus-tour`, icon: 'buildings' },
+            { title: 'Hire from us', desc: 'Recruit SST students', href: `${SST}/hire-from-us`, icon: 'briefcase' },
+            { title: 'Events', desc: 'Free events with industry experts', href: `${SST}/events/`, icon: 'chalkboard' },
+            { title: 'Guide', desc: 'Everything about SST in one place', href: `${SST}/guide`, icon: 'compass' },
+          ],
+        },
+      ],
+      footer: { text: 'Applications are closed for the 2026 batch.', sub: '4-year UG programmes · Bangalore campus', cta: { label: 'Join Waitlist', href: APPLY } },
+    },
+  ],
   links: [
     { label: 'Home', href: '#top' },
-    { label: 'Admission & Fees', href: `${SSB}/admission/` },
-    { label: 'Program', href: `${SSB}/program/` },
-    { label: 'Internship', href: `${SSB}/internship/` },
-    { label: 'Campus Life', href: `${SSB}/campus-life/` },
-    { label: 'Events', href: `${SSB}/events` },
-    { label: 'Career Roadmap', href: 'https://interviewbit.typeform.com/career-planning/' },
-    { label: 'Guide', href: `${SSB}/guide` },
-    { label: 'FAQs', href: `${SSB}/faq/` },
+    { label: 'Admission & Fees', href: `${SST}/admission/` },
+    { label: 'Degree', href: `${SST}/certification` },
+    { label: 'Outcomes', href: `${SST}/career-outcomes` },
+    { label: 'Campus Life', href: `${SST}/campus-life` },
+    { label: 'FAQs', href: `${SST}/faq/` },
   ],
-  // [CONFIRM] the live Login and Apply Now are buttons that open the site's own forms, not links
+  // [CONFIRM] the live Login and Join Waitlist are buttons that open the site's own forms, not links
   secondary: { label: 'Login', href: 'https://www.scaler.com/users/sign_in/' },
-  primary: { label: 'Apply Now', href: APPLY },
+  primary: { label: 'Join Waitlist', href: APPLY },
   menuLabel: 'Menu',
   closeLabel: 'Close menu',
 };
@@ -55,56 +76,56 @@ export const SSB_NAV: NavContent = {
 export const SSB_NAV_CONCEPT: NavContent = {
   menus: [
     {
-      label: 'Why SSB',
+      label: 'Why SST',
       groups: [
         {
           title: 'The school',
           items: [
-            { title: 'Outcomes', desc: 'Placement highlights of the founding PGP cohort', href: '#outcomes', icon: 'chart' },
-            { title: 'Alumni', desc: 'Career switches from the first cohorts', href: '#alumni', icon: 'users' },
-            { title: 'Founders & leaders', desc: 'EIRs, operators and investors who teach', href: '#founders', icon: 'rocket' },
+            { title: 'Outcomes', desc: 'Placement highlights of SST’s first placement cycle', href: '#outcomes', icon: 'chart' },
+            { title: 'Students', desc: 'Internships and PPOs from the 3rd year', href: '#alumni', icon: 'users' },
+            { title: 'Team & mentors', desc: 'Entrepreneurs and AI builders who lead SST', href: '#founders', icon: 'rocket' },
           ],
         },
         {
           title: 'How you learn',
           items: [
-            { title: 'Live consulting projects', desc: 'With actual companies, from brief to boardroom', href: '#experience', icon: 'briefcase' },
-            { title: 'Challenges', desc: 'Sell on the street, launch a live D2C brand', href: '#challenges', icon: 'target' },
-            { title: 'People & faculty', desc: 'Leaders across strategy, product and marketing', href: '#people', icon: 'chalkboard' },
+            { title: 'Learn by building', desc: '50+ projects and a year of industry immersion', href: '#experience', icon: 'briefcase' },
+            { title: 'Hackathons', desc: 'Monthly hackathons, ICPC and global contests', href: '#challenges', icon: 'target' },
+            { title: 'Super mentors', desc: 'Built and delivered by 100+ industry leaders', href: '#people', icon: 'chalkboard' },
           ],
         },
       ],
-      footer: { text: 'Applications are open for the next cohort.', sub: '18 months · Bengaluru campus · 150 seats', cta: { label: 'Apply now', href: APPLY } },
+      footer: { text: 'Applications are closed for the 2026 batch.', sub: '4-year UG programmes · Bangalore campus', cta: { label: 'Join Waitlist', href: APPLY } },
     },
     {
-      label: 'Programme',
+      label: 'Programmes',
       groups: [
         {
           title: 'Curriculum',
           items: [
-            { title: 'Five terms', desc: 'Learn the principles, make a sale, launch a brand', href: '#curriculum', icon: 'book' },
-            { title: 'AI journey', desc: '150+ hours, 25+ tools, three hackathons', href: '#ai', icon: 'sparkle' },
-            { title: 'Career prep', desc: 'Running parallel from Month 1', href: '#career', icon: 'compass' },
+            { title: 'Computer Science & AI', desc: 'Advanced CS, AI/ML and system design', href: '#curriculum', icon: 'book' },
+            { title: 'AI & Business', desc: 'CS, AI/ML, product thinking and business strategy', href: '#ai', icon: 'sparkle' },
+            { title: 'Career prep', desc: 'Internships from the 2nd year', href: '#career', icon: 'compass' },
           ],
         },
         {
           title: 'Beyond the classroom',
           items: [
-            { title: 'Internship', desc: 'A 3–6 month internship with industry', href: '#internship', icon: 'buildings' },
-            { title: 'Innovation lab', desc: 'Ventures from the wider lab community', href: '#innovation', icon: 'flask' },
+            { title: 'Internship', desc: '96.3% of eligible students got an internship offer', href: '#internship', icon: 'buildings' },
+            { title: 'Innovation lab', desc: 'India’s only deep-tech lab for undergraduates', href: '#innovation', icon: 'flask' },
             { title: 'Admissions', desc: 'How to apply and what happens next', href: '#admissions', icon: 'door' },
           ],
         },
       ],
-      footer: { text: 'See the whole programme in one place.', sub: 'The PGP in Management & Technology brochure', cta: { label: 'Download brochure', href: 'https://www.scaler.com/school-of-business/' } },
+      footer: { text: 'Explore the programmes and choose your best fit.', sub: 'Computer Science & AI · AI & Business', cta: { label: 'Explore Programmes', href: SST } },
     },
   ],
   links: [
     { label: 'Outcomes', href: '#outcomes' },
     { label: 'Admissions', href: '#admissions' },
   ],
-  secondary: { label: 'Download brochure', href: 'https://www.scaler.com/school-of-business/', icon: 'download' },
-  primary: { label: 'Apply now', href: APPLY },
+  secondary: { label: 'Login', href: 'https://www.scaler.com/users/sign_in/' },
+  primary: { label: 'Join Waitlist', href: APPLY },
   menuLabel: 'Menu',
   closeLabel: 'Close menu',
 };

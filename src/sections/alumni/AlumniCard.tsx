@@ -49,7 +49,7 @@ export function AlumniCard({ alumnus: a, priority = false }: { alumnus: Alumnus;
     <article ref={ref} className="alumni-card" data-in-view={inView || undefined}>
       <img
         className="alumni-card__photo"
-        src={a.photo ? `/alumni/${a.photo}.webp` : '/internship/plate.webp'}
+        src={a.photo ? `/sst/proof/alumni/${a.photo}.webp` : '/internship/plate.webp'}
         alt=""
         width={948}
         height={631}
@@ -63,7 +63,7 @@ export function AlumniCard({ alumnus: a, priority = false }: { alumnus: Alumnus;
           {a.name.split(' ').map((w) => w[0]).slice(0, 2).join('')}
         </span>
       )}
-      <div className="alumni-card__body" data-brand="ssb" data-theme="dark">
+      <div className="alumni-card__body" data-brand="sst" data-theme="dark">
         <div className="flex flex-col gap-2">
           <p className="alumni-card__name" data-part="title">
             {a.name}
@@ -79,7 +79,7 @@ export function AlumniCard({ alumnus: a, priority = false }: { alumnus: Alumnus;
               <img src={a.company.src} alt="" loading="lazy" />
             </span>
             <span>
-              <span className="alumni-card__label">Post SSB</span>
+              <span className="alumni-card__label">Offer from</span>
               <span className="alumni-card__value">{a.company.name}</span>
             </span>
           </div>
@@ -92,7 +92,7 @@ export function AlumniCard({ alumnus: a, priority = false }: { alumnus: Alumnus;
               <BriefcaseIcon />
             </span>
             <span>
-              <span className="alumni-card__label">Pre SSB</span>
+              <span className="alumni-card__label">At SST</span>
               <span className="alumni-card__value">{a.before}</span>
             </span>
           </div>

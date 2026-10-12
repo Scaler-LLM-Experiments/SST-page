@@ -52,7 +52,7 @@ export async function HeroV2({
   return (
     <HeroV2Motion moment={moment}>
       {/* Pulled up under the site navbar (--sn-h, its height), so the film runs behind its frosted glass. */}
-      <div data-brand="ssb" data-theme="dark" className="-mt-(--sn-h) bg-page text-content">
+      <div data-brand="sst" data-theme="dark" className="-mt-(--sn-h) bg-page text-content">
         <Splash />
 
         {/* The scroll track for the video moment: tall, with the hero stuck under the nav
@@ -75,7 +75,7 @@ export async function HeroV2({
             {/* The light page, faded in behind the video once it has opened (desktop scroll only). */}
             <div
               data-hero-light
-              data-brand="ssb"
+              data-brand="sst"
               data-theme="light"
               aria-hidden="true"
               className="pointer-events-none invisible absolute inset-0 bg-page opacity-0"

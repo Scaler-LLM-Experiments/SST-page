@@ -163,7 +163,7 @@ export async function PlacementsShowcase({
                   ))}
                   <span className="pl-app-frost" />
                 </div>
-                <p className="pl-v3-title">Companies that have visited Scaler School of Business</p>
+                <p className="pl-v3-title">Companies on campus to hire</p>
                 <div className="pl-app-visual">
                   <Drift className="pl-app-drift" tiles={resolved.map((logo) => <LogoTile key={logo.name} logo={logo} large />)} />
                 </div>
@@ -200,19 +200,19 @@ export async function PlacementsShowcase({
             <div className="pl-v3-report">
               {/* the lead's second half, redistributed (2026-10-09): a short line, then where they went */}
               <div className="pl-v3-report-text">
-                <strong>Where the founding cohort landed</strong>
+                <strong>Where SST students landed</strong>
                 <ul>
                   <li>
                     {ICONS.rocket}
-                    Indian startups
+                    AI startups
                   </li>
                   <li>
                     {ICONS.globe}
-                    Global MNCs
+                    Top tech companies
                   </li>
                   <li>
                     {ICONS.sparkle}
-                    Digital-first companies
+                    AI-specific roles
                   </li>
                 </ul>
               </div>
@@ -228,7 +228,7 @@ export async function PlacementsShowcase({
           {/* The cards, with the chips that name them laid over the cards' top left (after the team's
               slideshow card): they stay put as the cards change under them. */}
           <div data-deck className="pl-deck">
-            <ul data-carousel className="pl-fade" aria-label="Who hires from SSB">
+            <ul data-carousel className="pl-fade" aria-label="Who hires from SST">
               {showcases.map((showcase, i) => (
                 <li key={showcase.label} aria-label={`${i + 1} of ${showcases.length}`}>
                   <ShowcaseCard

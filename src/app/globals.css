@@ -24,7 +24,7 @@
    team's call, 2026-10-07. Eyebrows, labels and every other `content-brand` text follow. Light
    theme only: the dark theme's brand text is already a light green. */
 [data-brand='ssb']:not([data-theme='dark']) {
-  --content-brand: var(--color-ssb-light-9);
+  --content-brand: var(--color-sst-light-9);
 }
 
 /* The carousel rows (alumni, faculty, live projects, the impact foundation) start on the page's

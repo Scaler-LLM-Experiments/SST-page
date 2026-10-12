@@ -16,11 +16,13 @@
  * The safety net stays a single line under the fork, never a card (§4.4).
  */
 import * as React from 'react';
-import { Heading, Text } from '@kishanscaler/ssx-ui';
+import { Badge, Button, Heading, Text } from '@kishanscaler/ssx-ui';
 import { ArrowRight, ArrowsIn, CaretDown, CheckCircle, GitFork, Pause, Play } from '@phosphor-icons/react';
 import type { Fork } from './data';
 import { c, type JourneyConfig } from './config';
 import { RoleBadge, Visual } from './atoms';
+import { PHOTOS, photoSet, photoSrc } from './photos';
+import '../../community/community.css'; // the club card's styles (.vc)
 import { PathCard } from './cards';
 import { useLabels } from './parts';
 
@@ -525,10 +527,13 @@ function TransformFork({ fork, cfg, narrow }: { fork: Fork; cfg: JourneyConfig; 
           <Text size="sm" tone="secondary">
             {p.desc}
           </Text>
+          {/* the system's Badge: the founder's points in the brand tint, the roles neutral */}
           <ul className="sj-mt-chips" aria-label={p.title}>
             {[...(p.roles ?? []), ...p.points].map((t, i) => (
               <li key={t} style={{ '--i': i } as React.CSSProperties}>
-                {t}
+                <Badge tone={lane === 'founder' ? 'accent' : 'default'} size="lg">
+                  {t}
+                </Badge>
               </li>
             ))}
           </ul>
@@ -542,10 +547,10 @@ function TransformFork({ fork, cfg, narrow }: { fork: Fork; cfg: JourneyConfig; 
         <Text as="span" size="base" style={{ fontWeight: 600, color: 'var(--content-primary)' }}>
           {fork.intro}
         </Text>
-        <button type="button" className="sj-mt-pause" aria-pressed={paused} onClick={() => setPaused((v) => !v)}>
+        <Button variant="tertiary" size="sm" className="sj-mt-pause" aria-pressed={paused} onClick={() => setPaused((v) => !v)}>
           {paused ? <Play weight="fill" aria-hidden="true" /> : <Pause weight="fill" aria-hidden="true" />}
           {paused ? L.playProjects : L.pauseProjects}
-        </button>
+        </Button>
       </p>
       <div ref={stage} className="sj-mt-stage">
         <div className="sj-mt-in" aria-hidden="true">
@@ -588,6 +593,50 @@ function TransformFork({ fork, cfg, narrow }: { fork: Fork; cfg: JourneyConfig; 
   );
 }
 
+/* ── simple: the club card (VentureCard's markup and styles), one per path ── */
+
+const PATH_TAG: Record<string, string> = { founder: 'Founder', placement: 'Placements' };
+
+/** A path in the campus section's club card: its photo in the square at the left with a glass chip,
+    its title, then its line and its roles and points (the system's Badge) at the foot. */
+function SimplePathCard({ path }: { path: Path }) {
+  const photo = path.image && PHOTOS[path.image] ? path.image : undefined;
+  return (
+    <article className="vc sj-simplepath" data-path={path.id}>
+      <div className="vc-media">
+        <div className="vc-layers" data-part="photo">
+          {photo ? (
+            // eslint-disable-next-line @next/next/no-img-element -- fills its box
+            <img className="vc-photo" src={photoSrc(photo, 640, 640)} srcSet={photoSet(photo, 640, 640)} sizes="(min-width: 672px) 256px, 90vw" alt={PHOTOS[photo].alt} loading="lazy" decoding="async" />
+          ) : null}
+        </div>
+        <span className="vc-tag type-label">{PATH_TAG[path.id] ?? path.title}</span>
+      </div>
+      <div className="vc-body">
+        <div className="vc-head">
+          <div className="vc-title">
+            <Heading as="h4" size="2" data-part="title">
+              {path.title}
+            </Heading>
+          </div>
+        </div>
+        <div className="vc-text sj-simplepath-foot">
+          <Text size="sm" tone="secondary" data-part="description">
+            {path.desc}
+          </Text>
+          <ul className="sj-simplepath-chips" aria-label={path.title}>
+            {[...(path.roles ?? []), ...path.points].map((t) => (
+              <li key={t}>
+                <Badge tone={path.id === 'founder' ? 'accent' : 'default'}>{t}</Badge>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 /* ── the block ────────────────────────────────────────────────────────────── */
 
 export function ForkPaths({ fork, cfg, width }: { fork: Fork; cfg: JourneyConfig; width: number }) {
@@ -618,7 +667,7 @@ export function ForkPaths({ fork, cfg, width }: { fork: Fork; cfg: JourneyConfig
             <SplitFork fork={fork} cfg={cfg} />
           ) : (
             <div className="sj-fork-paths" data-style={style}>
-              {fork.paths.map((p) => (style === 'cover' ? <PathCover key={p.id} path={p} cfg={cfg} /> : <PathCard key={p.id} path={p} cfg={cfg} />))}
+              {fork.paths.map((p) => (style === 'cover' ? <PathCover key={p.id} path={p} cfg={cfg} /> : style === 'simple' ? <SimplePathCard key={p.id} path={p} /> : <PathCard key={p.id} path={p} cfg={cfg} />))}
             </div>
           )}
         </>

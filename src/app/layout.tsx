@@ -28,13 +28,13 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Scaler School of Business',
-  description: 'SSB home page design exploration, built on the Scaler Design System.',
+  title: 'Scaler School of Technology',
+  description: 'SST home page design exploration, built on the Scaler Design System.',
 };
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="en" data-brand="ssb" className={`${sans.variable} ${sansItalic.variable} ${mono.variable}`}>
+    <html lang="en" data-brand="sst" className={`${sans.variable} ${sansItalic.variable} ${mono.variable}`}>
       <body>{children}</body>
     </html>
   );

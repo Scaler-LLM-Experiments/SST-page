@@ -63,7 +63,7 @@ export async function PlacementsStories({
           />
         </Container>
 
-        <ul data-carousel className="pl-carousel" aria-label="Who hires from SSB">
+        <ul data-carousel className="pl-carousel" aria-label="Who hires from SST">
           {stories.map((story, i) => (
             <li key={story.title} aria-label={`${i + 1} of ${stories.length}`}>
               <StoryCard

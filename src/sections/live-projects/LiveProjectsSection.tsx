@@ -20,12 +20,12 @@ import '@/sections/faculty/story-card.css';
 import './live-projects.css';
 
 const PROJECTS: Project[] = [
-  { company: 'Mokobara', title: 'International expansion', desc: 'Design the APAC strategy for a ₹200Cr business and pitch to its founders.', image: 'mokobara' },
-  { company: 'AJIO', title: 'Product teardown', desc: 'Map conversion friction from discovery and search to product page and checkout.', image: 'ajio' },
-  { company: 'Practo', title: 'Healthcare growth', desc: 'Grow healthcare GMV across primary, secondary and tertiary care.', image: 'practo' },
-  { company: 'Meolaa', title: 'Launch strategy', desc: 'Build onboarding flows, brand campaigns and an app-launch roadmap.', image: 'meolaa' },
-  { company: 'Quenzy', title: 'Product-market fit', desc: 'Build a PMF and go-to-market strategy across culture, distribution and positioning.', image: 'quenzy' },
-  { company: 'StockGro', title: 'Stockathon', desc: 'Trade in a live mock-market simulation under real market conditions.', image: 'stockgro' },
+  { company: 'Year 1 · Flagship', title: 'E-commerce Challenge', desc: 'Build and scale a tech-enabled e-commerce business.', image: 'ajio' },
+  { company: 'Year 1', title: 'Database schema design', desc: 'Design the database schema for apps like Instagram, Amazon or MakeMyTrip.', image: 'mokobara' },
+  { company: 'Year 2 · Flagship', title: 'Startup Weekend Challenge', desc: 'Build and ship a working product in 48 hours.', image: 'meolaa' },
+  { company: 'Year 2', title: 'IPL performance prediction', desc: 'Use statistical methods to predict player performance.', image: 'stockgro' },
+  { company: 'Year 3 · Flagship', title: 'Real-world industry projects', desc: 'Solve real business problems of companies using AI.', image: 'practo' },
+  { company: 'Year 3', title: 'GTM Strategy Challenge', desc: 'Launch a real tech product and take it to market.', image: 'quenzy' },
 ];
 
 type Project = { company: string; title: string; desc: string; /** a file name in public/live-projects, without the extension */ image?: string };
@@ -78,10 +78,10 @@ export function LiveProjectsSection() {
               Live projects
             </Heading>
             <Heading as="h2" size="display" id="live-projects-title" data-enter="headline">
-              Live Consulting Projects With Actual Companies.
+              50+ Real-World Projects Across 4 Years.
             </Heading>
             <Text size="lg" tone="secondary" data-enter="sub">
-              Work through briefs with founders and operators, then defend your recommendations.
+              Build products, ship them to real users and solve industry-sourced problems, from your first business to AI systems for real companies.
             </Text>
           </div>
         </div>

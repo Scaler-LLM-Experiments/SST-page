@@ -38,7 +38,7 @@ export function BeyondPlacementsSection() {
   return (
     <RowSection
       id="beyond"
-      title="Companies built by SSB students"
+      title="Companies built by SST students"
       heading={
         <Heading as="h2" size="display" id="beyond-title" data-enter="headline" className="bp-turn">
           <span className="block">{c.turn.setup}</span>

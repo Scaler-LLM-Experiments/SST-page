@@ -23,8 +23,8 @@ export function FaqSection() {
               Frequently Asked Questions
             </Heading>
             <Text size="lg" tone="secondary" data-enter="sub">
-              Answers to what applicants ask most about the degree, eligibility, the programme and the
-              internship.
+              Answers to what applicants ask most about SST, the two programmes, NSET and
+              scholarships.
             </Text>
           </div>
 

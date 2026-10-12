@@ -116,7 +116,7 @@ export function BottomNav() {
   return (
     <>
       {/* desktop and tablet: the bar and the call-back */}
-      <div className="bn" data-shown={(shown && !inRail) || undefined} data-brand="ssb" data-theme="light">
+      <div className="bn" data-shown={(shown && !inRail) || undefined} data-brand="sst" data-theme="light">
         <nav className="bn-bar" aria-label={bottomNav.label}>
           <ul ref={list} className="bn-list">
           {bottomNav.items.map((item, i) => (
@@ -143,7 +143,7 @@ export function BottomNav() {
       </div>
 
       {/* phones: a thin strip of the sections under the navbar */}
-      <nav className="bn-strip" data-shown={shown || undefined} aria-label={bottomNav.label} data-brand="ssb" data-theme="light">
+      <nav className="bn-strip" data-shown={shown || undefined} aria-label={bottomNav.label} data-brand="sst" data-theme="light">
         <ul ref={strip} className="bn-strip-list">
           {bottomNav.items.map((item, i) => (
             <li key={item.target}>
@@ -167,7 +167,7 @@ export function BottomNav() {
         href={bottomNav.callback.href}
         aria-label={bottomNav.callback.label}
         data-shown={shown || undefined}
-        data-brand="ssb"
+        data-brand="sst"
         data-theme="light"
         tabIndex={shown ? undefined : -1}
       >
@@ -175,7 +175,7 @@ export function BottomNav() {
       </a>
 
       {/* phones: the sticky apply bar, Apply now over the icon tabs */}
-      <div className="bn-apply" data-shown={shown || undefined} data-brand="ssb" data-theme="light">
+      <div className="bn-apply" data-shown={shown || undefined} data-brand="sst" data-theme="light">
         <Button asChild variant="primary" size="md" className="bn-apply-btn">
           <a href={SSB_FOOTER.cta.primary.href} tabIndex={shown ? undefined : -1}>
             {bottomNav.apply.label}

@@ -32,11 +32,11 @@ import './internship.css';
 // the figure with its unit a step down in grey, what it measures, and a short line.
 // Three levels a box, as Placements' cohort boxes (2026-10-07): eyebrow, figure, caption.
 const STATS = [
-  { eyebrow: 'Internship placement', figure: ['', '100', '%'], label: 'Internship placement', caption: 'Across cohorts 1 and 2' },
-  { eyebrow: 'Top roles', figure: ['', '52', '%+'], label: 'In Product and Founder’s Office', caption: 'In Product and Founder’s Office' },
-  { eyebrow: 'Duration', figure: ['', '3–6', ' months'], label: 'Months of internship', caption: 'Of internship, within the PGP' },
+  { eyebrow: 'Internship offers', figure: ['', '96.3', '%'], label: 'Internship offers', caption: 'Of eligible students got at least 1 internship role' },
+  { eyebrow: 'Highest stipend', figure: ['₹', '2L', '/month'], label: 'Highest stipend', caption: 'SST’s highest internship stipend, in just 2nd year' },
+  { eyebrow: 'Global internships', figure: ['', '12', ''], label: 'Global internships', caption: 'In Bali, Singapore, New York, Germany and more' },
 ];
-const FUNCTIONS = ['Product', 'Founder’s Office', 'Marketing', 'Finance', 'Operations', 'Strategy'];
+const FUNCTIONS = ['Software Engineering', 'AI/ML', 'Product', 'Data Science', 'Founder’s Office'];
 
 // [name, from company, from role, to company, to role]
 const PIVOTS: [string, string, string, string, string][] = [
@@ -55,11 +55,12 @@ const PIVOTS: [string, string, string, string, string][] = [
 // live page lists them in. `video` is the story's link once it is known; a cover without one
 // is not a link.
 const STORIES: { name: string; line: string; cover: string; video?: string; clip?: string }[] = [
-  { name: 'Akarsh', line: 'Created a GTM strategy for BSLR Technologies', cover: 'akarsh' },
-  { name: 'Yukthi', line: 'Career pivot from operations to strategy', cover: 'yukthi' },
-  { name: 'Moh', line: 'Building a Shark Tank funded startup', cover: 'moh' },
-  { name: 'Ayush', line: 'From CA to private equity', cover: 'ayush' },
-  { name: 'Yash', line: 'From fintech intern to Founder’s Office', cover: 'yash' },
+  { name: 'Ananya Srivastava', line: '3rd Year · Internship + PPO at Wealthy', cover: 'ananya-srivastava' },
+  { name: 'Shubh Kesharwani', line: '3rd Year · Internship + PPO at Tasket', cover: 'shubh-kesharwani' },
+  { name: 'Abhishek Kumar Shah', line: '3rd Year · Internship + PPO at Emergent', cover: 'abhishek-kumar-shah' },
+  { name: 'Divyanshu Pandey', line: '3rd Year · Internship + PPO at Mamaearth', cover: 'divyanshu-pandey' },
+  { name: 'Loukik Thatte', line: '3rd Year · Internship + PPO at Manifest AI', cover: 'loukik-thatte' },
+  { name: 'Siva Rama Gogineni', line: '3rd Year · Internship + PPO at 1Pharmacy Network', cover: 'siva-rama-gogineni' },
 ];
 
 // The stories as shorts (2026-10-09). PLACEHOLDER: no learner's short is in the project yet, so each
@@ -67,18 +68,16 @@ const STORIES: { name: string; line: string; cover: string; video?: string; clip
 const REELS: Reel[] = STORIES.map((s, i) => ({
   name: s.name,
   line: s.line,
-  clip: s.clip ?? '/media/campus-film.mp4',
+  clip: s.clip ?? '/sst/hero/hero.mp4',
   start: s.clip ? 0 : i * 3,
-  poster: s.clip ? undefined : '/media/campus-film-poster.jpg',
+  poster: s.clip ? undefined : '/sst/hero/hero-poster.jpg',
 }));
 
 // Where learners have interned: the live site's grid ("Our Learners are now creating Impact at",
 // scaler.com/school-of-business), cut into its 24 logos (public/internship/logos), in the order given.
 const COMPANIES = [
-  'BCCI', 'Emergent', 'BharatPe', 'The Whole Truth', 'Razorpay', 'apna',
-  'LoEstro', 'Airtribe', 'Slikk', 'MPL', 'Neosapien', 'Ninjacart',
-  'BorderPlus', 'Chai Point', 'ToolJet', 'Vaani', 'Onsurity', 'FirstClub',
-  'Clientell', 'LimeChat', 'Reckitt', 'Aeos Labs', 'SpotDraft', 'WNS Vuram',
+  'Amazon', 'Rippling', 'Media.net', '1Pharmacy Network', 'Slice', 'Emergent',
+  'Wealthy', 'Tasket', 'Manifest AI', 'Mamaearth', 'Zeta', 'Google',
 ];
 
 // pictures in the alumni card's style (public/alumni: the person on the left, a dark blur on the right)
@@ -170,7 +169,7 @@ function LearnerCard({ card }: { card: Card }) {
             {MARKS[card.pivot[3]] ? <img src={MARKS[card.pivot[3]].src} alt="" loading="lazy" /> : card.pivot[3][0]}
           </span>
           <span>
-            <span className="alumni-card__label">Post SSB</span>
+            <span className="alumni-card__label">Post SST</span>
             <span className="alumni-card__value">{card.pivot[3]}</span>
           </span>
         </div>
@@ -183,7 +182,7 @@ function LearnerCard({ card }: { card: Card }) {
             <Briefcase />
           </span>
           <span>
-            <span className="alumni-card__label">Pre SSB</span>
+            <span className="alumni-card__label">Pre SST</span>
             <span className="alumni-card__value">
               {card.pivot[2]}, {card.pivot[1]}
             </span>
@@ -210,7 +209,7 @@ function LearnerCard({ card }: { card: Card }) {
           </span>
         </>
       )}
-      <div className="alumni-card__body" data-brand="ssb" data-theme="dark">
+      <div className="alumni-card__body" data-brand="sst" data-theme="dark">
         {body}
       </div>
     </>
@@ -319,13 +318,13 @@ export function InternshipSection() {
       <Container>
         <div data-enter="header" className="mb-10 flex max-w-(--size-measure-max) flex-col gap-3 sm:mb-12">
           <Heading as="p" size="eyebrow" className="text-content-brand" data-enter="eyebrow">
-            The internship
+            Internships
           </Heading>
           <Heading as="h2" size="display" id="internship-title" data-enter="headline">
-            Every Learner Interns. Many Change Lanes.
+            Exceptional Internship Results in Just 2nd Year.
           </Heading>
           <Text size="lg" tone="secondary" data-enter="sub">
-            The PGP includes a three-to-six-month internship across business functions.
+            Audited by B2K Analytics: 96.3% of eligible students have at least one internship offer, and 150+ companies have hired SST students.
           </Text>
         </div>
 
@@ -348,7 +347,7 @@ export function InternshipSection() {
           ))}
         </ul>
         <Text size="sm" tone="secondary" className="in-functions-line" data-fade>
-          Roles across {FUNCTIONS.slice(0, -1).join(', ')} and {FUNCTIONS[FUNCTIONS.length - 1]}.
+          Interns at 150+ companies, in roles across {FUNCTIONS.slice(0, -1).join(', ')} and {FUNCTIONS[FUNCTIONS.length - 1]}.
         </Text>
 
         <div className="in-carousel" data-fade>
@@ -356,13 +355,13 @@ export function InternshipSection() {
             Success stories
           </Heading>
           {/* shorts, in a reel row (2026-10-09); the card stack (<Stories />) was here */}
-          <StoryReels reels={REELS} label="Learners: success stories" />
+          <StoryReels reels={REELS} label="Students: success stories" />
         </div>
 
         {/* where they interned: the Placements grid's logo frame, one logo to a cell */}
         <div className="in-companies" data-fade>
           <Heading as="h3" size="eyebrow" className="mb-4 text-content-secondary">
-            Our learners are now creating impact at
+            Internships, PPOs and companies on campus to hire
           </Heading>
           <LogoGrid />
         </div>

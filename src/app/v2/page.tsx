@@ -27,7 +27,7 @@ import {
 } from '@/sections/community/CommunitySections';
 import { WhySection } from '@/sections/why/WhySection';
 
-export const metadata: Metadata = { title: 'V2 hero · SSB home page lab' };
+export const metadata: Metadata = { title: 'Scaler School of Technology · SST home page lab' };
 
 /**
  * The home page, assembled, in the agreed sequence: the hero (first fold), placements, Why SSB
@@ -44,7 +44,7 @@ export default function V2Page() {
   return (
     <FooterShell>
       {/* The site is light; only the hero is dark (HeroV2 is its own dark island). */}
-      <main data-brand="ssb" data-theme="light" className="bg-page text-content">
+      <main data-brand="sst" data-theme="light" className="bg-page text-content">
         {/* re-measures the sections' scroll entrances when the curriculum arrives and moves them */}
         <ScrollRefresh />
         {/* 1 first fold, in the chosen variant. Cinematic: the site navbar in the hero's nav slot, dark
@@ -55,7 +55,8 @@ export default function V2Page() {
         {/* the framed film (scroll moment, caption, play button) hidden for now (2026-10-09); drop moment={false} to bring it back */}
         <HeroV2 {...hero} moment={false} />
         {/* 2 placements (main's showcase take) */}
-        <PlacementsShowcase {...placements} />
+        {/* Placements pinned to version C (stats + logos), no switch: as /v3 */}
+        <PlacementsShowcase {...placements} fixed="v3" />
         {/* why SSB (deck slide 4) */}
         {/* The "He’s right about the old MBA" turn and its Build / Grow cards hidden for now (2026-10-09);
             drop answer={false} to bring them back. The breaker above them stays. */}
@@ -92,7 +93,7 @@ export default function V2Page() {
         {/* innovation lab */}
         <InnovationLabSection />
         {/* the founding team and investors */}
-        <PeopleTabsSection groups={['founding', 'investors']} id="founders" label="The team and backers behind SSB" />
+        <PeopleTabsSection groups={['founding', 'investors']} id="founders" label="The team behind SST" />
         {/* campus life, then in the news (deck p24, p25) */}
         <CampusLifeSection />
         <InTheNewsSection />

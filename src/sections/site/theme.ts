@@ -13,7 +13,7 @@ const subscribe = (onChange: () => void) => {
 const readOnServer = () => undefined;
 
 /**
- * The theme on <html>, kept live. Parts that carry `data-brand="ssb"` must
+ * The theme on <html>, kept live. Parts that carry `data-brand="sst"` must
  * repeat it as their own `data-theme`: the brand rule re-declares the light
  * tokens on that element, so an ancestor's dark theme would not reach inside.
  */

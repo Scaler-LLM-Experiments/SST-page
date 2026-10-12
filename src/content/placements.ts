@@ -1,268 +1,130 @@
 import type { PlacementsContent } from '@/sections/placements/types';
 
-// Section 2 content, from "SSB Website vF _ Sep'26", slide 3. The description is ours
-// (2026-10-01), for the team to replace. Recruiter names are the deck's, shortened
-// to the brand people know ("Edelweiss Financial Services" → "Edelweiss").
+// Section 2 content, from the live SST page's "Placement Highlights" (scaler.com/school-of-technology,
+// read 2026-10-12): the first ever placement cycle's four figures, the "Companies On campus to hire"
+// strip, the Internship + PPO students and the internship report. Card copy is ours, restating
+// those figures.
+
+/** The companies on the live site's "Companies On campus to hire" strip (one file each), then
+ *  Emergent (15+ SST students joined it as founding engineers, the live site's headline). */
+const CAMPUS = [
+  { name: 'Amazon', logoUrl: '/sst/proof/campus-logos/amazon.png', ink: 0.37 },
+  { name: 'Rippling', logoUrl: '/sst/proof/campus-logos/rippling.png', ink: 0.32 },
+  { name: 'Media.net', logoUrl: '/sst/proof/campus-logos/media-net.png', ink: 0.39 },
+  { name: '1Pharmacy Network', logoUrl: '/sst/proof/campus-logos/1pharmacy-network.png', ink: 0.22 },
+  { name: 'slice', logoUrl: '/sst/proof/campus-logos/slice.png', ink: 0.43 },
+  { name: 'Wealthy', logoUrl: '/sst/proof/campus-logos/wealthy.png', ink: 0.27 },
+  { name: 'Tasket', logoUrl: '/sst/proof/campus-logos/tasket.png', ink: 0.4 },
+  { name: 'Manifest AI', logoUrl: '/sst/proof/campus-logos/manifest-ai.png', ink: 0.44 },
+  { name: 'Mamaearth', logoUrl: '/sst/proof/campus-logos/mamaearth.png', ink: 0.48 },
+  { name: 'Zeta', logoUrl: '/sst/proof/campus-logos/zeta.png', ink: 0.44 },
+  { name: 'Emergent', logoUrl: '/sst/proof/logos/emergent.webp', ink: 0.19 },
+];
 
 export const placements: PlacementsContent = {
-  eyebrow: 'Outcomes',
-  title: 'Placement Highlights.',
-  description: 'Reported outcomes for SSB’s founding PGP cohort.',
-  // Ours (2026-10-01), from the deck's figures (87% switched, a 3.2× average hike), for the team to replace.
-  lead: 'Reported outcomes for SSB’s founding PGP cohort. They joined Indian startups, global MNCs and digital-first companies, most of them in a new industry or role, earning on average 3.2 times what they did before SSB.',
-  // Labels are the deck's. Descriptions are ours (2026-10-01), restating the deck's figures; for the
-  // team to replace.
+  eyebrow: 'Placement Highlights',
+  title: 'Offers came in, before the placement season started.',
+  description: 'Top tech companies that hire from IITs & NITs are already hiring from SST.',
+  // The live site's line, then ours: the showcase shows the first sentence, version C the rest.
+  lead: 'Top tech companies that hire from IITs & NITs are already hiring from SST. Reported outcomes from SST’s first ever placement cycle, with offers made before the placement season officially opened.',
+  // The live site's four figures and labels; the descriptions restate them.
   stats: [
-    { value: '₹19L', label: 'Average CTC', description: 'Top quartile: ₹25.7L.', icon: 'currency' },
-    {
-      value: '3.2×',
-      label: 'Average hike vs. pre-SSB',
-      description: 'On what students earned before SSB.',
-      icon: 'trend',
-    },
-    {
-      value: '87%',
-      label: 'Switched industries or roles',
-      description: 'A new industry, a new role, or both.',
-      icon: 'switch',
-    },
-    {
-      value: '55%+',
-      label: 'In digital & AI-first roles',
-      description: 'More than half the founding cohort.',
-      icon: 'sparkle',
-    },
+    { value: '₹44L', label: 'Highest CTC via PPO', description: 'Before placement season officially opens.', icon: 'currency' },
+    { value: '₹21 LPA', label: 'Average CTC', description: 'SST’s first ever placement cycle.', icon: 'trend' },
+    { value: '36%', label: 'Batch obtained offers', description: 'Before the season officially opened.', icon: 'switch' },
+    { value: '55%+', label: 'AI-specific roles', description: 'More than half the offers made.', icon: 'sparkle' },
   ],
-  // The first card's copy is the team's sketch (2026-10-01); the rest is ours. PLACEHOLDER claims,
-  // to check before this goes anywhere near production: the deck lists 62 recruiters, about 43 of
-  // them startups, so "50+" needs a source (or "40+"); the cities are the team's.
+  // The stories variation (no route renders it): the same claims as cards.
   stories: [
     {
-      kicker: 'Startups',
-      title: 'Top 50+ startups are hiring from SSB.',
-      description: 'Startups from Bengaluru, Hyderabad and beyond are picking candidates from SSB.',
-      logos: [
-        'Swiggy',
-        'Razorpay',
-        'Zomato',
-        'Zepto',
-        'Blinkit',
-        'PhonePe',
-        'Groww',
-        'Urban Company',
-        'Lenskart',
-        'BharatPe',
-        'Pine Labs',
-        'BigBasket',
-        'Myntra',
-        'Flipkart',
-        'OYO',
-        'Vedantu',
-      ],
+      kicker: 'On campus',
+      title: 'Top tech companies are on campus to hire.',
+      description: 'Companies that hire from IITs & NITs are already hiring from SST.',
+      logos: ['Amazon', 'Rippling', 'Media.net', 'slice', 'Zeta', 'Wealthy', 'Tasket', 'Manifest AI'],
     },
     {
-      kicker: 'Global firms',
-      title: 'MNCs recruit from SSB, too.',
-      description: 'Amazon, Goldman Sachs, EY, Nomura and Samsung hired from the founding cohort.',
-      logos: ['Amazon', 'Goldman Sachs', 'EY', 'Nomura', 'Samsung', 'Uber', 'ArcelorMittal', 'Zendesk'],
+      kicker: 'AI startups',
+      title: '15+ SST students joined Emergent as founding engineers.',
+      description: 'From Day Zero, at a startup that recently raised $70M: part of the core building team.',
+      logos: ['Emergent', 'Manifest AI', 'Tasket', '1Pharmacy Network', 'Mamaearth', 'Wealthy'],
     },
     {
-      kicker: 'Career switch',
-      title: '87% switched industries or roles.',
-      description: 'Engineers, analysts and founders moved into growth, strategy and partnerships roles.',
+      kicker: 'Internship + PPO',
+      title: 'Internships that turned into offers.',
+      description: '3rd-year students placed through internships and pre-placement offers.',
       roles: true,
     },
     {
-      kicker: 'Placement report',
+      kicker: 'Internship report',
       title: 'Every number, audited.',
-      description: 'The founding PGP cohort’s placements, company by company, in one audited report.',
-      // A still from the campus film, until the team's asset arrives.
-      imageUrl: '/media/campus-students.webp',
-      imageAlt: 'Students walking on the SSB campus in Bengaluru',
-      ctaLabel: 'Download the report',
+      description: 'SST’s internship report, audited by B2K Analytics, auditor for IIM Ahmedabad, XLRI and MDI Gurgaon.',
+      imageUrl: '/sst/proof/peers/classroom.webp',
+      imageAlt: 'SST students at work in a classroom',
+      ctaLabel: 'Download Report',
       ctaIcon: 'download',
-      // PLACEHOLDER: the report's link.
-      ctaHref: '#',
+      // PLACEHOLDER: the live site's button opens a form
+      ctaHref: 'https://www.scaler.com/school-of-technology/career-outcomes/',
     },
   ],
-  reportLabel: 'Download placement report',
-  // PLACEHOLDER: the report's link.
-  reportHref: '#',
-  // The cards' copy is ours (2026-10-01), from the team's sketch ("Top 50+ startups are hiring from
-  // us", "startups from Bengaluru, Hyderabad are picking candidates from us"); photos are stills from
-  // the campus film until the team's arrive. PLACEHOLDER figures, to check before this goes anywhere
-  // near production: the deck lists 62 recruiters, about 43 of them startups, so "50+" needs a source
-  // (or "40+"); "10+" MNCs is our count of the deck's list. 55%+ is the deck's.
-  // After the App Store's Today cards: a city, fading into the card's grey. Photos are CC0, from
-  // Wikimedia Commons (public/media/CREDITS.md); the entrance is a still from the campus film.
+  reportLabel: 'Download SST Internship Report 2026',
+  // PLACEHOLDER: the live site's button opens a form
+  reportHref: 'https://www.scaler.com/school-of-technology/career-outcomes/',
+  // The cards: SST's own photos (the live site's classroom band and campus photos).
   showcases: [
     {
-      label: 'Indian startups',
+      label: 'On campus',
       icon: 'rocket',
-      // The title reads on from the figure: "50+ startups from Bengaluru…".
-      // the team's figures (2026-10-09), in place of the startup / MNC / AI-role counts
-      statValue: '₹25.7L',
-      title: 'Top-quartile average CTC.',
-      logos: ['Swiggy', 'Zomato', 'Zepto', 'Blinkit', 'Razorpay', 'PhonePe', 'Urban Company', 'Lenskart'],
-      imageUrl: '/media/bengaluru-vidhana-soudha-1280.webp',
-      imageSrcSet:
-        '/media/bengaluru-vidhana-soudha-1280.webp 1280w, /media/bengaluru-vidhana-soudha-2560.webp 2560w',
-      imageAlt: 'Vidhana Soudha, Bengaluru',
-      imagePosition: 'center 75%',
+      statValue: '₹44L',
+      title: 'Highest CTC offered via the PPO route.',
+      logos: ['Amazon', 'Rippling', 'Media.net', 'slice', 'Zeta', 'Wealthy', 'Tasket', 'Manifest AI'],
+      imageUrl: '/sst/proof/peers/classroom.webp',
+      imageSrcSet: '/sst/proof/peers/classroom.webp 1600w',
+      imageAlt: 'SST students at work in a classroom',
+      imagePosition: 'center 40%',
     },
     {
-      label: 'Global MNCs',
+      label: 'Top tech companies',
       icon: 'globe',
-      statValue: '3.2x',
-      title: 'Average hike vs. pre-SSB.',
-      logos: ['Amazon', 'Goldman Sachs', 'EY', 'Nomura', 'Samsung', 'Uber', 'Zendesk', 'ArcelorMittal'],
-      imageUrl: '/media/san-francisco-golden-gate-1280.webp',
-      imageSrcSet:
-        '/media/san-francisco-golden-gate-1280.webp 1280w, /media/san-francisco-golden-gate-2560.webp 2560w',
-      imageAlt: 'The Golden Gate Bridge, San Francisco',
-      imagePosition: 'center 40%',
+      statValue: '₹21 LPA',
+      title: 'Average CTC.',
+      logos: ['Emergent', 'Amazon', 'Mamaearth', '1Pharmacy Network', 'Manifest AI', 'Wealthy', 'Tasket', 'Rippling'],
+      imageUrl: '/sst/community/campus/campus-1.webp',
+      imageSrcSet: '/sst/community/campus/campus-1.webp 1600w',
+      imageAlt: 'SST students walking across the Bangalore campus',
+      imagePosition: 'center 35%',
     },
     {
       label: 'AI-first roles',
       icon: 'sparkle',
-      statValue: '87%',
-      title: 'Switched industries or roles.',
+      statValue: '55%+',
+      title: 'Of offers in AI-specific roles.',
       roles: true,
-      imageUrl: '/media/campus-entrance-1280.webp',
-      imageSrcSet: '/media/campus-entrance-1280.webp 1280w, /media/campus-entrance-1920.webp 1920w',
-      imageAlt: 'The entrance of Scaler School of Business',
-      imagePosition: 'center 30%',
+      imageUrl: '/sst/community/campus/campus-4.webp',
+      imageSrcSet: '/sst/community/campus/campus-4.webp 1600w',
+      imageAlt: 'SST students working together on laptops on campus',
+      imagePosition: 'center 40%',
     },
   ],
-  // From the deck's "Strong Alumni Base" (page 5): where six alumni moved, plus two from "Beyond
-  // Placements". Real, but only Emergent is an AI company: for "AI titles", the team has to supply them.
+  // The live site's "Internship + PPO Highlights": 3rd-year students and the companies on their cards
+  // (no role titles on the site, so each tile names the student).
   roles: [
-    { role: 'Growth Marketing', company: 'Emergent' },
-    { role: 'Sr. Strategy Manager', company: 'Urban Company' },
-    { role: 'Asst. Program Manager', company: 'Blinkit' },
-    { role: 'Partnerships', company: 'Razorpay' },
-    { role: 'Investment Advisor', company: 'Avendus' },
-    { role: 'Growth Manager', company: 'Ninjacart' },
-    { role: 'Brand Marketing', company: 'The Whole Truth' },
-    { role: 'Growth Marketing', company: 'BharatPe' },
+    { role: 'Ananya Srivastava', company: 'Wealthy' },
+    { role: 'Shubh Kesharwani', company: 'Tasket' },
+    { role: 'Abhishek Kumar Shah', company: 'Emergent' },
+    { role: 'Divyanshu Pandey', company: 'Mamaearth' },
+    { role: 'Loukik Thatte', company: 'Manifest AI' },
+    { role: 'Ajai Sharan Velmurugan', company: 'Wealthy' },
+    { role: 'Siva Rama Gogineni', company: '1Pharmacy Network' },
+    { role: 'Ayush Kesharwani', company: 'Wealthy' },
   ],
-  // The team's line (2026-10-06). PLACEHOLDER figure: the deck lists 62 recruiters; "200+" needs a
-  // source before this goes anywhere near production.
-  // Feedback, 2026-10-06: the highlights split by cohort. TO CONFIRM: Cohort 2's final figure
-  // (the note said ₹23-24 LPA).
-  // The two cohort boxes are off the page (2026-10-09, the team's ask); their figures were Cohort 1
-  // ₹19 LPA and Cohort 2 ₹23–24 LPA (Average CTC).
   cohorts: [],
-  // Version C's card (the team, 2026-10-12): the two cohorts' figures in place of "87% switched
-  // industries or roles". TO CONFIRM: Cohort 2's final figure (the note said ₹23-24 LPA).
+  // Version C's card: the other two figures in place of the last showcase's.
   v3Cohorts: [
-    { value: '₹19L', label: 'Cohort 1 average CTC' },
-    { value: '₹23–24L', label: 'Cohort 2 average CTC' },
+    { value: '36%', label: 'Of the batch obtained offers' },
+    { value: '55%+', label: 'Offers in AI-specific roles' },
   ],
-  // One merged list, framed as visits (feedback, 2026-10-06).
-  recruitersTitle: 'Companies that have visited Scaler School of Business',
-  // The grid's logos, best known first (the first twelve are what the grid opens on). Files trimmed
-  // to their edges, from Wikidata (P154) and English Wikipedia's article images; `ink` measured
-  // as CLAUDE.md, "Logos" says.
-  // PLACEHOLDER `placed` counts, to show the flip: not real numbers. Replace with the placement
-  // team's per-company counts before this goes anywhere near production.
-  logos: [
-    { name: 'Amazon', logoUrl: '/logos/amazon.svg', ink: 0.36, placed: 4 },
-    { name: 'Goldman Sachs', logoUrl: '/logos/goldman-sachs.svg', ink: 0.32, placed: 2 },
-    { name: 'EY', logoUrl: '/logos/ey.svg', ink: 0.28, placed: 3 },
-    { name: 'Nomura', logoUrl: '/logos/nomura.svg', ink: 0.47, placed: 2 },
-    { name: 'Samsung', logoUrl: '/logos/samsung.svg', ink: 0.51, placed: 3 },
-    { name: 'Uber', logoUrl: '/logos/uber.svg', ink: 0.37, placed: 2 },
-    { name: 'Razorpay', logoUrl: '/logos/razorpay.svg', ink: 0.27, placed: 5 },
-    { name: 'Swiggy', logoUrl: '/logos/swiggy.svg', ink: 0.36, placed: 4 },
-    { name: 'Zomato', logoUrl: '/logos/zomato.svg', ink: 0.49, placed: 3 },
-    { name: 'Flipkart', logoUrl: '/logos/flipkart.svg', ink: 0.28, placed: 4 },
-    { name: 'Blinkit', logoUrl: '/logos/blinkit.svg', ink: 0.57, placed: 3 },
-    { name: 'PhonePe', logoUrl: '/logos/phonepe.svg', ink: 0.33, placed: 2 },
-    { name: 'Myntra', logoUrl: '/logos/myntra.svg', ink: 0.32, placed: 2 },
-    { name: 'Urban Company', logoUrl: '/logos/urban-company.svg', ink: 0.34, placed: 3 },
-    { name: 'Groww', logoUrl: '/logos/groww.png', ink: 0.28, placed: 2 },
-    { name: 'BharatPe', logoUrl: '/logos/bharatpe.png', ink: 0.39, placed: 3 },
-    { name: 'Lenskart', logoUrl: '/logos/lenskart.svg', ink: 0.36, placed: 2 },
-    { name: 'Zepto', logoUrl: '/logos/zepto.svg', ink: 0.31, placed: 3 },
-    { name: 'ArcelorMittal', logoUrl: '/logos/arcelormittal.svg', ink: 0.16, placed: 1 },
-    { name: 'Pine Labs', logoUrl: '/logos/pine-labs.svg', ink: 0.32, placed: 2 },
-    { name: 'BigBasket', logoUrl: '/logos/bigbasket.svg', ink: 0.26, placed: 2 },
-    { name: 'OYO', logoUrl: '/logos/oyo.png', ink: 0.66, placed: 1 },
-    { name: 'Zendesk', logoUrl: '/logos/zendesk.svg', ink: 0.27, placed: 1 },
-    { name: 'Vedantu', logoUrl: '/logos/vedantu.png', ink: 0.25, placed: 2 },
-    // Added 2026-10-05 for the recruiters' box (no hires counts: the grid variation isn't shown).
-    // From English Wikipedia's article images, trimmed and measured as above.
-    { name: 'Aviva', logoUrl: '/logos/aviva.svg', ink: 0.31 },
-    { name: 'CK Birla Group', logoUrl: '/logos/ck-birla-group.svg', ink: 0.27 },
-    { name: 'FNP', logoUrl: '/logos/fnp.svg', ink: 0.2 },
-    { name: 'ONDC', logoUrl: '/logos/ondc.svg', ink: 0.27 },
-    { name: 'HealthifyMe', logoUrl: '/logos/healthify.png', ink: 0.23 },
-    { name: 'Landmark Group', logoUrl: '/logos/landmark-group.png', ink: 0.15 },
-    { name: 'The Times Group', logoUrl: '/logos/the-times-group.png', ink: 0.36 },
-  ],
-  recruiters: [
-    'Amazon',
-    'Goldman Sachs',
-    'EY',
-    'Nomura',
-    'Edelweiss',
-    'CK Birla Group',
-    'Muthoot FinCorp',
-    'Blinkit',
-    'Urban Company',
-    'Emergent',
-    'Samsung',
-    'Razorpay',
-    'The Whole Truth',
-    'BharatPe',
-    'Avendus',
-    'ArcelorMittal',
-    'Peak XV Partners',
-    'Think School',
-    'TMRW',
-    'Swiggy',
-    'Zomato',
-    'Flipkart',
-    'Myntra',
-    'Meesho',
-    'PhonePe',
-    'Uber',
-    'Zepto',
-    'Rapido',
-    'Groww',
-    'BigBasket',
-    'upGrad',
-    'Vedantu',
-    'OYO',
-    'Lenskart',
-    'Wakefit',
-    'ClearTax',
-    'Pine Labs',
-    'Practo',
-    'Curefit',
-    'CashKaro',
-    'Noise',
-    'mCaffeine',
-    'Pilgrim',
-    'Neeman’s',
-    'Snitch',
-    'FNP',
-    'Traya Health',
-    'The Times Group',
-    'Aviva Life Insurance',
-    'Zendesk',
-    'Landmark Group',
-    'ONDC',
-    'Pocket FM',
-    'Healthify',
-    'Ninjacart',
-    'Reckitt',
-    'Scapia',
-    'Airtribe',
-    'Vaani Research',
-    'gnani.ai',
-    'AEOS',
-    'AM/NS India',
-  ],
+  recruitersTitle: 'Companies on campus to hire',
+  // The strip's logos (trimmed, transparent), in the strip's order. No per-company hires counts.
+  logos: CAMPUS,
+  recruiters: CAMPUS.map((c) => c.name),
 };
